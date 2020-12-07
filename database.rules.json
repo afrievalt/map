@@ -1,0 +1,51 @@
+{
+  "rules": {
+    "tables": {
+      ".read": true,
+      ".write": true,
+      "$tableId": {
+        ".write": "!data.exists()",
+        "players": {
+          "$playersKey": {
+            ".read": "auth.uid === $playersKey"
+          }
+        }
+      }
+    },
+    "private": {
+      "$table": {
+        "$uid": {
+          ".read": "auth.uid === $uid"
+        }
+      }
+    },
+    "vote": {
+      "$table": {
+        "$uid": {
+          ".write": "auth.uid === $uid"
+        }
+      }
+    },
+    "action": {
+      "$table": {
+        "$uid": {
+          ".write": "auth.uid === $uid"
+        }
+      }
+    },
+    "throw": {
+      "$tid": {
+        "$uid": {
+          ".write": "auth.uid === $uid"
+        }
+      }
+    },
+    "personal": {
+      "$table": {
+        "$uid": {
+          ".read": "auth.uid === $uid"
+        }
+      }
+    }
+  }
+}

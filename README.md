@@ -1,3 +1,32 @@
+# Setup
+1. Install and run create react app
+2. Setup Firebase
+
+# Set up firebase
+1. clone .firebaserc, ???
+2. clone firebase.json and update 
+toto new project
+run firebase init
+select ? 
+
+# create github repository
+create github repository (Don't add anything like readme ...)
+copy url
+
+exe  gitbash
+nav to project
+commit project
+git remote add origin https://github.com/afrievalt/parent-pickup.git
+git push -u origin main
+
+
+
+
+# troubleshooting 
+firebase login --reauth
+
+deployment trouble sho
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
