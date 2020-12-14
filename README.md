@@ -12,20 +12,33 @@ select ?
 # create github repository
 create github repository (Don't add anything like readme ...)
 copy url
-
-exe  gitbash
-nav to project
 commit project
 git remote add origin https://github.com/afrievalt/parent-pickup.git
-git push -u origin main
+git push -u origin master
 
 
+# installs:
+npm install @material-ui/core
+npm install @material-ui/icons
+npm install @material-ui/icons
 
+npm install --save final-form react-final-form final-form-focus
+npm install @reduxjs/toolkit
+
+npm install --save-dev plop
+
+
+entry-point
+import 'fontsource-roboto';
+
+# todo:
+styled components
+router
 
 # troubleshooting 
 firebase login --reauth
 
-deployment trouble sho
+deployment troubleshooting
 
 # Getting Started with Create React App
 

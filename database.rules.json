@@ -6,7 +6,7 @@
       "$tableId": {
         ".write": "!data.exists()",
         "players": {
-          "$playersKey": {
+          "$playersKey": { 
             ".read": "auth.uid === $playersKey"
           }
         }
