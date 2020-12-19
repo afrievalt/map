@@ -1,0 +1,27 @@
+import React from 'react';
+import { useField } from 'react-final-form';
+import LunaFormControlGroup from '@uitk/ui-toolkit-react/dist/wip/luna-form-control-group';
+import LunaInput from '@uitk/ui-toolkit-react/dist/wip/luna-input';
+import { defaultGetMessage } from './fieldHelpers';
+import Cell from '../components/Cell';
+
+const {{name}} = ({ fieldId, label, optional, helpMessage, gridSize = 12, getErrorMessage = defaultGetMessage, disabled = false, ...rest }) => {
+	const { input, meta } = useField(fieldId);
+	const { errorMessage, hideErrorMessage } = getErrorMessage(meta);
+	return (
+		<Cell size={gridSize}>
+			<LunaFormControlGroup
+				label={label}
+				isValid={hideErrorMessage}
+				systemMessage={errorMessage}
+				optional={optional}
+				helpMessage={helpMessage}
+				disabled={disabled}
+			>
+				<LunaInput {...input} {...rest} />
+			</LunaFormControlGroup>
+		</Cell>
+	);
+};
+
+export default {{name}};

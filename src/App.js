@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import SignUpForm from './pages/SignUp.form';
-const doNothing = () => {}
+import SignUpForm from './pages/SignUpForm';
 function App() {
   return (
     <div className="App">
