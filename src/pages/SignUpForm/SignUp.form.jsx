@@ -18,7 +18,7 @@ const SignUpForm = () => {
         <InputField
           fieldId='password'
           label="Create Password"
-          autocomplete="off"
+          autoComplete="off"
           type='password'/>
         <Button
           type="submit"

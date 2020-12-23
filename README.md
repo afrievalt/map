@@ -27,7 +27,8 @@ npm install --save final-form react-final-form final-form-focus
 npm install @reduxjs/toolkit
 
 npm install --save-dev plop
-
+npm install --save react-redux-firebase
+npm i (should i do save) redux-first-router
 
 entry-point
 import 'fontsource-roboto';
