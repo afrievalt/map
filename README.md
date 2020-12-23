@@ -8,6 +8,7 @@
 toto new project
 run firebase init
 select ? 
+npm i --save firebase
 
 # create github repository
 create github repository (Don't add anything like readme ...)
