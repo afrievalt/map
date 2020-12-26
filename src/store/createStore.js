@@ -3,6 +3,8 @@ import { connectRoutes } from 'redux-first-router';
 import rootReducer from './rootReducer'
 import routePaths from './routePaths';
 import firebase from 'firebase/app'
+import  'firebase/database'
+import 'firebase/auth'
 import firebaseConfig from './firebaseConfig';
 import { getFirebase } from 'react-redux-firebase'
 

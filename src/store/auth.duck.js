@@ -1,10 +1,4 @@
 import {createSlice} from '@reduxjs/toolkit';
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/database'
-
-
-
 
 export const initialState = {
   foundAuth: null,
@@ -18,8 +12,8 @@ const auth = createSlice({
   initialState,
   reducers: {
     selectAuth(state, action) {
-      const {payload} = action || {};
-      state.selected = payload;
+      const {payload} = action || {}
+      state.selected = payload
     }
   }
 });
@@ -28,12 +22,13 @@ export const {
   selectAuth
 } = auth.actions;
 
-export const createUserAccount = (payload) => {
+export const createUserAccount = (payload) => (dispatch, getState, getFirebase) => {
   const {email, password} = payload;
-  firebase
+  console.log('auth.duck.js:27 payload: ', payload);
+  getFirebase()
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then((x)=>console.log('auth.duck.js:46 x: ',  x))
+    .then((x) => console.log('auth.duck.js:46 x: ', x))
     .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
