@@ -17,13 +17,9 @@ const SignUpForm = () => {
           fieldId='password'
           label='Create Password'
           autoComplete='off'
-          type='password'
-        />
-        <Button
-          type='submit'
-          variant='contained'
-          color='inherit'
-        >Create
+          type='password' />
+        <Button type='submit' variant='contained' color='inherit'>
+          Create
         </Button>
       </SimpleForm>
     </Container>
