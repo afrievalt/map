@@ -1,36 +1,34 @@
-import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
-import { connectRoutes } from 'redux-first-router';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { connectRoutes } from 'redux-first-router'
 import rootReducer from './rootReducer'
-import routePaths from './routePaths';
+import routePaths from './routePaths'
 import firebase from 'firebase/app'
-import  'firebase/database'
+import 'firebase/database'
 import 'firebase/auth'
-import firebaseConfig from './firebaseConfig';
+import firebaseConfig from './firebaseConfig'
 import { getFirebase } from 'react-redux-firebase'
 
-const {middleware: routerMiddleware, enhancer: routerEnhancer, initialDispatch} = connectRoutes(routePaths, {initialDispatch: false});
+const { middleware: routerMiddleware, enhancer: routerEnhancer, initialDispatch } = connectRoutes(routePaths, { initialDispatch: false })
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig)
 
 const defaultMiddleware = getDefaultMiddleware({
   thunk: {
-    extraArgument: getFirebase,
+    extraArgument: getFirebase
   },
-  serializableCheck: false,
+  serializableCheck: false
 })
 
-
-function configureRouteStore() {
+function configureRouteStore () {
   const store = configureStore({
     reducer: rootReducer,
     middleware: [...defaultMiddleware, routerMiddleware],
     enhancers: (defaultEnhancers) => [routerEnhancer, ...defaultEnhancers]
   })
-  initialDispatch();
-  return store;
+  initialDispatch()
+  return store
 }
-const store = configureRouteStore();
-
+const store = configureRouteStore()
 
 export const rrfProps = {
   firebase,
@@ -39,4 +37,4 @@ export const rrfProps = {
   // createFirestoreInstance // <- needed if using firestore
 }
 
-export default store;
+export default store

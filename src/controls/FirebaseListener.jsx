@@ -1,8 +1,4 @@
-import {TextField} from '@material-ui/core';
-import React from 'react';
-import firebase from 'firebase/app'
-
-import { useFirebaseConnect } from 'react-redux-firebase';
+import { useFirebaseConnect } from 'react-redux-firebase'
 
 const FirebaseListener = () => {
   useFirebaseConnect([
@@ -10,7 +6,7 @@ const FirebaseListener = () => {
       path: 'cms'
     }
   ])
-  return null;
+  return null
 }
 
-export default FirebaseListener;
+export default FirebaseListener

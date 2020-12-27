@@ -1,8 +1,9 @@
 const routePaths = {
-  'HOME': '/',
-  //'ABOUT': '/about',
-  //'PROJECTS': '/projects',
-  //'TIMELINE': '/projects/timeline'
+  HOME: '/',
+  SIGNUP: '/admin/signup'
+  // 'ABOUT': '/about',
+  // 'PROJECTS': '/projects',
+  // 'TIMELINE': '/projects/timeline'
 }
 
-export default routePaths;
+export default routePaths

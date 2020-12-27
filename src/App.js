@@ -5,15 +5,20 @@ import store, { rrfProps } from './store/createStore'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 
 import FirebaseListener from './controls/FirebaseListener'
+import Route from './controls/Route'
+import Home from './pages/Home'
 
 function App () {
   return (
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
         <FirebaseListener />
-        <div className='App'>
+        <Route type='HOME'>
+          <Home />
+        </Route>
+        <Route type='SIGNUP'>
           <SignUpForm />
-        </div>
+        </Route>
       </ReactReduxFirebaseProvider>
     </Provider>
 

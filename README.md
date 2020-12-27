@@ -29,6 +29,7 @@ npm install @reduxjs/toolkit
 npm install --save-dev plop
 npm install --save react-redux-firebase
 npm i (should i do save) redux-first-router
+npm i --save redux-first-router-link
 
 entry-point
 import 'fontsource-roboto';
