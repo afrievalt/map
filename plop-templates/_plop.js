@@ -1,5 +1,5 @@
 module.exports = {
-  description: 'create a redux slice with redux-toolkit',
+  description: 'create a plop template',
   prompts: [
     {
       type: 'input',
