@@ -1,0 +1,24 @@
+import reducer, { fetch{{pascalCase name}}Failure, initialState } from './{{name}}.duck';
+
+describe('{{name}} reducer', () => {
+	it('fetch{{pascalCase name}}Failure action - updates state', () => {
+		// arrange
+		const { type } = fetch{{pascalCase name}}Failure  
+		const action = {
+			type,
+			payload: "test error"
+		}
+		const state = {...initialState, loading: true};
+
+		// act
+		const result = reducer(state, action);
+
+		// assert
+		expect(result).toEqual({
+			found{{pascalCase name}}: null,
+			loading: false,
+			error: 'test error',
+			selected: null
+		});
+	});
+});
