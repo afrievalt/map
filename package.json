@@ -28,13 +28,22 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "pm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject"
+  },
+  "standard": {
+    "env": {
+      "jest": true
+    }
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "env": {
+      "jest": true
+    }
   },
   "browserslist": {
     "production": [
@@ -50,6 +59,7 @@
   },
   "devDependencies": {
     "plop": "^2.7.4",
+    "react-test-renderer": "^17.0.1",
     "standard": "^16.0.3"
   }
 }
