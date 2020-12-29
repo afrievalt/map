@@ -2,11 +2,6 @@ module.exports = {
   description: 'create a react page',
   prompts: [
     {
-      type: 'input',
-      name: 'name',
-      message: 'page name?'
-    },
-    {
       type: 'list',
       name: 'type',
       message: 'What kind of page?',
@@ -14,12 +9,17 @@ module.exports = {
       filter: function (val) {
         return val.toLowerCase()
       }
+    },
+    {
+      type: 'input',
+      name: 'name',
+      message: '{{type}} name?'
     }
   ],
   actions: [
     {
       type: 'addMany',
-      destination: 'src/pages/{{name}}',
+      destination: 'src/pages/{{name}}Form',
       base: 'plop-templates/page-templates/{{type}}-templates',
       templateFiles: 'plop-templates/page-templates/{{type}}-templates/*.hbs'
     }

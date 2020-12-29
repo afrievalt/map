@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {{name}}Form from './{{name}}.form.jsx';
+import SignInForm from './SignIn.form.jsx';
 
 xit('renders correctly', () => {
   const tree = renderer
-    .create(<{{name}}Form />)
+    .create(<SignInForm />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
