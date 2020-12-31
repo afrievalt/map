@@ -41,3 +41,24 @@ export const signInAccount = (payload) => (dispatch, getState, getFirebase) => {
       console.log(error)
     })
 }
+
+export const signOut = () => (dispatch, getState, getFirebase) => {
+  console.log('auth.duck.js:46 : in here'  );
+  getFirebase()
+    .auth()
+    .signOut()
+    .then((x) => console.log('signout: ', x))
+    .then(() => dispatch({ type: 'HOME' }))
+    .catch(function (error) {
+      // Handle Errors here.
+      const errorCode = error.code
+      const errorMessage = error.message
+
+      if (errorCode === 'auth/weak-password') {
+        window.alert('The password is too weak.')
+      } else {
+        window.alert(errorMessage)
+      }
+      console.log(error)
+    })
+}

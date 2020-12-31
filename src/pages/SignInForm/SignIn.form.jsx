@@ -15,12 +15,12 @@ const SignUpForm = () => {
         <InputField fieldId='email' label='E-mail Address' />
         <InputField
           fieldId='password'
-          label='Create Password'
+          label='Password'
           autoComplete='off'
           type='password'
         />
         <Button type='submit' variant='contained' color='inherit'>
-          Create
+          Sign In
         </Button>
       </SimpleForm>
     </Container>

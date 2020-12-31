@@ -1,4 +1,5 @@
 import './App.css'
+import React from 'react'
 import SignUpForm from './pages/SignUpForm'
 import SignInForm from './pages/SignInForm'
 import { Provider } from 'react-redux'
