@@ -3,7 +3,7 @@ import { useFirebaseConnect } from 'react-redux-firebase'
 const FirebaseListener = () => {
   useFirebaseConnect([
     {
-      path: 'cms'
+      path: 'student'
     }
   ])
   return null

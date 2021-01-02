@@ -1,6 +1,5 @@
 export const createUserAccount = (payload) => (dispatch, getState, getFirebase) => {
   const { email, password } = payload
-  console.log('auth.duck.js:27 payload: ', payload)
   getFirebase()
     .auth()
     .createUserWithEmailAndPassword(email, password)
@@ -22,7 +21,6 @@ export const createUserAccount = (payload) => (dispatch, getState, getFirebase) 
 
 export const signInAccount = (payload) => (dispatch, getState, getFirebase) => {
   const { email, password } = payload
-  console.log('auth.duck.js:27 payload: ', payload)
   getFirebase()
     .auth()
     .signInWithEmailAndPassword(email, password)

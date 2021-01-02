@@ -1,21 +1,20 @@
-import {TextField} from '@material-ui/core';
-import React from 'react';
-import {useField} from 'react-final-form';
-import FieldWrapper from './FieldWrapper';
+import { TextField } from '@material-ui/core'
+import React from 'react'
+import { useField } from 'react-final-form'
+import FieldWrapper from './FieldWrapper'
 
 const getError = meta => {
   const {
-    error = "",
+    error = '',
     touched
   } = meta
-  console.log('Input.field.jsx:14 meta: ', meta);
-  const inProgressError = error && error[0] === "-";
+  const inProgressError = error && error[0] === '-';
   const displayError = inProgressError
     ? error.substring(1)
-    : error;
+    : error
   const suppressError = inProgressError && !touched
   const errorMessage = suppressError
-    ? ""
+    ? ''
     : displayError
   return {
     showError: !!errorMessage,
@@ -29,8 +28,8 @@ const InputField = ({
   variant = 'outlined',
   ...rest
 }) => {
-  const {input, meta} = useField(fieldId);
-  const {showError, errorMessage} = getError(meta)
+  const { input, meta } = useField(fieldId)
+  const { showError, errorMessage } = getError(meta)
   return (
     <FieldWrapper>
       <TextField
@@ -39,9 +38,10 @@ const InputField = ({
         helperText={errorMessage}
         variant={variant}
         {...input}
-        {...rest}/>
+        {...rest} 
+      />
     </FieldWrapper>
   )
 }
 
-export default InputField;
+export default InputField
