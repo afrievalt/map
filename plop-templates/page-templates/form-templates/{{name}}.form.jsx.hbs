@@ -4,13 +4,14 @@ import SimpleForm from '../../form/SimpleForm'
 import {{name}}Validate from './{{name}}Validate'
 import { createUserAccount } from '../../store/auth.duck'
 import { useActions } from '../../hooks/useActions'
+import {{name}}FieldGroup from './{{name}}FieldGroup'
 
 const {{name}}Form = () => {
   const handleSubmit = useActions(createUserAccount)
   return (
     <Container>
       <CssBaseline />
-      <SimpleForm onSubmit={handleSubmit} validate={{{name}}Validate}>
+      <SimpleForm onSubmit={handleSubmit} validate={ {{name}}Validate}>
         <{{name}}FieldGroup />
         <Button type='submit' variant='contained' color='inherit'>
           Submit
