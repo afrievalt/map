@@ -1,12 +1,12 @@
 import { Button, Container, CssBaseline } from '@material-ui/core'
-import React from 'react'
+import React, {memo} from 'react'
 import SimpleForm from '../../form/SimpleForm'
 import InputField from '../../form/Input.field'
 import validate from './validate'
 import { createUserAccount } from '../../store/auth.duck'
 import { useActions } from '../../hooks/useActions'
 
-const SignUpForm = () => {
+const {{name}}Form = () => {
   const handleSubmit = useActions(createUserAccount)
   return (
     <Container>
@@ -27,4 +27,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm
+export default memo({{name}}Form)

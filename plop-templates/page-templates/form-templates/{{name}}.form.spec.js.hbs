@@ -1,10 +1,14 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
+import AppProvider from '../../AppProvider.js'
 import {{name}}Form from './{{name}}.form.jsx';
 
 xit('renders correctly', () => {
   const tree = renderer
-    .create(<{{name}}Form />)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
-});
+    .create(
+      <AppProvider>
+        <{{name}}Form />
+      </AppProvider>
+    )
+    .toJSON()
+  expect(tree).toMatchSnapshot()
+})
