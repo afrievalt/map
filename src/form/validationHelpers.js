@@ -78,9 +78,15 @@ getFuncValidateFields.x = () => {
   }
 }
 
-getFuncValidateFields.log = () => {
-  console.log('Todo: enable validation')
-  return () => ({})
+getFuncValidateFields.log = (rules) => {
+  console.log('Validation rules:', rules)
+  const lambda = getFuncValidateFields(rules)
+  return (fieldValues) => {
+    console.log('Validation fieldValues: ', JSON.stringify(fieldValues, 2, 2))
+    const result = lambda(fieldValues)
+    console.log('Validation results: ', JSON.stringify(result, 2, 2))
+    return result
+  }
 }
 
 export const getIsTooLong = (maxLength) => (fieldValue) => {
