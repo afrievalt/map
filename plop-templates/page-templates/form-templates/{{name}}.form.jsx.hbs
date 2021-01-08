@@ -2,12 +2,12 @@ import { Button, Container, CssBaseline } from '@material-ui/core'
 import React, {memo} from 'react'
 import SimpleForm from '../../form/SimpleForm'
 import {{name}}Validate from './{{name}}Validate'
-import { createUserAccount } from '../../store/auth.duck'
+import { upsert{{name}} } from '.{{camelCase name}}Actions'
 import { useActions } from '../../hooks/useActions'
 import {{name}}FieldGroup from './{{name}}FieldGroup'
 
 const {{name}}Form = () => {
-  const handleSubmit = useActions(createUserAccount)
+  const handleSubmit = useActions(upsert{{name}})
   return (
     <Container>
       <CssBaseline />
