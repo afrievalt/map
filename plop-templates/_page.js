@@ -27,10 +27,18 @@ module.exports = {
       {
         // Action type 'append' injects a template into an existing file
         type: 'append',
-        path: 'src/store/rootReducer.js',
+        path: 'src/store/routePaths.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "HOME: '/',",
         template: "ADD_CONTACT: '/contact/add',\nEDIT_CONTACT: '/contact/:contactId',"
+      },
+      {
+        // Action type 'append' injects a template into an existing file
+        type: 'modify',
+        path: 'src/App.js',
+        // Pattern tells plop where in the file to inject the template
+        pattern: '</AppProvider>',
+        templateFile: '_page-modify-App.js.hbs'
       }
     ]
     return actions
