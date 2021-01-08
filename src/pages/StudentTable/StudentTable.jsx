@@ -10,12 +10,12 @@ const columns = [
   { field: 'studentFirstName', headerName: 'Student First Name' },
   { field: 'studentLastName', headerName: 'Student Last Name' }
 ]
-
+const handleRowClick = (x) => console.log('StudentTable.jsx:13 x: ', x.row.id) 
 const StudentTable = () => {
   const studentData = useSelector(selectStudentTableData)
   return (
     <Container style={{ height: 600, width: '100%' }}>
-      <DataGrid rows={studentData} columns={columns} />
+      <DataGrid rows={studentData} columns={columns} onRowClick={handleRowClick} />
     </Container>
   )
 }
