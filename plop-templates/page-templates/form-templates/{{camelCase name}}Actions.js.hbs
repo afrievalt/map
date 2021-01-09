@@ -1,4 +1,4 @@
-export const add{{name}} = (payload, form) => (dispatch, getState, getFirebase) => {
+export const upsert{{name}} = (payload, form) => (dispatch, getState, getFirebase) => {
   const newRef = getFirebase()
     .database()
     .ref('{{camelCase name}}')

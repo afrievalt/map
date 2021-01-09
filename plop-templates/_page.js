@@ -30,15 +30,21 @@ module.exports = {
         path: 'src/store/routePaths.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "HOME: '/',",
-        template: "ADD_CONTACT: '/contact/add',\nEDIT_CONTACT: '/contact/:contactId',"
+        template: "{{{{constantCase name}}_ADD}}: '/{{lowercase name}}/add',\n{{constantCase name}}_EDIT: '/{{lowercase name}}/:{{lowercase name}}Id',"
       },
       {
-        // Action type 'append' injects a template into an existing file
         type: 'modify',
         path: 'src/App.js',
         // Pattern tells plop where in the file to inject the template
         pattern: '</AppProvider>',
-        templateFile: '_page-modify-App.js.hbs'
+        templateFile: 'plop-templates/_page-modify-App.js.hbs'
+      },
+      {
+        type: 'append',
+        path: 'src/App.js',
+        // Pattern tells plop where in the file to inject the template
+        pattern: "import Route from './controls/Route'",
+        template: "import {{name}}Form from './pages/{{name}}Form'"
       }
     ]
     return actions
