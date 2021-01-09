@@ -30,7 +30,7 @@ module.exports = {
         path: 'src/store/routePaths.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "HOME: '/',",
-        template: "{{{{constantCase name}}_ADD}}: '/{{lowercase name}}/add',\n{{constantCase name}}_EDIT: '/{{lowercase name}}/:{{lowercase name}}Id',"
+        template: "{ {{constantCase name}}_ADD: '/{{lowerCase name}}/add',\n{{constantCase name}}_EDIT: '/{{lowerCase name}}/:{{lowerCase name}}Id',"
       },
       {
         type: 'modify',
