@@ -1,0 +1,14 @@
+import renderer from 'react-test-renderer'
+import AppProvider from '../../AppProvider.js'
+import {{name}}List from './{{name}}.list.jsx';
+
+xit('renders correctly', () => {
+  const tree = renderer
+    .create(
+      <AppProvider>
+        <{{name}}List />
+      </AppProvider>
+    )
+    .toJSON()
+  expect(tree).toMatchSnapshot()
+})

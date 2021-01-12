@@ -1,26 +1,17 @@
 module.exports = {
-  description: 'create a react page',
+  description: 'create a list page',
   prompts: [
-    {
-      type: 'list',
-      name: 'type',
-      message: 'What kind of page?',
-      choices: ['List', 'Form', 'Empty'],
-      filter: function (val) {
-        return val.toLowerCase()
-      }
-    },
     {
       type: 'input',
       name: 'name',
-      message: '{{type}} name?'
+      message: 'List name?'
     }
   ],
   actions: data => {
     const actions = [
       {
         type: 'addMany',
-        destination: 'src/pages//{{name}}Form',
+        destination: 'src/pages/{{name}}/{{name}}List',
         base: 'plop-templates/page-templates/{{type}}-templates',
         templateFiles: 'plop-templates/page-templates/{{type}}-templates/*.hbs'
       },
@@ -44,7 +35,7 @@ module.exports = {
         path: 'src/App.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "import Route from './controls/Route'",
-        template: "import {{name}}Form from './pages/{{name}}Form'"
+        template: "import {{name}}List from './pages/{{name}}List'"
       }
     ]
     return actions
