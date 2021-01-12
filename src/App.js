@@ -7,22 +7,23 @@ import FirebaseListener from './controls/FirebaseListener'
 import Route from './controls/Route'
 import Home from './pages/Home'
 import AppProvider from './AppProvider'
-import ResponsiveDrawer from './controls/ResponsiveDrawer/ResponsiveDrawer'
+import LeftSidebar from './controls/LeftSidebar'
 
 function App () {
   return (
     <AppProvider>
       <FirebaseListener />
-      <ResponsiveDrawer />
-      <Route type='HOME'>
-        <Home />
-      </Route>
-      <Route type='SIGNUP'>
-        <SignUpForm />
-      </Route>
-      <Route type='SIGNIN'>
-        <SignInForm />
-      </Route>
+      <LeftSidebar>
+        <Route type='HOME'>
+          <Home />
+        </Route>
+        <Route type='SIGNUP'>
+          <SignUpForm />
+        </Route>
+        <Route type='SIGNIN'>
+          <SignInForm />
+        </Route>
+      </LeftSidebar>
     </AppProvider>
 
   )
