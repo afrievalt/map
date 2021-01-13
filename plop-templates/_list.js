@@ -12,8 +12,8 @@ module.exports = {
       {
         type: 'addMany',
         destination: 'src/pages/{{name}}/{{name}}List',
-        base: 'plop-templates/page-templates/{{type}}-templates',
-        templateFiles: 'plop-templates/page-templates/{{type}}-templates/*.hbs'
+        base: 'plop-templates/page-templates/list-templates',
+        templateFiles: 'plop-templates/page-templates/list-templates/*.hbs'
       },
       {
         // Action type 'append' injects a template into an existing file
@@ -21,7 +21,7 @@ module.exports = {
         path: 'src/store/routePaths.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "HOME: '/',",
-        template: "{{constantCase name}}_ADD: '/{{lowerCase name}}/add',\n{{constantCase name}}_EDIT: '/{{lowerCase name}}/:{{lowerCase name}}Id',"
+        template: "{{constantCase name}}_LIST: '/{{lowerCase name}}/list',"
       },
       {
         type: 'modify',
