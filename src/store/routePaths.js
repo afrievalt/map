@@ -1,6 +1,6 @@
 const routePaths = {
   HOME: '/',
-  CONTACTS_LIST: '/contacts/list',
+  CONTACT_LIST: '/contact/list',
   SIGNUP: '/admin/signup',
   SIGNIN: '/admin/signin'
 }
