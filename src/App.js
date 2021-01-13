@@ -5,7 +5,7 @@ import SignInForm from './pages/SignInForm'
 
 import FirebaseListener from './controls/FirebaseListener'
 import Route from './controls/Route'
-import ContactList from './pages/ContactList'
+import ContactList from './pages/Contact/ContactList'
 import Home from './pages/Home'
 import AppProvider from './AppProvider'
 import LeftSidebar from './controls/LeftSidebar'
