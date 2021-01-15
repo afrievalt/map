@@ -17,7 +17,7 @@ module.exports = {
     const actions = [
       {
         type: 'addMany',
-        destination: 'src/pages//{{lowercase name}}//{{name}}Form',
+        destination: 'src/pages//{{lowerCase name}}//{{name}}Form',
         base: 'plop-templates/page-templates/{{type}}-templates',
         templateFiles: 'plop-templates/page-templates/{{type}}-templates/*.hbs'
       },
@@ -41,7 +41,7 @@ module.exports = {
         path: 'src/App.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "import Route from './controls/Route'",
-        template: "import {{name}}Form from './pages/{{name}}Form'"
+        template: "import {{name}}{{type}} from './pages/{{name}}{{type}}'"
       }
     ]
     return actions
