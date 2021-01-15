@@ -5,22 +5,19 @@ module.exports = {
       type: 'list',
       name: 'type',
       message: 'What kind of page?',
-      choices: ['List', 'Form', 'Empty'],
-      filter: function (val) {
-        return val.toLowerCase()
-      }
+      choices: ['List', 'Form', 'Grid', 'Empty'],
     },
     {
       type: 'input',
       name: 'name',
-      message: '{{type}} name?'
+      message: 'Page name?'
     }
   ],
   actions: data => {
     const actions = [
       {
         type: 'addMany',
-        destination: 'src/pages//{{name}}Form',
+        destination: 'src/pages//{{lowercase name}}//{{name}}Form',
         base: 'plop-templates/page-templates/{{type}}-templates',
         templateFiles: 'plop-templates/page-templates/{{type}}-templates/*.hbs'
       },
