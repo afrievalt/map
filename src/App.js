@@ -5,6 +5,7 @@ import SignInForm from './pages/SignInForm'
 
 import FirebaseListener from './controls/FirebaseListener'
 import Route from './controls/Route'
+import ContactForm from './pages/Contact/ContactForm'
 import ContactList from './pages/Contact/ContactList'
 import Home from './pages/Home'
 import AppProvider from './AppProvider'
@@ -15,6 +16,7 @@ function App () {
     <AppProvider>
       <FirebaseListener />
       <LeftSidebar>
+        <ContactList />
         <Route type='HOME'>
           <Home />
         </Route>
@@ -27,6 +29,9 @@ function App () {
       </LeftSidebar>
       <Route type='CONTACT_LIST'>
         <ContactList />
+      </Route>
+      <Route type='CONTACT_ADD'>
+        <ContactForm />
       </Route>
     </AppProvider>
 

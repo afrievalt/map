@@ -4,7 +4,10 @@ const FirebaseListener = () => {
   useFirebaseConnect([
     {
       path: 'student'
-    }
+    },
+    {
+      path: 'contact'
+    },
   ])
   return null
 }

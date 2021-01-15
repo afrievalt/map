@@ -1,2 +1,2 @@
-import ContactForm from './Contact.form'
+import ContactForm from './Contact.list'
 export default ContactForm
