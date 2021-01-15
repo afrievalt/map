@@ -41,7 +41,7 @@ module.exports = {
         path: 'src/App.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "import Route from './controls/Route'",
-        template: "import {{name}}{{type}} from './pages/{{name}}{{type}}'"
+        template: "import {{name}}{{type}} from './pages/{{lowerCase name}}/{{name}}{{type}}'"
       }
     ]
     return actions
