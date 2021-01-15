@@ -1,0 +1,9 @@
+import { createSelector } from '@reduxjs/toolkit'
+
+const EMPTY = []
+const EMPTY_OBJECT = {}
+const selectFirebase = state => state.firebase || EMPTY_OBJECT
+
+const selectOrdered = createSelector(selectFirebase, f => f.ordered || EMPTY)
+const select{{ name }} = createSelector(selectOrdered, s => s.{{ name }} || EMPTY)
+export const select{{ name }}GridData = createSelector(select{{ name }}, {{ name }}Grid => {{ name }}Grid.map({{ name }} => ({...{{ name }}.value, id: {{ name }}.key})))

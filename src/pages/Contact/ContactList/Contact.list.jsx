@@ -1,23 +1,26 @@
-import { Button, Container, CssBaseline } from '@material-ui/core'
+import { Container } from '@material-ui/core'
 import { DataGrid } from '@material-ui/data-grid'
 import React, { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { selectContactTableData } from './ContactList.selectors'
-{ /* <InputField fieldId='firstName' label='First Name' />
-      <InputField fieldId='lastName' label='Last Name' />
-      <InputField fieldId='phoneNumber' label='Phone Number' /> */ }
 
 const columns = [
-  
-  { field: 'firstName', headerName: 'Last Name' },
-  { field: 'lastName', headerName: 'Student First Name' },
-  { field: 'phoneNumber', headerName: 'Student Last Name' }
+
+  { field: 'firstName', headerName: 'First Name', width: 150 },
+  { field: 'lastName', headerName: 'Last Name', width: 150 },
+  { field: 'phoneNumber', headerName: 'Phone', width: 150 },
+  { field: 'linkedInProfile', headerName: 'Linked In', width: 150 },
+  { field: 'colleagueAt', headerName: 'Colleague At', width: 150 },
+  { field: 'employer', headerName: 'Employer', width: 150 },
+  { field: 'skills', headerName: 'Skills', width: 150 },
+  { field: 'lastContact', headerName: 'Last Contact', width: 150 },
+  { field: 'pastEmployers', headerName: 'Past Employers', width: 150 }
+
 ]
 const ContactList = () => {
-  const studentData = useSelector(selectContactTableData) 
+  const studentData = useSelector(selectContactTableData)
   return (
     <Container style={{ height: 600, width: '100%' }}>
-      <h1>Hello contacts</h1>
       <DataGrid rows={studentData} columns={columns} />
     </Container>
   )
