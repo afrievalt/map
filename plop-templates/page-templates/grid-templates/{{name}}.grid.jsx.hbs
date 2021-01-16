@@ -15,7 +15,7 @@ const {{name}}Grid = () => {
     <Container>
         const {{lowercase name}}GridData = useSelector(select{{name}}GridData)
         return (
-          <Container style={{ height: 600, width: '100%' }}>
+          <Container style={ { height: 600, width: '100%' } }>
             <DataGrid rows={ {{lowercase name}}GridData} columns={columns} />
           </Container>
         )
