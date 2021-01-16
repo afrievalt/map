@@ -35,6 +35,10 @@ function LeftDrawer (props) {
           <ListItemIcon><SettingsIcon /></ListItemIcon>
           <ListItemText primary='Contacts' />
         </ListItem>
+        <ListItem button component={Link} to='/company/add'>
+          <ListItemIcon><AddCircleOutlineIcon /></ListItemIcon>
+          <ListItemText primary='Company' />
+        </ListItem>
       </List>
       <Divider />
 
