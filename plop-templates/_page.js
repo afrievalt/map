@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         type: 'modify',
-        path: 'src/controls/LefSidebar/LeftDrawer.jsx',
+        path: 'src/controls/LeftSidebar/LeftDrawer.jsx',
         // Pattern tells plop where in the file to inject the template
         pattern: '</List>',
         templateFile: 'plop-templates/fragment-templates/page/{{lowerCase name}}/LeftDrawer.jsx.hbs'
