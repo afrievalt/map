@@ -9,6 +9,7 @@ import useStyles from './useStyles'
 import Link from 'redux-first-router-link'
 import SettingsIcon from '@material-ui/icons/Settings'
 import HomeIcon from '@material-ui/icons/Home';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 function LeftDrawer (props) {
   const classes = useStyles()

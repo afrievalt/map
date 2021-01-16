@@ -5,7 +5,7 @@ module.exports = {
       type: 'list',
       name: 'type',
       message: 'What kind of page?',
-      choices: ['List', 'Form', 'Grid', 'Empty'],
+      choices: ['List', 'Form', 'Grid', 'Empty']
     },
     {
       type: 'input',
@@ -28,6 +28,13 @@ module.exports = {
         // Pattern tells plop where in the file to inject the template
         pattern: "HOME: '/',",
         template: "{{constantCase name}}_ADD: '/{{lowerCase name}}/add',\n{{constantCase name}}_EDIT: '/{{lowerCase name}}/:{{lowerCase name}}Id',"
+      },
+      {
+        type: 'modify',
+        path: 'src/controls/LefSidebar\LeftDrawer.jsx',
+        // Pattern tells plop where in the file to inject the template
+        pattern: '</List>',
+        templateFile: 'plop-templates/fragment-templates/page/{{lowerCase}}/LeftDrawer.jsx.hbs'
       },
       {
         type: 'modify',
