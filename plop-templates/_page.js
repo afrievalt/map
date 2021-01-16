@@ -17,7 +17,7 @@ module.exports = {
     const actions = [
       {
         type: 'addMany',
-        destination: 'src/pages//{{lowerCase name}}//{{name}}Form',
+        destination: 'src/pages//{{lowerCase name}}//{{name}}{{type}}',
         base: 'plop-templates/page-templates/{{type}}-templates',
         templateFiles: 'plop-templates/page-templates/{{type}}-templates/*.hbs'
       },
