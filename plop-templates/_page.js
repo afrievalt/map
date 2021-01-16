@@ -34,15 +34,15 @@ module.exports = {
         path: 'src/controls/LeftSidebar/LeftDrawer.jsx',
         // Pattern tells plop where in the file to inject the template
         pattern: '</List>',
-        templateFile: 'plop-templates/fragment-templates//{{type}}-LeftDrawer.jsx.hbs'
+        templateFile: 'plop-templates/fragment-templates/page//{{type}}-LeftDrawer.jsx.hbs'
       },
       {
         type: 'modify',
         path: 'src/App.js',
         // Pattern tells plop where in the file to inject the template
         pattern: '</AppProvider>',
-        templateFile: 'plop-templates/fragment-templates//{{type}}-App.jsx.hbs'
-      
+        templateFile: 'plop-templates/fragment-templates/page//{{type}}-App.jsx.hbs'
+
       },
       {
         type: 'append',
