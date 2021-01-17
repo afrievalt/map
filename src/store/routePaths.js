@@ -1,7 +1,7 @@
 const routePaths = {
   HOME: '/',
-COMPANY_ADD: '/company/add',
-COMPANY_EDIT: '/company/:companyId',
+  COMPANY_ADD: '/company/add',
+  COMPANY_EDIT: '/company/:companyId',
   CONTACT_ADD: '/contact/add',
   CONTACT_EDIT: '/contact/:contactId',
   CONTACT_LIST: '/contact/list',
