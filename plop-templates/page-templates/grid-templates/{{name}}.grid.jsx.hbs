@@ -1,8 +1,8 @@
+import React, {memo} from 'react'
 import { Container } from '@material-ui/core'
 import { DataGrid } from '@material-ui/data-grid'
-import {select{{ name }}TableData} from '{{lowerCase name}}Grid.selectors.js'
-import React, {memo} from 'react'
-import { select{{name}}GridData } from './{{name}}Grid.selectors'
+import { select{{ name }}GridData } from './{{lowerCase name}}Grid.selectors.js'
+import { useSelector } from 'react-redux'
 
 const columns = [
 
@@ -11,14 +11,12 @@ const columns = [
 ]
 
 const {{name}}Grid = () => {
+  const {{lowerCase name}}GridData = useSelector(select{{name}}GridData)
   return (
     <Container>
-        const {{lowerCase name}}GridData = useSelector(select{{name}}GridData)
-        return (
           <Container style={ { height: 600, width: '100%' } }>
             <DataGrid rows={ {{lowerCase name}}GridData} columns={columns} />
           </Container>
-        )
     </Container>
   )
 }
