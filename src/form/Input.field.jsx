@@ -2,25 +2,7 @@ import { TextField } from '@material-ui/core'
 import React from 'react'
 import { useField } from 'react-final-form'
 import FieldWrapper from './FieldWrapper'
-
-const getError = meta => {
-  const {
-    error = '',
-    touched
-  } = meta
-  const inProgressError = error && error[0] === '-';
-  const displayError = inProgressError
-    ? error.substring(1)
-    : error
-  const suppressError = inProgressError && !touched
-  const errorMessage = suppressError
-    ? ''
-    : displayError
-  return {
-    showError: !!errorMessage,
-    errorMessage
-  }
-}
+import { getError } from './helpers'
 
 const InputField = ({
   fieldId,
@@ -38,7 +20,7 @@ const InputField = ({
         helperText={errorMessage}
         variant={variant}
         {...input}
-        {...rest} 
+        {...rest}
       />
     </FieldWrapper>
   )
