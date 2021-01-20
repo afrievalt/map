@@ -14,6 +14,7 @@ const columns = [
 
 const CompanyGrid = () => {
   const companyGridData = useSelector(selectCompanyGridData)
+  console.log('Company.grid.jsx:17 companyGridData: ',  companyGridData);
   return (
     <Container>
       <Container style={{ height: 600, width: '100%' }}>

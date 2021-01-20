@@ -8,6 +8,9 @@ const FirebaseListener = () => {
     {
       path: 'contact'
     },
+    {
+      path: 'company'
+    },
   ])
   return null
 }
