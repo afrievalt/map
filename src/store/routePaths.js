@@ -5,7 +5,7 @@ const routePaths = {
   COMPANY: '/company',
   CONTACT_ADD: '/contact/add',
   CONTACT_EDIT: '/contact/:contactId',
-  CONTACT_LIST: '/contact/list',
+  CONTACT: '/contact',
   SIGNUP: '/admin/signup',
   SIGNIN: '/admin/signin'
 }

@@ -17,6 +17,7 @@ function App () {
   return (
     <AppProvider>
       <FirebaseListener />
+
       <LeftSidebar>
         <Route type='HOME'>
           <Home />
@@ -28,7 +29,7 @@ function App () {
           <SignInForm />
         </Route>
       </LeftSidebar>
-      <Route type='CONTACT_LIST'>
+      <Route type='CONTACT'>
         <ContactList />
       </Route>
       <Route type='CONTACT_ADD'>

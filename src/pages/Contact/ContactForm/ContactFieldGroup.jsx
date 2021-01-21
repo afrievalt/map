@@ -1,8 +1,12 @@
-import { Button, Container, CssBaseline } from '@material-ui/core'
 import React, { memo } from 'react'
+import { useSelector } from 'react-redux'
 import InputField from '../../../form/Input.field'
+import Options from '../../../form/Options'
+import SelectField from '../../../form/SelectField'
+import { selectCompanyOptionsData } from './contactForm.selectors'
 
 const ContactForm = () => {
+  const companyOptionsData = useSelector(selectCompanyOptionsData);
   return (
     <>
       <InputField fieldId='firstName' label='First Name' />
@@ -10,7 +14,9 @@ const ContactForm = () => {
       <InputField fieldId='phoneNumber' label='Phone Number' />
       <InputField fieldId='linkedInProfile' label='LinkedIn Profile' />
       <InputField fieldId='colleagueAt' label='Colleague At' />
-      <InputField fieldId='employer' label='Employer' />
+      <SelectField fieldId='employer' label='Employer'>
+        <Options data={companyOptionsData} />
+      </SelectField>
       <InputField fieldId='skills' label='Skills' />
       <InputField fieldId='lastContact' label='Last Contact' />
       <InputField fieldId='contactNotes' label='Contact Notes' />

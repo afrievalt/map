@@ -1,2 +1,2 @@
-import ContactForm from './Contact.list'
-export default ContactForm
+import ContactGrid from './Contact.list'
+export default ContactGrid
