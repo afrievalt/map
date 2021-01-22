@@ -28,19 +28,20 @@ function App () {
         <Route type='SIGNIN'>
           <SignInForm />
         </Route>
+        <Route type='CONTACT'>
+          <ContactList />
+        </Route>
+        <Route type='CONTACT_ADD'>
+          <ContactForm />
+        </Route>
+        <Route type='COMPANY_ADD'>
+          <CompanyForm />
+        </Route>
+        <Route type='COMPANY'>
+          <CompanyGrid />
+        </Route>
       </LeftSidebar>
-      <Route type='CONTACT'>
-        <ContactList />
-      </Route>
-      <Route type='CONTACT_ADD'>
-        <ContactForm />
-      </Route>
-      <Route type='COMPANY_ADD'>
-        <CompanyForm />
-      </Route>
-      <Route type='COMPANY'>
-        <CompanyGrid />
-      </Route>
+
     </AppProvider>
 
   )

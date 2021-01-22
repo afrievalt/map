@@ -6,7 +6,6 @@ import { signOut } from '../../store/auth.duck'
 import If from '../If'
 
 export const WelcomeSection = ({ welcomeMessage, isLoggedIn, signOut }) => {
-  console.log('WelcomeSection.jsx:7 welcomeMessage: ', welcomeMessage)
   return (
     <>
       <If condition={isLoggedIn}>

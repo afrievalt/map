@@ -8,7 +8,6 @@ export const upsertCompany = (payload, form) => (dispatch, getState, getFirebase
     .then(form.restart)
     .catch(function (error) {
       const errorMessage = error.message
-      window.alert(errorMessage)
-      console.log(error)
+      console.log(errorMessage)
     })
 }

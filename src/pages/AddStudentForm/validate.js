@@ -1,6 +1,6 @@
 import { getFuncValidateFields, getIsTooLong, isNumberInvalid, isRequired } from '../../form/validationHelpers'
 
-const validate = getFuncValidateFields.log(
+const validate = getFuncValidateFields(
   {
     id: [
       isRequired, isNumberInvalid
