@@ -1,4 +1,4 @@
-import { Button, Container, CssBaseline } from '@material-ui/core'
+import { Button, Container } from '@material-ui/core'
 import React, { memo } from 'react'
 import SimpleForm from '../../../form/SimpleForm'
 import ContactValidate from './ContactValidate'
@@ -11,8 +11,6 @@ const ContactForm = () => {
   return (
     <Container>
       <Container>
-       
-        <h1>hi</h1>
         <SimpleForm onSubmit={handleSubmit} validate={ContactValidate}>
           <ContactFieldGroup />
           <Button type='submit' variant='contained' color='inherit'>

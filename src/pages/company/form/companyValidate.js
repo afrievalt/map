@@ -1,4 +1,4 @@
-import { getFuncValidateFields, isEmailInvalid, isRequired } from '../../../form/validationHelpers'
+import { getFuncValidateFields } from '../../../form/validationHelpers'
 
 const companyValidate = getFuncValidateFields.x({
 
