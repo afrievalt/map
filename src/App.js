@@ -12,35 +12,40 @@ import ContactList from './pages/Contact/ContactList'
 import Home from './pages/Home'
 import AppProvider from './AppProvider'
 import LeftSidebar from './controls/LeftSidebar'
+import TwoColumnLayout from './controls/TwoColumnLayout'
+import LeftDrawer from './controls/TwoColumnLayout/LeftDrawer'
 
 function App () {
   return (
     <AppProvider>
       <FirebaseListener />
 
-      <LeftSidebar>
-        <Route type='HOME'>
-          <Home />
-        </Route>
-        <Route type='SIGNUP'>
-          <SignUpForm />
-        </Route>
-        <Route type='SIGNIN'>
-          <SignInForm />
-        </Route>
-        <Route type='CONTACT'>
-          <ContactList />
-        </Route>
-        <Route type='CONTACT_ADD'>
-          <ContactForm />
-        </Route>
-        <Route type='COMPANY_ADD'>
-          <CompanyForm />
-        </Route>
-        <Route type='COMPANY'>
-          <CompanyGrid />
-        </Route>
-      </LeftSidebar>
+      <TwoColumnLayout>
+        <LeftDrawer />
+        <>
+          <Route type='HOME'>
+            <Home />
+          </Route>
+          <Route type='SIGNUP'>
+            <SignUpForm />
+          </Route>
+          <Route type='SIGNIN'>
+            <SignInForm />
+          </Route>
+          <Route type='CONTACT'>
+            <ContactList />
+          </Route>
+          <Route type='CONTACT_ADD'>
+            <ContactForm />
+          </Route>
+          <Route type='COMPANY_ADD'>
+            <CompanyForm />
+          </Route>
+          <Route type='COMPANY'>
+            <CompanyGrid />
+          </Route>
+        </>
+      </TwoColumnLayout>
 
     </AppProvider>
 
