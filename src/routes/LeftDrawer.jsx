@@ -4,11 +4,11 @@ import Divider from '@material-ui/core/Divider'
 import List from '@material-ui/core/List'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import useStyles from './useStyles'
+import useStyles from '../controls/TwoColumnLayout/useStyles'
 import SettingsIcon from '@material-ui/icons/Settings'
 import HomeIcon from '@material-ui/icons/Home'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
-import ListItemLink from '../ListItemLink'
+import ListItemLink from '../controls/ListItemLink'
 
 function LeftDrawer (props) {
   const classes = useStyles()

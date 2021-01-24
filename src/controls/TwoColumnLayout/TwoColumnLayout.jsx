@@ -9,7 +9,6 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { useTheme } from '@material-ui/core/styles'
-import LeftDrawer from './LeftDrawer'
 import useStyles from './useStyles'
 
 function ResponsiveDrawer (props) {
@@ -60,7 +59,7 @@ function ResponsiveDrawer (props) {
               keepMounted: true // Better open performance on mobile.
             }}
           >
-            <LeftDrawer />
+            {leftDrawer}
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation='css'>
