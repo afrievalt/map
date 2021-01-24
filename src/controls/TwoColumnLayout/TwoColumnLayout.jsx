@@ -15,7 +15,6 @@ import useStyles from './useStyles'
 function ResponsiveDrawer (props) {
   const { window, children } = props
   const [leftDrawer, mainContent] = Children.toArray(children)
-  console.log('TwoColumnLayout.jsx:18 x: ', x)
   const classes = useStyles()
   const theme = useTheme()
   const [mobileOpen, setMobileOpen] = React.useState(false)

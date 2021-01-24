@@ -11,7 +11,6 @@ import ContactForm from './pages/Contact/ContactForm'
 import ContactList from './pages/Contact/ContactList'
 import Home from './pages/Home'
 import AppProvider from './AppProvider'
-import LeftSidebar from './controls/LeftSidebar'
 import TwoColumnLayout from './controls/TwoColumnLayout'
 import LeftDrawer from './controls/TwoColumnLayout/LeftDrawer'
 
