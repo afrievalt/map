@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         type: 'modify',
-        path: 'src/Routes/LeftDrawer.jsx',
+        path: 'src/routes/LeftDrawer.jsx',
         // Pattern tells plop where in the file to inject the template
         pattern: '</List>',
         // templateFile: 'plop-templates/fragment-templates/page//{{type}}-LeftDrawer.jsx.hbs'
@@ -45,7 +45,8 @@ module.exports = {
         path: 'src/routes/MainContent.js',
         // Pattern tells plop where in the file to inject the template
         pattern: '</AppProvider>',
-        templateFile: 'plop-templates/fragment-templates/page//{{type}}-MainContent.jsx.hbs'
+        // templateFile: 'plop-templates/fragment-templates/page//{{type}}-MainContent.jsx.hbs'
+        templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/MainContent.jsx.hbs'
 
       },
       {
