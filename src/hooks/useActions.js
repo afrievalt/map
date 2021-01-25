@@ -16,4 +16,3 @@ export function useActions (actions) {
 }
 
 // const handleSubmit = useActions(addStudent)
-  

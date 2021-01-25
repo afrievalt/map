@@ -19,34 +19,38 @@ module.exports = {
         type: 'addMany',
         destination: 'src/pages//{{lowerCase name}}//{{lowerCase type}}',
         base: 'plop-templates/page-templates/{{type}}-templates',
-        templateFiles: 'plop-templates/page-templates/{{type}}-templates/*.hbs'
+        templateFiles: 'plop-templates/page-templates/{{lowerCase type}}-templates/*.hbs'
       },
       {
         // Action type 'append' injects a template into an existing file
-        type: 'append',
-        path: 'src/store/routePaths.js',
+        type: 'modify',
+        path: 'src/routes/routePaths.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "HOME: '/',",
-        template: "{{constantCase name}}_ADD: '/{{lowerCase name}}/add',\n{{constantCase name}}_EDIT: '/{{lowerCase name}}/:{{lowerCase name}}Id',"
+        // templateFile: './plop-templates/page-templates/_fragments/form/routePaths.js.hbs'
+        // templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/routePaths.js.hbs'
+
+        templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/LeftDrawer.jsx.hbs'
       },
       {
         type: 'modify',
-        path: 'src/controls/LeftSidebar/LeftDrawer.jsx',
+        path: 'src/Routes/LeftDrawer.jsx',
         // Pattern tells plop where in the file to inject the template
         pattern: '</List>',
-        templateFile: 'plop-templates/fragment-templates/page//{{type}}-LeftDrawer.jsx.hbs'
+        // templateFile: 'plop-templates/fragment-templates/page//{{type}}-LeftDrawer.jsx.hbs'
+        templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/LeftDrawer.jsx.hbs'
       },
       {
         type: 'modify',
-        path: 'src/App.js',
+        path: 'src/routes/MainContent.js',
         // Pattern tells plop where in the file to inject the template
         pattern: '</AppProvider>',
-        templateFile: 'plop-templates/fragment-templates/page//{{type}}-App.jsx.hbs'
+        templateFile: 'plop-templates/fragment-templates/page//{{type}}-MainContent.jsx.hbs'
 
       },
       {
         type: 'append',
-        path: 'src/App.js',
+        path: 'src/routes/MainContent.js',
         // Pattern tells plop where in the file to inject the template
         pattern: "import Route from './controls/Route'",
         template: "import {{name}}{{type}} from './pages//{{lowerCase name}}//{{lowerCase type}}'"
