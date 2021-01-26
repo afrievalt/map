@@ -63,6 +63,15 @@ module.exports = {
         // templateFile: 'plop-templates/fragment-templates/page//{{type}}-MainContent.jsx.hbs'
         templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/Title.jsx.hbs'
 
+      },
+      {
+        type: 'modify',
+        path: 'src/routes/FirebaseListener.jsx',
+        // Pattern tells plop where in the file to inject the template
+        pattern: 'useFirebaseConnect([',
+        // templateFile: 'plop-templates/fragment-templates/page//{{type}}-MainContent.jsx.hbs'
+        templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/FirebaseListener.jsx.hbs'
+
       }
     ]
     return actions

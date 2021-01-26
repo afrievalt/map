@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react'
 
-import FirebaseListener from './controls/FirebaseListener'
+import FirebaseListener from './routes/FirebaseListener'
 
 import AppProvider from './AppProvider'
 import TwoColumnLayout from './controls/TwoColumnLayout'

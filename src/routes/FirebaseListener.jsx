@@ -10,7 +10,7 @@ const FirebaseListener = () => {
     },
     {
       path: 'company'
-    },
+    }
   ])
   return null
 }
