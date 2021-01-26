@@ -13,7 +13,7 @@ import useStyles from './useStyles'
 
 function ResponsiveDrawer (props) {
   const { window, children } = props
-  const [leftDrawer, mainContent] = Children.toArray(children)
+  const [title, leftDrawer, mainContent] = Children.toArray(children)
   const classes = useStyles()
   const theme = useTheme()
   const [mobileOpen, setMobileOpen] = React.useState(false)
@@ -38,9 +38,7 @@ function ResponsiveDrawer (props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' noWrap>
-            Responsive drawer
-          </Typography>
+          {title}
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label='mailbox folders'>
