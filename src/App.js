@@ -7,7 +7,7 @@ import AppProvider from './AppProvider'
 import TwoColumnLayout from './controls/TwoColumnLayout'
 import LeftDrawer from './routes/LeftDrawer'
 import MainContent from './routes/MainContent'
-import Title from './controls/Title'
+import Title from './routes/Title'
 
 function App () {
   return (

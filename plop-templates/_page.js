@@ -54,6 +54,15 @@ module.exports = {
         // Pattern tells plop where in the file to inject the template
         pattern: "import Route from './controls/Route'",
         template: "import {{name}}{{type}} from './pages//{{lowerCase name}}//{{lowerCase type}}'"
+      },
+      {
+        type: 'modify',
+        path: 'src/routes/Title.jsx',
+        // Pattern tells plop where in the file to inject the template
+        pattern: "HOME: 'Home',",
+        // templateFile: 'plop-templates/fragment-templates/page//{{type}}-MainContent.jsx.hbs'
+        templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/Title.jsx.hbs'
+
       }
     ]
     return actions
