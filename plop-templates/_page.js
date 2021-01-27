@@ -43,7 +43,7 @@ module.exports = {
         type: 'modify',
         path: 'src/routes/MainContent.jsx',
         // Pattern tells plop where in the file to inject the template
-        pattern: '</AppProvider>',
+        pattern: '</>',
         // templateFile: 'plop-templates/fragment-templates/page//{{type}}-MainContent.jsx.hbs'
         templateFile: 'plop-templates/page-templates/_fragments//{{lowerCase type}}/MainContent.jsx.hbs'
 
@@ -52,7 +52,7 @@ module.exports = {
         type: 'append',
         path: 'src/routes/MainContent.jsx',
         // Pattern tells plop where in the file to inject the template
-        pattern: "import Route from './controls/Route'",
+        pattern: "import Home from '../pages/Home'",
         template: "import {{name}}{{type}} from './pages//{{lowerCase name}}//{{lowerCase type}}'"
       },
       {
