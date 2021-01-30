@@ -53,7 +53,7 @@ module.exports = {
         path: 'src/routes/MainContent.jsx',
         // Pattern tells plop where in the file to inject the template
         pattern: "import Home from '../pages/Home'",
-        template: "import {{name}}{{type}} from './pages//{{lowerCase name}}//{{lowerCase type}}'"
+        template: "import {{name}}{{type}} from './pages//{{lowerCase name}}/{{lowerCase type}}'"
       },
       {
         type: 'modify',
