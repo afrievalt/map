@@ -1,12 +1,13 @@
 import React, { memo } from 'react'
 import { useSelector } from 'react-redux'
+import CheckboxGroupField from '../../../form/CheckboxGroupField'
 import InputField from '../../../form/Input.field'
 import Options from '../../../form/Options'
 import SelectField from '../../../form/SelectField'
 import { selectCompanyOptionsData } from './contactForm.selectors'
 
 const ContactForm = () => {
-  const companyOptionsData = useSelector(selectCompanyOptionsData);
+  const companyOptionsData = useSelector(selectCompanyOptionsData)
   return (
     <>
       <InputField fieldId='firstName' label='First Name' />
@@ -21,6 +22,17 @@ const ContactForm = () => {
       <InputField fieldId='lastContact' label='Last Contact' />
       <InputField fieldId='contactNotes' label='Contact Notes' />
       <InputField fieldId='pastEmployers' label='pastEmployers' />
+      <CheckboxGroupField
+        fieldId='tags'
+        label='Tags'
+        options={[
+          { label: 'Decision Maker', value: 'Decision Maker' },
+          { label: 'Colleague', value: 'Colleague' },
+          { label: 'HR', value: 'HR' },
+          { label: 'Recruiter', value: 'Recruiters' },
+          { label: 'Influencer', value: 'Influencer' }
+        ]}
+      />
     </>
   )
 }
