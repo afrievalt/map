@@ -5,7 +5,7 @@ module.exports = {
       type: 'list',
       name: 'type',
       message: 'What kind of page?',
-      choices: ['List', 'Form', 'Grid', 'Empty']
+      choices: ['Form', 'Grid', 'View', 'List', 'Empty']
     },
     {
       type: 'input',
