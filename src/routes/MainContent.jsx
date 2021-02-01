@@ -8,6 +8,7 @@ import CompanyForm from '../pages/company/form'
 import ContactForm from '../pages/Contact/ContactForm'
 import ContactList from '../pages/Contact/ContactList'
 import Home from '../pages/Home'
+import TaskForm from '../pages/task/form'
 
 const MainContent = ({ type, children }) => (
   <>
@@ -31,6 +32,9 @@ const MainContent = ({ type, children }) => (
     </Route>
     <Route type='COMPANY'>
       <CompanyGrid />
+    </Route>
+    <Route type='TASK_ADD'>
+      <TaskForm />
     </Route>
   </>
 
