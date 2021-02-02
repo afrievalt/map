@@ -10,7 +10,7 @@ export const selectCompanyOptionsData = createSelector(
   selectCompany,
   companyList => companyList.map(({ key, value }) => {
     return {
-      display: value.name,
+      label: value.name,
       key: key,
       value: key
     }

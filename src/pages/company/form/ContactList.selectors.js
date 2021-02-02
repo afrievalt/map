@@ -11,7 +11,7 @@ export const selectContactOptionsData = createSelector(
   contactList => console.log('ContactList.selectors.js:11 contactList: ', contactList) || contactList.map(({ key, value }) => {
     console.log('ContactList.selectors.js:12 dey, value: ', key, value)
     return {
-      display: `${value.lastName}, ${value.firstName}`,
+      label: `${value.lastName}, ${value.firstName}`,
       key: key,
       value: key
     }

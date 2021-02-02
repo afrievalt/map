@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Options = ({ data }) => {
-  return data.map(({ key, value, display }) => (
-    <option key={key} value={value}>{display}</option>
+  return data.map(({ key, value, label }) => (
+    <option key={key} value={value}>{label}</option>
   ))
 }
 

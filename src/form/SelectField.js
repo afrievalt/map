@@ -31,4 +31,11 @@ const SelectField = ({ fieldId, label, children, ...rest }) => {
   )
 }
 
+// <SelectField fieldId='contact' label='Contact'>
+// <Options data={[
+//  {label: 'foo', value: '1', key: '1'}
+//  {label: 'bar', value: '2', key: '2'}
+// ]} />
+// </SelectField>
+
 export default SelectField
