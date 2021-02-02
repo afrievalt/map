@@ -4,15 +4,15 @@ import SimpleForm from '../../../form/SimpleForm'
 import taskValidate from './taskValidate'
 import { upsertTask } from './taskActions'
 import { useActions } from '../../../hooks/useActions'
-import TaskFieldGroup from './TaskFieldGroup'
+import InputField from '../../../form/Input.field'
 
-const TaskForm = () => {
+const MiniTaskForm = () => {
   const handleSubmit = useActions(upsertTask)
   return (
     <Container>
       <CssBaseline />
       <SimpleForm onSubmit={handleSubmit} validate={taskValidate}>
-        <TaskFieldGroup />
+        <InputField label='Add Task' fieldId='title' />
         <Button type='submit' variant='contained' color='inherit'>
           Submit
         </Button>
@@ -21,4 +21,4 @@ const TaskForm = () => {
   )
 }
 
-export default memo(TaskForm)
+export default memo(MiniTaskForm)

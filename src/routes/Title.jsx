@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 
 const lookupTitle = {
   HOME: 'Home',
+TASK: 'Task',
   TASK_ADD: 'Add Task',
   COMPANY_ADD: 'Add Company',
   COMPANY_EDIT: 'Edit Company',

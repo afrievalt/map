@@ -1,7 +1,10 @@
 import { useFirebaseConnect } from 'react-redux-firebase'
 
 const FirebaseListener = () => {
-  useFirebaseConnect([
+    useFirebaseConnect([
+    {
+      path: 'task'
+    },
     {
       path: 'student'
     },
