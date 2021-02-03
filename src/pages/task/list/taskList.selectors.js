@@ -5,5 +5,11 @@ const EMPTY_OBJECT = {}
 const selectFirebase = state => state.firebase || EMPTY_OBJECT
 
 const selectOrdered = createSelector(selectFirebase, f => f.ordered || EMPTY)
-const selectTask = createSelector(selectOrdered, s => s.Task || EMPTY)
-export const selectTaskTableData = createSelector(selectTask, TaskList => TaskList.map(Task => ({...Task.value, id: Task.key})))
+const selectTask = createSelector(selectOrdered, s => s.task || EMPTY)
+export const selectTaskTableData = createSelector(selectTask, taskList => taskList.map(task => ({ ...task.value, id: task.key })))
+export const selectTaskListData = createSelector(selectTaskTableData,
+  taskList => taskList.map(task => {
+    const done = task.status === 'done'
+    return { ...task, done }
+  })
+)

@@ -5,5 +5,5 @@ const EMPTY_OBJECT = {}
 const selectFirebase = state => state.firebase || EMPTY_OBJECT
 
 const selectOrdered = createSelector(selectFirebase, f => f.ordered || EMPTY)
-const select{{ name }} = createSelector(selectOrdered, s => s.{{ name }} || EMPTY)
-export const select{{ name }}TableData = createSelector(select{{ name }}, {{ name }}List => {{ name }}List.map({{ name }} => ({...{{ name }}.value, id: {{ name }}.key})))
+const select{{ name }} = createSelector(selectOrdered, s => s.{{ camelCase name }} || EMPTY)
+export const select{{ name }}TableData = createSelector(select{{ name }}, {{ camelCase ame }}List => {{ camelCase name }}List.map({{ name }} => ({...{{ name }}.value, id: {{ name }}.key})))

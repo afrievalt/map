@@ -6,4 +6,5 @@ const selectFirebase = state => state.firebase || EMPTY_OBJECT
 
 const selectOrdered = createSelector(selectFirebase, f => f.ordered || EMPTY)
 const select{{ name }} = createSelector(selectOrdered, s => s.{{ camelCase name }} || EMPTY)
-export const select{{ name }}GridData = createSelector(select{{ name }}, {{ name }}Grid => {{ name }}Grid.map({{ name }} => ({...{{ name }}.value, id: {{ name }}.key})))
+export const select{{ name }}GridData = createSelector(select{{ name }}, 
+  {{ camelCase name }}Grid => {{ camelCase name }}Grid.map({{ camelCase name }} => ({...{{ camelCase name }}.value, id: {{ camelCase name }}.key})))
