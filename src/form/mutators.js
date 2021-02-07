@@ -6,4 +6,5 @@ const setValueMutator = (
   changeValue(state, fieldId, () => value)
 }
 
-export default { setValueMutator }
+const mutators = { setValueMutator }
+export default mutators

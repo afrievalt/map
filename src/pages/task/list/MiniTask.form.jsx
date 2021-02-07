@@ -6,12 +6,13 @@ import { upsertTask } from './taskActions'
 import { useActions } from '../../../hooks/useActions'
 import InputField from '../../../form/Input.field'
 
+const initialValues = { status: 'todo' }
 const MiniTaskForm = () => {
   const handleSubmit = useActions(upsertTask)
   return (
     <Container>
       <CssBaseline />
-      <SimpleForm onSubmit={handleSubmit} validate={taskValidate}>
+      <SimpleForm onSubmit={handleSubmit} validate={taskValidate} initialValues={initialValues}>
         <InputField label='Add Task' fieldId='title' />
         <Button type='submit' variant='contained' color='inherit'>
           Submit

@@ -11,28 +11,35 @@ import CommentIcon from '@material-ui/icons/Comment'
 import React, { memo } from 'react'
 import MiniTaskForm from './MiniTask.form.jsx'
 import { useSelector } from 'react-redux'
-
-const temp = () => 0
+import { toggleTaskStatus } from './taskActions.js'
+import { useActions } from '../../../hooks/useActions.js'
 
 const TaskList = () => {
+  const update = useActions(toggleTaskStatus)
+  const handleClickCheckbox = (id, isChecked) => () => {
+    update(id, isChecked)
+  }
   const taskList = useSelector(selectTaskListData)
   console.log('Task.list.jsx:20 taskList: ', taskList)
   return (
     <Container>
       <MiniTaskForm />
       <List>
-        {taskList.map(({ title, id, done }) => {
+        {taskList.map(({ title, id, checked, indeterminate, color }) => {
           const labelId = `checkbox-list-label-${id}`
-
+          console.log('Task.list.jsx:30 color, title: ',  color, title);
           return (
-            <ListItem key={title} role={undefined} dense button onClick={temp}>
+            <ListItem key={title} role={undefined} dense button onClick={handleClickCheckbox(id)}>
               <ListItemIcon>
                 <Checkbox
                   edge='start'
-                  checked={done}
+                  color='primary'
+                  indeterminate={indeterminate}
+                  checked={checked}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
+                  style={{ color }}
                 />
               </ListItemIcon>
               <ListItemText id={labelId} primary={title} />
