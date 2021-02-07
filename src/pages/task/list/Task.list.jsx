@@ -27,7 +27,7 @@ const TaskList = () => {
       <List>
         {taskList.map(({ title, id, checked, indeterminate, color }) => {
           const labelId = `checkbox-list-label-${id}`
-          console.log('Task.list.jsx:30 color, title: ',  color, title);
+          console.log('Task.list.jsx:30 color, title: ', color, title)
           return (
             <ListItem key={title} role={undefined} dense button onClick={handleClickCheckbox(id)}>
               <ListItemIcon>
