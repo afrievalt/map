@@ -19,44 +19,45 @@ const TaskList = (provider) => {
     update(id, isChecked)
   }
   const taskList = useSelector(selectTaskListData)
-  console.log('Task.list.jsx:20 taskList: ', taskList)
   return (
 
     <List {...provider.droppableProps}>
       {taskList.map(({ title, id, checked, indeterminate, color }, i) => {
         const labelId = `checkbox-list-label-${id}`
-        console.log('Task.list.jsx:30 color, title: ', color, title)
         return (
           <Draggable key={id} draggableId={id} index={i}>
             {(provided) => (
-              <ListItem
-                ContainerProps={{ ref: provided.innerRef }}
-                {...provided.draggableProps}
-                {...provided.dragHandleProps}
-                role={undefined}
-                dense
-                button
-                onClick={handleClickCheckbox(id)}
-              >
-                <ListItemIcon>
-                  <Checkbox
-                    edge='start'
-                    color='primary'
-                    indeterminate={indeterminate}
-                    checked={checked}
-                    tabIndex={-1}
-                    disableRipple
-                    inputProps={{ 'aria-labelledby': labelId }}
-                    style={{ color }}
-                  />
-                </ListItemIcon>
-                <ListItemText id={labelId} primary={title} />
-                <ListItemSecondaryAction>
-                  <IconButton edge='end' aria-label='comments'>
-                    <CommentIcon />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
+              <>
+                {provided.placeholder}
+                <ListItem
+                  ContainerProps={{ ref: provided.innerRef }}
+                  {...provided.draggableProps}
+                  {...provided.dragHandleProps}
+                  role={undefined}
+                  dense
+                  button
+                  onClick={handleClickCheckbox(id)}
+                >
+                  <ListItemIcon>
+                    <Checkbox
+                      edge='start'
+                      color='primary'
+                      indeterminate={indeterminate}
+                      checked={checked}
+                      tabIndex={-1}
+                      disableRipple
+                      inputProps={{ 'aria-labelledby': labelId }}
+                      style={{ color }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText id={labelId} primary={title} />
+                  <ListItemSecondaryAction>
+                    <IconButton edge='end' aria-label='comments'>
+                      <CommentIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
+              </>
             )}
           </Draggable>
         )

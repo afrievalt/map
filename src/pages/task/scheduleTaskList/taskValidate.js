@@ -2,7 +2,7 @@ import {
   getFuncValidateFields
   // isEmailInvalid, isRequired
 } from '../../../form/validationHelpers'
-const taskValidate = getFuncValidateFields.x({
+const taskValidate = getFuncValidateFields({
 
 })
 

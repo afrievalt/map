@@ -1,25 +1,29 @@
-import { Container, RootRef } from '@material-ui/core'
-import { selectTaskListData } from './taskList.selectors.js'
+import { Container } from '@material-ui/core'
 import React, { memo } from 'react'
 import MiniTaskForm from './MiniTask.form.jsx'
-import { useSelector } from 'react-redux'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import TaskList from './Task.list.jsx'
 
-const handleDragEnd = result => {}
+const handleDragEnd = result => {
+  const { destination, source, draggableId } = result
+  const { droppableId, index } = destination || {}
+  const newTaskOrder= 1
+}
+
 const ScheduleTaskList = () => {
-  const taskList = useSelector(selectTaskListData)
-  console.log('Task.list.jsx:20 taskList: ', taskList)
   return (
     <Container>
       <MiniTaskForm />
       <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable id='backlog'>
+        <Droppable droppableId='backlog'>
           {(provided) => (
-            <RootRef rootRef={provided.innerRef}>
+            <div ref={provided.innerRef}>
               <TaskList provided={provided} />
-            </RootRef>
+              {provided.placeholder}
+            </div>
+
           )}
+
         </Droppable>
       </DragDropContext>
     </Container>
