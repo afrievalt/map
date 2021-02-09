@@ -36,13 +36,18 @@ export const toggleTaskStatus = (id, isChecked) => (dispatch, getState, getFireb
 const getNewTaskOrder = (result, getState) => {
   const { destination, source, draggableId } = result
   const { droppableId, index } = destination || {}
-  const newTaskOrder = getState().firebase.data.task_order
-  return newTaskOrder
+  const isNewLocation = !(source.index === index && source.droppableId === droppableId)
+  if (isNewLocation) {
+    const newTaskOrder = getState().firebase.ordered.backlog.map(v => v.value)
+    newTaskOrder.splice(source.index, 1)
+    newTaskOrder.splice(index, 0, draggableId)
+    return newTaskOrder
+  }
 }
 export const dragEnd = (result) => (dispatch, getState, getFirebase) => {
   const taskOrder = getNewTaskOrder(result, getState)
-  getFirebase()
+  taskOrder && getFirebase()
     .database()
-    .ref('task_order')
+    .ref('backlog')
     .set(taskOrder)
 }
