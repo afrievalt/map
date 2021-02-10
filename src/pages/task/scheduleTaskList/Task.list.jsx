@@ -2,19 +2,18 @@ import { selectTaskListData } from './taskList.selectors.js'
 import List from '@material-ui/core/List'
 import React, { memo } from 'react'
 import { useSelector } from 'react-redux'
-import TaskListItem from './TaskListItem.jsx'
+import DraggableTask from './DraggableTask.jsx'
 
-const TaskList = (provider) => {
+const TaskList = (dropContext) => {
   const taskList = useSelector(selectTaskListData)
   return (
-
-    <List {...provider.droppableProps}>
+    <List {...dropContext.droppableProps}>
       {taskList.map((props, i) => {
         return (
-          <TaskListItem key={props.id} index={i} {...props} />
+          <DraggableTask key={props.id} index={i} {...props} />
         )
       })}
-      {provider.placeholder}
+      {dropContext.placeholder}
     </List>
   )
 }

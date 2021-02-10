@@ -37,6 +37,11 @@ const getNewTaskOrder = (result, getState) => {
   const { destination, source, draggableId } = result
   const { droppableId, index } = destination || {}
   const isNewLocation = !(source.index === index && source.droppableId === droppableId)
+  console.log('taskActions.js:40 result: ', result)
+  // temp
+  if (droppableId !== 'backlog') {
+    return
+  }
   if (isNewLocation) {
     const newTaskOrder = getState().firebase.ordered.backlog.map(v => v.value)
     newTaskOrder.splice(source.index, 1)
