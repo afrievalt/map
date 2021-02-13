@@ -6,18 +6,21 @@ import { toggleTaskStatus } from './taskActions.js'
 import { useActions } from '../../../hooks/useActions.js'
 
 import ListSubheader from '@material-ui/core/ListSubheader'
+import DragTarget from '../../../controls/DragTarget.jsx'
+import SlotTarget from './SlotTarget'
 
-const TaskList = (provider) => {
+const ScheduleSlots = ({ dropContext }) => {
   const update = useActions(toggleTaskStatus)
   const taskList = useSelector(selectTaskListData)
   return (
 
-    <List {...provider.droppableProps}>
-      <ListSubheader>Drop here 1</ListSubheader>
+    <List {...dropContext.droppableProps}>
+      <DragTarget dragId='slot1' index={0}>
+        <SlotTarget />
+      </DragTarget>
       <ListSubheader>Drop here 2</ListSubheader>
     </List>
   )
-
 }
 
-export default memo(TaskList)
+export default memo(ScheduleSlots)

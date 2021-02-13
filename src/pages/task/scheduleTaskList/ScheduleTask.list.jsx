@@ -7,6 +7,7 @@ import { useActions } from '../../../hooks/useActions.js'
 import { dragEnd } from './taskActions.js'
 import ScheduleSlots from './ScheduleSlots.jsx'
 import DropTarget from '../../../controls/DropTarget'
+import ScheduleSlot from './ScheduleSlot/ScheduleSlot.jsx'
 const ScheduleTaskList = () => {
   // const handleDragEnd = (foo) => {
   //   console.log('ScheduleTask.list.jsx:13 foo: ', foo)
@@ -17,7 +18,7 @@ const ScheduleTaskList = () => {
     <Container>
       <MiniTaskForm />
       <DragDropContext onDragEnd={handleDragEnd}>
-        <ScheduleSlots />
+        <ScheduleSlot />
         <DropTarget id='backlog'>
           <TaskList />
         </DropTarget>

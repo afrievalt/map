@@ -5,7 +5,7 @@ const DragTarget = ({ dragId, children, index }) => {
   const child = Children.only(children)
   return (
     <Draggable draggableId={dragId} index={index}>
-      {(dragContext) => console.log('DragTarget.jsx:8 dragContext: ',  dragContext) || (
+      {(dragContext) => (
         <>
           {cloneElement(child, { dragContext, index })}
           {dragContext.placeholder}

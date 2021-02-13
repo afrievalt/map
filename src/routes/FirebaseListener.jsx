@@ -9,6 +9,9 @@ const FirebaseListener = () => {
       path: 'backlog'
     },
     {
+      path: 'timeSlot'
+    },
+    {
       path: 'student'
     },
     {
