@@ -5,12 +5,11 @@ import { ListSubheader } from '@material-ui/core'
 import { selectTimeSlotListData } from '../taskList.selectors.js'
 import List from '@material-ui/core/List'
 
-// selectTimeSlotListData
-const SlotList = ({ dropContext }) => {
+const SlotList = ({ dropContext, label }) => {
   const taskList = useSelector(selectTimeSlotListData)
   return (
     <List {...dropContext.droppableProps}>
-      <ListSubheader>Time slot here</ListSubheader>
+      <ListSubheader>{label}</ListSubheader>
       {taskList.map((props, i) => {
         return (
           <DraggableTask key={props.id} index={i} {...props} />
