@@ -1,12 +1,12 @@
 import React, { memo } from 'react'
-import { useSelector } from 'react-redux'
+import { connect, useSelector } from 'react-redux'
 import DraggableTask from '../DraggableTask.jsx'
 import { ListSubheader } from '@material-ui/core'
 import { selectTimeSlotListData } from '../taskList.selectors.js'
 import List from '@material-ui/core/List'
 
-const SlotList = ({ dropContext, label }) => {
-  const taskList = useSelector(selectTimeSlotListData)
+const SlotList = ({ dropContext, label, taskList }) => {
+  // const taskList = useSelector(selectTimeSlotListData)
   return (
     <List {...dropContext.droppableProps}>
       <ListSubheader>{label}</ListSubheader>
@@ -20,4 +20,7 @@ const SlotList = ({ dropContext, label }) => {
   )
 }
 
-export default memo(SlotList)
+const mapPropsToState = (state, ownProps) => ({
+  taskList: selectTimeSlotListData(state, ownProps)
+})
+export default memo(connect(mapPropsToState)(SlotList))

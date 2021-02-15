@@ -5,11 +5,9 @@ const FirebaseListener = () => {
     {
       path: 'task'
     },
+
     {
-      path: 'backlog'
-    },
-    {
-      path: 'timeSlot'
+      path: 'taskSchedule'
     },
     {
       path: 'student'

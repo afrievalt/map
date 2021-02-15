@@ -3,7 +3,7 @@ export const upsertTask = (payload, form) => (dispatch, getState, getFirebase) =
     .database()
   const newRef = db.ref('task')
     .push()
-  db.ref('backlog')
+  db.ref('taskSchedule/unscheduled')
     .push(newRef.key)
   console.log('taskActions.js:6 ssss newRef.val(): ', newRef.key)
 
@@ -33,58 +33,38 @@ export const toggleTaskStatus = (id, isChecked) => (dispatch, getState, getFireb
     .set(nextStatus)
 }
 
-const getNewTaskOrderOld = (result, getState) => {
-  const { destination, source, draggableId } = result
-  const { droppableId, index } = destination || {}
-  const isInSameList = source.droppableId === droppableId
-  const isNewLocation = !(source.index === index && isInSameList)
-  if (isNewLocation) {
-    const newTaskOrder = getState().firebase.ordered.backlog?.map(v => v.value) || []
-    newTaskOrder.splice(source.index, 1)
-    newTaskOrder.splice(index, 0, draggableId)
-    return newTaskOrder
-  }
+const defaultTaskSchedule = {
+  unscheduled: []
 }
-
-const getNewTaskOrder = (result, getState) => {
+const getNewTaskSchedule = (result, getState) => {
   const { destination, source, draggableId } = result
-  const { droppableId, index } = destination || {}
-  const isInSameList = source.droppableId === droppableId
+  const { droppableId: targetId, index } = destination || {}
+  const sourceId = source.droppableId
+  const isInSameList = sourceId === targetId
   const isNewLocation = !(source.index === index && isInSameList)
 
   if (!isNewLocation) {
-    return
+    return []
   }
-  const backlog = getState().firebase.ordered.backlog?.map(v => v.value) || []
-  const timeSlot = getState().firebase.ordered.timeSlot?.map(v => v.value) || []
-  const newOrder = {
-    backlog, timeSlot
+  const taskSchedule = getState().firebase.data.taskSchedule || defaultTaskSchedule
+  console.log('taskActions.js:50 taskSchdule: ', taskSchedule)
+  const sourceList = Object.values(taskSchedule[sourceId] || {})
+  const targetList = isInSameList ? sourceList : Object.values(taskSchedule[targetId] || {})
+  sourceList.splice(source.index, 1)
+  targetList.splice(index, 0, draggableId)
+  if (isInSameList) {
+    return [{ key: sourceId, value: sourceList }]
   }
-  console.log('taskActions.js:63 timeSlot: ', newOrder, source.droppableId, droppableId)
-  newOrder[source.droppableId].splice(source.index, 1)
-  newOrder[droppableId].splice(index, 0, draggableId)
-  // newTaskOrder.splice(source.index, 1)
-  // newTaskOrder.splice(index, 0, draggableId)
-  return newOrder
-}
-export const dragEnd = (result) => (dispatch, getState, getFirebase) => {
-  const newOrder = getNewTaskOrder(result, getState)
-  if (newOrder) {
-    getFirebase()
-      .database()
-      .ref('backlog')
-      .set(newOrder.backlog)
-    getFirebase()
-      .database()
-      .ref('timeSlot')
-      .set(newOrder.timeSlot)
-  }
+  return [
+    { key: sourceId, value: sourceList },
+    { key: targetId, value: targetList }
+  ]
 }
 
-export const dragEndOld = (result) => (dispatch, getState, getFirebase) => {
-  const taskOrder = getNewTaskOrderOld(result, getState)
-  taskOrder && getFirebase()
+export const dragEnd = (result) => (dispatch, getState, getFirebase) => {
+  const taskSchedule = getNewTaskSchedule(result, getState)
+  console.log('taskActions.js:65 newSche: ', taskSchedule)
+  const db = getFirebase()
     .database()
-    .ref('backlog')
-    .set(taskOrder)
+  taskSchedule.map(({ key, value }) => db.ref(`taskSchedule/${key}`).set(value))
 }

@@ -15,7 +15,7 @@ const ScheduleTaskList = () => {
       <MiniTaskForm />
       <DragDropContext onDragEnd={handleDragEnd}>
         <ScheduleSlotList />
-        <DropTarget id='backlog'>
+        <DropTarget id='unscheduled'>
           <TaskList />
         </DropTarget>
       </DragDropContext>

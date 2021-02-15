@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
-
+import { createCachedSelector } from 're-reselect'
 const EMPTY = []
 const EMPTY_OBJECT = {}
 const selectFirebase = state => state.firebase || EMPTY_OBJECT
@@ -7,13 +7,16 @@ const selectFirebase = state => state.firebase || EMPTY_OBJECT
 const selectOrdered = createSelector(selectFirebase, f => f.ordered || EMPTY)
 const selectData = createSelector(selectFirebase, f => f.data || EMPTY)
 const selectTask = createSelector(selectData, s => s.task || EMPTY)
-const selectBacklog = createSelector(selectOrdered, s => s.backlog || EMPTY)
+const selectTaskSchedule = createSelector(selectData, s => s.taskSchedule || EMPTY)
+const selectUnscheduledTasks = createSelector(selectTaskSchedule, s => Object.values(s.unscheduled || EMPTY_OBJECT))
+const selectPropTargetId = (s, p) => p.targetId
+const selectSlot = createCachedSelector(
+  selectTaskSchedule,
+  selectPropTargetId,
+  (taskSchedule, targetList) => Object.values(taskSchedule[targetList] || {})
+)(selectPropTargetId)
 
-// temp
-const selectTimeSlot = createSelector(selectOrdered, s => s.timeSlot || EMPTY)
-
-const transformTaskData = (tasksById, allTasks) => allTasks.map(taskId => {
-  const id = taskId.value
+const transformTaskData = (tasksById, allTasks) => allTasks.map(id => {
   const task = tasksById[id]
   const checked = task?.status !== 'todo'
   const indeterminate = task?.status === 'inprogress'
@@ -23,12 +26,12 @@ const transformTaskData = (tasksById, allTasks) => allTasks.map(taskId => {
 export const selectTaskTableData = createSelector(selectTask, taskList => taskList.map(task => ({ ...task.value, id: task.key })))
 export const selectTaskListData = createSelector(
   selectTask,
-  selectBacklog,
+  selectUnscheduledTasks,
   transformTaskData
 )
 
 export const selectTimeSlotListData = createSelector(
   selectTask,
-  selectTimeSlot,
+  selectSlot,
   transformTaskData
 )
