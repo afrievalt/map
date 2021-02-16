@@ -12,7 +12,7 @@ const statusOptions = [
 const TaskForm = () => {
   return (
     <>
-      <SelectField fieldId='status' label='Contact'>
+      <SelectField fieldId='status' label='Status'>
         <Options data={statusOptions} />
       </SelectField>
       <InputField fieldId='title' label='Title' />

@@ -5,9 +5,9 @@ export const upsertTask = (payload, form) => (dispatch, getState, getFirebase) =
     .push()
   db.ref('taskSchedule/unscheduled')
     .push(newRef.key)
-  console.log('taskActions.js:6 ssss newRef.val(): ', newRef.key)
-
+  
   newRef.set(payload)
+    .then(() => dispatch({ type: 'TASK' }))
     .then(form.restart)
     .catch(function (error) {
       const errorMessage = error.message
