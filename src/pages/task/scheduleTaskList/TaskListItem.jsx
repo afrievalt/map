@@ -4,15 +4,17 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 import ListItemText from '@material-ui/core/ListItemText'
 import Checkbox from '@material-ui/core/Checkbox'
 import IconButton from '@material-ui/core/IconButton'
-import CommentIcon from '@material-ui/icons/Comment'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import React, { memo } from 'react'
 import { toggleTaskStatus } from './taskActions.js'
 import { useActions } from '../../../hooks/useActions.js'
+import Link from '../../../controls/Link.jsx'
 const TaskListItem = ({ id, dragContext, index, indeterminate, checked, color, title }) => {
   const update = useActions(toggleTaskStatus)
   const handleClickCheckbox = (id, isChecked) => () => {
     update(id, isChecked)
   }
+
   const labelId = `checkbox-list-label-${id}`
   return (
     <ListItem
@@ -38,9 +40,11 @@ const TaskListItem = ({ id, dragContext, index, indeterminate, checked, color, t
       </ListItemIcon>
       <ListItemText id={labelId} primary={title} />
       <ListItemSecondaryAction>
-        <IconButton edge='end' aria-label='comments'>
-          <CommentIcon />
-        </IconButton>
+        <Link routeKey='TASK_EDIT' taskId={id}>
+          <IconButton edge='end' aria-label='comments'>
+            <ArrowForwardIosIcon />
+          </IconButton>
+        </Link>
       </ListItemSecondaryAction>
     </ListItem>
 

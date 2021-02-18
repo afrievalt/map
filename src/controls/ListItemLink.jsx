@@ -1,9 +1,11 @@
 import ListItem from '@material-ui/core/ListItem'
-import { useActions } from '../hooks/useActions'
-const makeActionCreator = type => () => ({ type })
-const ListItemLink = ({ routeKey, children }) => {
-  const handleClick = useActions(makeActionCreator(routeKey))
-  return (<ListItem button onClick={handleClick}>{children}</ListItem>)
+import Link from './Link'
+const ListItemLink = ({ routeKey, routeParameters, children }) => {
+  return (
+    <Link routeKey={routeKey} {...routeParameters}>
+      <ListItem button>{children}</ListItem>
+    </Link>
+  )
 }
 
 export default ListItemLink

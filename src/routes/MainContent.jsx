@@ -11,6 +11,7 @@ import Home from '../pages/Home'
 // import TaskList from '../pages/task/list'
 import TaskForm from '../pages/task/form'
 import ScheduleTaskList from '../pages/task/scheduleTaskList'
+import TaskEditForm from '../pages/task/form/TaskEdit.form'
 
 const MainContent = ({ type, children }) => (
   <>
@@ -37,6 +38,9 @@ const MainContent = ({ type, children }) => (
     </Route>
     <Route type='TASK_ADD'>
       <TaskForm />
+    </Route>
+    <Route type='TASK_EDIT'>
+      <TaskEditForm />
     </Route>
     <Route type='TASK'>
       <ScheduleTaskList />
