@@ -10,7 +10,7 @@ module.exports = {
   actions: [
     {
       type: 'add',
-      path: 'src/app/fields/{{name}}.js',
+      path: 'src/form/{{name}}.field.js',
       templateFile: 'plop-templates/InputField.js.hbs'
     }
   ]

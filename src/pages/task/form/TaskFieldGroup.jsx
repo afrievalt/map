@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import SelectField from '../../../form/SelectField'
 import InputField from '../../../form/Input.field'
 import Options from '../../../form/Options'
+import DatePickerField from '../../../form/DatePicker.field'
 
 const statusOptions = [
   { label: 'to do', value: 'todo', key: 'todo' },
@@ -17,6 +18,7 @@ const TaskForm = () => {
       </SelectField>
       <InputField fieldId='title' label='Title' />
       <InputField fieldId='description' label='Description' />
+      <DatePickerField fieldId='start' label='Start' />
     </>
   )
 }

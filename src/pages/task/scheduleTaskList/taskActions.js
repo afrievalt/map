@@ -5,7 +5,6 @@ export const upsertTask = (payload, form) => (dispatch, getState, getFirebase) =
     .push()
   db.ref('taskSchedule/unscheduled')
     .push(newRef.key)
-  
   newRef.set(payload)
     .then(() => dispatch({ type: 'TASK' }))
     .then(form.restart)
@@ -47,7 +46,6 @@ const getNewTaskSchedule = (result, getState) => {
     return []
   }
   const taskSchedule = getState().firebase.data.taskSchedule || defaultTaskSchedule
-  console.log('taskActions.js:50 taskSchdule: ', taskSchedule)
   const sourceList = Object.values(taskSchedule[sourceId] || {})
   const targetList = isInSameList ? sourceList : Object.values(taskSchedule[targetId] || {})
   sourceList.splice(source.index, 1)
@@ -63,7 +61,6 @@ const getNewTaskSchedule = (result, getState) => {
 
 export const dragEnd = (result) => (dispatch, getState, getFirebase) => {
   const taskSchedule = getNewTaskSchedule(result, getState)
-  console.log('taskActions.js:65 newSche: ', taskSchedule)
   const db = getFirebase()
     .database()
   taskSchedule.map(({ key, value }) => db.ref(`taskSchedule/${key}`).set(value))

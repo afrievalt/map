@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import { useField } from 'react-final-form'
 import FieldWrapper from './FieldWrapper'
 import { getError } from './helpers'
-import { TextField } from '@material-ui/core'
+import InputLabel from '@material-ui/core/InputLabel'
+import FormHelperText from '@material-ui/core/FormHelperText'
+import OutlinedInput from '@material-ui/core/OutlinedInput'
 
 const propTypes = {
   fieldId: PropTypes.string.isRequired,
@@ -11,7 +13,7 @@ const propTypes = {
   variant: PropTypes.string
 }
 
-const {{ pascalCase name }}Field = ({
+const DatePickerField = ({
   fieldId,
   label,
   variant = 'outlined',
@@ -19,20 +21,26 @@ const {{ pascalCase name }}Field = ({
 }) => {
   const { input, meta } = useField(fieldId)
   const { showError, errorMessage } = getError(meta)
+  const htmlFor = input.id
   return (
     <FieldWrapper>
-      <TextField
+      <InputLabel htmlFor={htmlFor}>{label}</InputLabel>
+      <OutlinedInput
         label={label}
         error={showError}
         helperText={errorMessage}
         variant={variant}
+        placeholder='foo bar'
+        type='datetime-local'
         {...input}
         {...rest}
       />
+
+      <FormHelperText>{errorMessage}</FormHelperText>
     </FieldWrapper>
   )
 }
 
-{{ pascalCase name }}Field.propTypes = propTypes
+DatePickerField.propTypes = propTypes
 
-export default {{ pascalCase name }}Field
+export default DatePickerField

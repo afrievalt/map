@@ -1,8 +1,15 @@
-import { TextField } from '@material-ui/core'
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useField } from 'react-final-form'
 import FieldWrapper from './FieldWrapper'
 import { getError } from './helpers'
+import { TextField } from '@material-ui/core'
+
+const propTypes = {
+  fieldId: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  variant: PropTypes.string
+}
 
 const InputField = ({
   fieldId,
@@ -25,5 +32,7 @@ const InputField = ({
     </FieldWrapper>
   )
 }
+
+InputField.propTypes = propTypes
 
 export default InputField
