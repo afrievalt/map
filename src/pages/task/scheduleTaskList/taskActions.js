@@ -15,6 +15,15 @@ export const upsertTask = (payload, form) => (dispatch, getState, getFirebase) =
     })
 }
 
+export const updateTask = (payload, form) => (dispatch, getState, getFirebase) => {
+  const id = getState().location.payload.taskId
+  getFirebase()
+    .database()
+    .ref(`task/${id}`)
+    .set(payload)
+    .then(() => dispatch({ type: 'TASK' }))
+}
+
 const nextStatusLookup = {
   todo: 'inprogress',
   inprogress: 'done',
