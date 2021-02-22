@@ -88,3 +88,8 @@ ResponsiveDrawer.propTypes = {
 }
 
 export default ResponsiveDrawer
+ /* <TwoColumnLayout>
+<Title />
+<LeftDrawer />
+<MainContent />
+</TwoColumnLayout> */

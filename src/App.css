@@ -38,3 +38,56 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+body {
+  margin: 0;
+} 
+.wrapper {
+  min-height: 100vh;
+  background: #ccc;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.header, .footer{
+  height: 50px;
+  background: #666;
+  color: #fff;
+}
+.content {
+  display: flex;
+  flex: 1;
+  background: #999;
+  color: #000; 
+}
+.columns{
+  display: flex;
+  flex:1;
+ 
+}
+.main{
+  flex: 1;
+  order: 2;
+  background: #eee;
+  width: 500px;
+  overflow: hidden;
+  
+  background-color: blue;;
+}
+.sidebar-first{
+  width: 20%;
+  background: #ccc;
+  order: 1;
+}
+.sidebar-second{ 
+  width: 20%;
+  order: 3;
+  background: #ddd;
+}
+
+li {
+  color: red;
+  background-color: green;;
+}

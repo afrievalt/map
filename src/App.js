@@ -4,21 +4,23 @@ import React from 'react'
 import FirebaseListener from './routes/FirebaseListener'
 
 import AppProvider from './AppProvider'
-import TwoColumnLayout from './controls/TwoColumnLayout'
+// import TwoColumnLayout from './controls/TwoColumnLayout'
 import LeftDrawer from './routes/LeftDrawer'
 import MainContent from './routes/MainContent'
 import Title from './routes/Title'
+import ThreeColumnLayout from './controls/ThreeColumnLayout/ThreeColumnLayout'
+import RightColumn from './routes/RightColumn'
 
 function App () {
   return (
     <AppProvider>
       <FirebaseListener />
-      <TwoColumnLayout>
+      <ThreeColumnLayout>
         <Title />
         <LeftDrawer />
         <MainContent />
-      </TwoColumnLayout>
-
+        <RightColumn />
+      </ThreeColumnLayout>
     </AppProvider>
 
   )

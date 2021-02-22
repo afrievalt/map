@@ -3,10 +3,12 @@ export const upsertTask = (payload, form) => (dispatch, getState, getFirebase) =
     .database()
   const newRef = db.ref('task')
     .push()
+  console.log('taskActions.js:6 payload: ', payload)
   db.ref('taskSchedule/unscheduled')
     .push(newRef.key)
+  console.log('taskActions.js:9 newRef.key: ', newRef.key)
   newRef.set(payload)
-    .then(() => dispatch({ type: 'TASK' }))
+    // .then(() => dispatch({ type: 'TASK' }))
     .then(form.restart)
     .catch(function (error) {
       const errorMessage = error.message
