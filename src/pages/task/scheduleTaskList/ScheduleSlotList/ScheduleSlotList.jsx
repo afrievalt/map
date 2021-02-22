@@ -3,6 +3,7 @@ import List from '../../../../controls/List'
 import startOfToday from 'date-fns/startOfToday'
 import addHours from 'date-fns/addHours'
 import ScheduleSlot from './ScheduleSlot'
+import RightSidebar from '../../../../controls/TwoColumnLayout/RighSidebar'
 
 const schedule = [
   { id: addHours(startOfToday(), 12) },
@@ -15,9 +16,11 @@ const schedule = [
 // selectTimeSlotListData
 const ScheduleSlotList = () => {
   return (
-    <List data={schedule}>
-      <ScheduleSlot />
-    </List>
+    <RightSidebar>
+      <List data={schedule}>
+        <ScheduleSlot />
+      </List>
+    </RightSidebar>
   )
 }
 

@@ -1,6 +1,6 @@
 const routePaths = {
   HOME: '/',
-  TASK: '/task',
+  PLAN: '/plan',
   TASK_ADD: '/task/add',
   TASK_EDIT: '/task/:taskId',
   COMPANY_ADD: '/company/add',

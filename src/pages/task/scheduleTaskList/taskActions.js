@@ -8,7 +8,7 @@ export const upsertTask = (payload, form) => (dispatch, getState, getFirebase) =
     .push(newRef.key)
   console.log('taskActions.js:9 newRef.key: ', newRef.key)
   newRef.set(payload)
-    // .then(() => dispatch({ type: 'TASK' }))
+    // .then(() => dispatch({ type: 'PLAN' }))
     .then(form.restart)
     .catch(function (error) {
       const errorMessage = error.message
@@ -23,7 +23,7 @@ export const updateTask = (payload, form) => (dispatch, getState, getFirebase) =
     .database()
     .ref(`task/${id}`)
     .set(payload)
-    .then(() => dispatch({ type: 'TASK' }))
+    .then(() => dispatch({ type: 'PLAN' }))
 }
 
 const nextStatusLookup = {

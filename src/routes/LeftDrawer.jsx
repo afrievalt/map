@@ -46,9 +46,9 @@ function LeftDrawer (props) {
           <ListItemIcon><AddCircleOutlineIcon /></ListItemIcon>
           <ListItemText primary='Task' />
         </ListItemLink>
-        <ListItemLink routeKey='TASK'>
+        <ListItemLink routeKey='PLAN'>
           <ListItemIcon><PlaylistAddCheckIcon /></ListItemIcon>
-          <ListItemText primary='Task' />
+          <ListItemText primary='Task Planning' />
         </ListItemLink>
       </List>
       <Divider />

@@ -42,7 +42,7 @@ const MainContent = ({ type, children }) => (
     <Route type='TASK_EDIT'>
       <TaskEditForm />
     </Route>
-    <Route type='TASK'>
+    <Route type='PLAN'>
       <ScheduleTaskList />
     </Route>
   </>

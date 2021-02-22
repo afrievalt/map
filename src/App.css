@@ -72,22 +72,25 @@ body {
   order: 2;
   background: #eee;
   width: 500px;
-  overflow: hidden;
-  
-  background-color: blue;;
 }
 .sidebar-first{
   width: 20%;
   background: #ccc;
   order: 1;
 }
-.sidebar-second{ 
-  width: 20%;
-  order: 3;
-  background: #ddd;
+
+footer.footer {
+  display: none
 }
 
-li {
-  color: red;
-  background-color: green;;
+header.header {
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  font-size: 1.25rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
 }
+

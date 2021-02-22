@@ -6,7 +6,7 @@ const DraggableTask = (props) => {
   const { id, index } = props
   return (
     <DragTarget dragId={id} index={index}>
-      <SimpleLi {...props} />
+      <TaskListItem {...props} />
     </DragTarget>
   )
 }
