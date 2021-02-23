@@ -23,7 +23,7 @@ export const updateTask = (payload, form) => (dispatch, getState, getFirebase) =
     .database()
     .ref(`task/${id}`)
     .set(payload)
-    .then(() => dispatch({ type: 'PLAN' }))
+    .then(() => dispatch({ type: 'TASK' }))
 }
 
 const nextStatusLookup = {

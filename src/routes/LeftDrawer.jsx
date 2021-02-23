@@ -10,7 +10,8 @@ import HomeIcon from '@material-ui/icons/Home'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
 import ListItemLink from '../controls/ListItemLink'
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck'
-
+import EventAvailableIcon from '@material-ui/icons/EventAvailable'
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd'
 function LeftDrawer (props) {
   const classes = useStyles()
   return (
@@ -43,11 +44,15 @@ function LeftDrawer (props) {
           <ListItemText primary='Company' />
         </ListItemLink>
         <ListItemLink routeKey='TASK_ADD'>
-          <ListItemIcon><AddCircleOutlineIcon /></ListItemIcon>
-          <ListItemText primary='Task' />
+          <ListItemIcon><PlaylistAddIcon /></ListItemIcon>
+          <ListItemText primary='Add Task' />
+        </ListItemLink>
+        <ListItemLink routeKey='TASK'>
+          <ListItemIcon><PlaylistAddCheckIcon /></ListItemIcon>
+          <ListItemText primary='Tasks' />
         </ListItemLink>
         <ListItemLink routeKey='PLAN'>
-          <ListItemIcon><PlaylistAddCheckIcon /></ListItemIcon>
+          <ListItemIcon><EventAvailableIcon /></ListItemIcon>
           <ListItemText primary='Task Planning' />
         </ListItemLink>
       </List>
