@@ -8,7 +8,10 @@ const selectFirebase = state => state.firebase || EMPTY_OBJECT
 const selectData = createSelector(selectFirebase, f => f.data || EMPTY)
 const selectTaskData = createSelector(selectData, s => s.task || EMPTY)
 const selectTaskSchedule = createSelector(selectData, s => s.taskSchedule || EMPTY)
-const selectUnscheduledTasks = createSelector(selectTaskSchedule, s => Object.values(s.unscheduled || EMPTY_OBJECT))
+// const selectUnscheduledTasks = createSelector(selectTaskSchedule, s => Object.values(s.unscheduled || EMPTY_OBJECT))
+// todo rename unscheudled to taskOrder?
+const selectAllTasks = createSelector(selectTaskSchedule, s => Object.values(s.unscheduled || EMPTY_OBJECT))
+
 const selectPropTargetId = (s, p) => p.targetId
 const selectSlot = createCachedSelector(
   selectTaskSchedule,
@@ -32,10 +35,18 @@ const transformTaskData = (tasksById, allTasks) => allTasks.map(id => {
   return { ...task, indeterminate, checked, color, id }
 })
 export const selectTaskTableData = createSelector(selectTaskData, taskList => taskList.map(task => ({ ...task.value, id: task.key })))
-export const selectTaskListData = createSelector(
+
+export const selectAllTaskListData = createSelector(
   selectTaskData,
-  selectUnscheduledTasks,
+  selectAllTasks,
   transformTaskData
+)
+
+const filterOutScheduledTasks = (task) => !task.start
+export const selectUnscheduledTaskListData = createSelector(
+  selectAllTaskListData,
+  (allTasks) => allTasks.filter(filterOutScheduledTasks)
+
 )
 
 export const selectTimeSlotListData = createSelector(
