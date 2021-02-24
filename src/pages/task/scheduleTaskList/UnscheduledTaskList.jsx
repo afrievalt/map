@@ -4,7 +4,7 @@ import MiniTaskForm from './MiniTask.form.jsx'
 import TaskList from './Task.list.jsx'
 import DropTarget from '../../../controls/DropTarget'
 
-const ScheduleTaskList = () => {
+const UnscheduledTaskList = () => {
   return (
     <Container>
       <MiniTaskForm />
@@ -16,4 +16,4 @@ const ScheduleTaskList = () => {
   )
 }
 
-export default memo(ScheduleTaskList)
+export default memo(UnscheduledTaskList)

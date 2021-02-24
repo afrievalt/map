@@ -71,8 +71,28 @@ const getNewTaskSchedule = (result, getState) => {
 }
 
 export const dragEnd = (result) => (dispatch, getState, getFirebase) => {
+  console.log('taskActions.js:74 result: ', result)
+
   const taskSchedule = getNewTaskSchedule(result, getState)
+  const taskKey = result.draggableId
+  const dropId = result.destination.droppableId
+  const newStart = dropId === 'unscheduled' ? '' : dropId
   const db = getFirebase()
     .database()
+
+  // todo: build drop target "start-20210225...."
+  // split on -
+  //    to get filedTarget := start
+  //    and targetValue := 20210225...
+  db.ref(`task/${taskKey}/start`).set(newStart)
+  // temp:
   taskSchedule.map(({ key, value }) => db.ref(`taskSchedule/${key}`).set(value))
 }
+// result: {
+// combine: null
+// destination: {droppableId: "20210225T150000-06:00", index: 0}
+// draggableId: "-MU4-PVF_SkrLjOYTWsH"
+// mode: "FLUID"
+// reason: "DROP"
+// source: {index: 8, droppableId: "unscheduled"}
+// type: "DEFAULT"

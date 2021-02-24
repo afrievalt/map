@@ -10,8 +10,8 @@ import ContactList from '../pages/Contact/ContactList'
 import Home from '../pages/Home'
 // import TaskList from '../pages/task/list'
 import TaskForm from '../pages/task/form'
-import ScheduleTaskList from '../pages/task/scheduleTaskList'
-import TaskEditForm from '../pages/task/form/TaskEdit.form'
+import AllTasksList from '../pages/task/scheduleTaskList'
+import UnscheduledTaskList from '../pages/task/scheduleTaskList/UnscheduledTaskList'
 
 const MainContent = ({ type, children }) => (
   <>
@@ -39,11 +39,11 @@ const MainContent = ({ type, children }) => (
     <Route type='TASK_ADD'>
       <TaskForm />
     </Route>
-    <Route type={['TASK', 'TASK_EDIT', 'PLAN']}>
-      <ScheduleTaskList />
+    <Route type={['TASK', 'TASK_EDIT']}>
+      <AllTasksList />
     </Route>
     <Route type={['PLAN']}>
-      <ScheduleTaskList />
+      <UnscheduledTaskList />
     </Route>
   </>
 

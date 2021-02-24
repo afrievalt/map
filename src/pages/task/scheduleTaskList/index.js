@@ -1,2 +1,2 @@
-import ScheduleTaskList from './ScheduleTask.list'
-export default ScheduleTaskList
+import AllTasksList from './AllTasksList'
+export default AllTasksList
