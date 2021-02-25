@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { connect, useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import DraggableTask from '../DraggableTask.jsx'
 import { ListSubheader } from '@material-ui/core'
 import { selectTimeSlotListData } from '../taskList.selectors.js'

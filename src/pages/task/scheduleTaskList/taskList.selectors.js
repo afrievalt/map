@@ -54,3 +54,15 @@ export const selectTimeSlotListData = createSelector(
   selectSlot,
   transformTaskData
 )
+
+const reduceBuildTimeSlotLookup = (acc, cur) => {
+  const { start } = cur
+  const oldLeaf = acc[start] || []
+  return start ? { ...acc, [start]: [...oldLeaf, cur] } : acc
+}
+export const selectTimeSlotLookup = createSelector(
+  selectAllTaskListData, // we may want to use non transformed data
+  (taskList) => {
+    return taskList.reduce(reduceBuildTimeSlotLookup, {})
+  }
+)
