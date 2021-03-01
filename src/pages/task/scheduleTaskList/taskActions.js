@@ -71,11 +71,9 @@ const getNewTaskSchedule = (result, getState) => {
 }
 
 export const dragEnd = (result) => (dispatch, getState, getFirebase) => {
-  console.log('taskActions.js:74 result: ', result)
-
   const taskSchedule = getNewTaskSchedule(result, getState)
   const taskKey = result.draggableId
-  const dropId = result.destination.droppableId
+  const dropId = result.destination?.droppableId ?? ''
   const newStart = dropId === 'unscheduled' ? '' : dropId
   const db = getFirebase()
     .database()
