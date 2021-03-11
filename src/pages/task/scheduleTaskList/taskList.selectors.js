@@ -4,13 +4,31 @@ const EMPTY = []
 const EMPTY_OBJECT = {}
 const selectFirebase = state => state.firebase || EMPTY_OBJECT
 
-// const selectOrdered = createSelector(selectFirebase, f => f.ordered || EMPTY)
+const selectOrdered = createSelector(selectFirebase, f => f.ordered || EMPTY)
 const selectData = createSelector(selectFirebase, f => f.data || EMPTY)
+
 const selectTaskData = createSelector(selectData, s => s.task || EMPTY)
 const selectTaskSchedule = createSelector(selectData, s => s.taskSchedule || EMPTY)
 // const selectUnscheduledTasks = createSelector(selectTaskSchedule, s => Object.values(s.unscheduled || EMPTY_OBJECT))
-// todo rename unscheudled to taskOrder?
-const selectAllTasks = createSelector(selectTaskSchedule, s => Object.values(s.unscheduled || EMPTY_OBJECT))
+const selectUnscheduledTasks = createSelector(selectTaskSchedule, s => Object.values(s.unscheduled || EMPTY_OBJECT))
+const selectOrderedTask = createSelector(selectOrdered,
+  o => o.task
+)
+
+const transformTaskData = (tasksById, allTasks) => allTasks.map(id => {
+  const task = tasksById[id]
+  const checked = task?.status !== 'todo'
+  const indeterminate = task?.status === 'inprogress'
+  const color = task?.status === 'done' ? 'green' : 'none'
+  return { ...task, indeterminate, checked, color, id }
+})
+
+export const selectScheduledTasksKeys = createSelector(
+  selectOrderedTask,
+  t => t.filter(t => t?.value?.start)
+    .sort((a, b) => a.value.start > b.value.start)
+    .map(t => t.key)
+)
 
 const selectPropTargetId = (s, p) => p.targetId
 const selectSlot = createCachedSelector(
@@ -27,24 +45,23 @@ export const selectTask = createSelector(
   selectTaskId,
   (taskData, taskId) => console.log('taskList.selectors.js:25 : ', taskData, taskId) || taskData[taskId] || EMPTY_OBJECT)
 
-const transformTaskData = (tasksById, allTasks) => allTasks.map(id => {
-  const task = tasksById[id]
-  const checked = task?.status !== 'todo'
-  const indeterminate = task?.status === 'inprogress'
-  const color = task?.status === 'done' ? 'green' : 'none'
-  return { ...task, indeterminate, checked, color, id }
-})
 export const selectTaskTableData = createSelector(selectTaskData, taskList => taskList.map(task => ({ ...task.value, id: task.key })))
 
-export const selectAllTaskListData = createSelector(
+export const selectAllUnscheduledTaskListData = createSelector(
   selectTaskData,
-  selectAllTasks,
+  selectUnscheduledTasks,
+  transformTaskData
+)
+
+export const selectScheduledTasks = createSelector(
+  selectTaskData,
+  selectScheduledTasksKeys,
   transformTaskData
 )
 
 const filterOutScheduledTasks = (task) => !task.start
 export const selectUnscheduledTaskListData = createSelector(
-  selectAllTaskListData,
+  selectAllUnscheduledTaskListData,
   (allTasks) => allTasks.filter(filterOutScheduledTasks)
 
 )
@@ -61,7 +78,7 @@ const reduceBuildTimeSlotLookup = (acc, cur) => {
   return start ? { ...acc, [start]: [...oldLeaf, cur] } : acc
 }
 export const selectTimeSlotLookup = createSelector(
-  selectAllTaskListData, // we may want to use non transformed data
+  selectAllUnscheduledTaskListData, // we may want to use non transformed data
   (taskList) => {
     return taskList.reduce(reduceBuildTimeSlotLookup, {})
   }

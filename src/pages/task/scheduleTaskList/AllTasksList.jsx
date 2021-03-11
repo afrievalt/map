@@ -4,10 +4,10 @@ import MiniTaskForm from './MiniTask.form.jsx'
 import TaskList from './Task.list.jsx'
 import DropTarget from '../../../controls/DropTarget'
 import { useSelector } from 'react-redux'
-import { selectAllTaskListData } from './taskList.selectors.js'
+import { selectAllUnscheduledTaskListData } from './taskList.selectors.js'
 
 const AllTasksList = () => {
-  const taskList = useSelector(selectAllTaskListData)
+  const taskList = useSelector(selectAllUnscheduledTaskListData)
 
   return (
     <Container>
