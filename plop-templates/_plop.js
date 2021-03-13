@@ -11,35 +11,48 @@ module.exports = {
       name: 'type',
       message: 'What kind of template?',
       choices: ['file', 'folder']
+    },
+    {
+      type: 'input',
+      name: 'extension',
+      message: 'file extension?'
     }
   ],
+
   actions: userInput => {
     const { type } = userInput || {}
+    const data = {
+      promptName: '{{name}}',
+      promptNameCamel: '{{camelCase name}}'
+
+    }
     const typeResults = (type === 'file')
       ? [
           {
             type: 'add',
             path: 'plop-templates/_{{name}}.js',
+            data,
             templateFile: 'plop-templates/plop-generator_file.hbs'
           },
           {
             type: 'add',
-            path: 'plop-templates/{{name}}.js.hbs',
-            data: { promptName: '{{name}}' },
-            templateFile: 'plop-templates/plop-template.hbs'
-          },
-          {
-            type: 'add',
-            path: 'plop-templates/{{name}}.spec.js.hbs',
-            templateFile: 'plop-templates/plop-template.spec.hbs'
+            path: 'plop-templates/{{name}}.{{extension}}.hbs',
+            templateFile: '// todo, copy the plop template you wish to create and replace w/ templates'
           }
         ]
       : [ // type !== 'file
           {
             type: 'add',
             path: 'plop-templates/_{{name}}.js',
-            templateFile: 'plop-templates/plop-generator_folder.hbs'
+            templateFile: 'plop-templates/plop-generator_folder.hbs',
+            data
+          },
+          {
+            type: 'add',
+            path: 'plop-templates/{{camelCase name}}-templates/{{name}}.{{extension}}.hbs',
+            templateFile: '// todo, copy the plop template you wish to create and replace w/ templates'
           }
+
         ]
 
     return [
