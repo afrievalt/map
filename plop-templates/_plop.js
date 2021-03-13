@@ -37,7 +37,7 @@ module.exports = {
           {
             type: 'add',
             path: 'plop-templates/{{name}}.{{extension}}.hbs',
-            templateFile: '// todo, copy the plop template you wish to create and replace w/ templates'
+            template: '// todo, copy the plop template you wish to create and replace w/ templates'
           }
         ]
       : [ // type !== 'file
@@ -50,7 +50,7 @@ module.exports = {
           {
             type: 'add',
             path: 'plop-templates/{{camelCase name}}-templates/{{name}}.{{extension}}.hbs',
-            templateFile: '// todo, copy the plop template you wish to create and replace w/ templates'
+            template: '// todo, copy the plop template you wish to create and replace w/ templates'
           }
 
         ]
