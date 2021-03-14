@@ -11,7 +11,7 @@ module.exports = {
     const actions = [
       {
         type: 'addMany',
-        destination: './',
+        destination: './pages/{{name camelCase}}',
         base: 'plop-templates/screen-templates/',
         templateFiles: 'plop-templates/screen-templates/*.hbs'
       },

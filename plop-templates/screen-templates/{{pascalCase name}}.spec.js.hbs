@@ -1,12 +1,12 @@
 import renderer from 'react-test-renderer'
 import AppProvider from '../../AppProvider.js'
-import {{name}} from './{{name}}.jsx';
+import {{pascalCase name}} from './{{pascalCase name}}.jsx';
 
 xit('renders correctly', () => {
   const tree = renderer
     .create(
       <AppProvider>
-        <{{name}} />
+        <{{pascalCase name}} />
       </AppProvider>
     )
     .toJSON()
