@@ -1,1 +1,0 @@
-// todo, replace this files with .hbs files, note you can use handlebar inside file names
