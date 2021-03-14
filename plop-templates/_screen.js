@@ -11,7 +11,7 @@ module.exports = {
     const actions = [
       {
         type: 'addMany',
-        destination: './pages//{{camelCase name}}',
+        destination: 'src/pages//{{camelCase name}}',
         base: 'plop-templates/screen-templates',
         templateFiles: 'plop-templates/screen-templates/*.hbs'
       },
@@ -38,7 +38,7 @@ module.exports = {
         type: 'append',
         path: 'src/routes/MainContent.jsx',
         pattern: "import Home from '../pages/Home'",
-        template: "import {{name}} from '../pages/{{lowerCase name}}'"
+        template: "import {{pascalCase name}} from '../pages/{{pascalCase name}}'"
       },
       {
         type: 'modify',
