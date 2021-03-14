@@ -11,11 +11,6 @@ module.exports = {
       name: 'type',
       message: 'What kind of template?',
       choices: ['file', 'folder']
-    },
-    {
-      type: 'input',
-      name: 'extension',
-      message: 'file extension?'
     }
   ],
 
@@ -49,8 +44,8 @@ module.exports = {
           },
           {
             type: 'add',
-            path: 'plop-templates/{{camelCase name}}-templates/{{name}}.{{extension}}.hbs',
-            template: '// todo, copy the plop template you wish to create and replace w/ templates'
+            path: 'plop-templates/{{camelCase name}}-templates/replace.txt',
+            template: '// todo, replace this files with .hbs files, note you can use handlebar inside file names'
           }
 
         ]
