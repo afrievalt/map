@@ -5,15 +5,27 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'form name?'
+    },
+    {
+      type: 'input',
+      name: 'path',
+      message: 'path to place form?'
     }
   ],
-  actions: data => {
+  actions: (prompts) => {
+    const data = {
+      field: [
+        { id: 'firstName' },
+        { id: 'lastName' }
+      ]
+    }
     const actions = [
       {
         type: 'addMany',
-        destination: './form',
-        base: 'plop-templates/{{camelCase name}}-templates/',
-        templateFiles: 'plop-templates/{{camelCase name}}-templates/*.hbs'
+        destination: '{{path}}/form',
+        base: 'plop-templates/form-templates/',
+        templateFiles: 'plop-templates/form-templates/*.hbs',
+        data
       }
     ]
     return actions
