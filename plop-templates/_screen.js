@@ -38,7 +38,7 @@ module.exports = {
         type: 'append',
         path: 'src/routes/MainContent.jsx',
         pattern: "import Home from '../pages/Home'",
-        template: "import {{pascalCase name}} from '../pages/{{pascalCase name}}'"
+        template: "import {{pascalCase name}} from '../pages/{{camelCase name}}'"
       },
       {
         type: 'modify',
