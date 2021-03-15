@@ -46,12 +46,6 @@ module.exports = {
         pattern: "HOME: 'Home',",
         templateFile: 'plop-templates/screen-templates/_fragments/Title.jsx.hbs'
 
-      },
-      {
-        type: 'modify',
-        path: 'src/routes/FirebaseListener.jsx',
-        pattern: 'useFirebaseConnect([',
-        templateFile: 'plop-templates/screen-templates/_fragments/FirebaseListener.jsx.hbs'
       }
     ]
     return actions

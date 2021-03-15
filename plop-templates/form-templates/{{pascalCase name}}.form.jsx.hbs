@@ -1,0 +1,24 @@
+import { Button, Container, CssBaseline } from '@material-ui/core'
+import React, {memo} from 'react'
+import SimpleForm from '../../../form/SimpleForm'
+import {{camelCase name}}Validate from './{{camelCase name}}Validate'
+import { upsert{{name}} } from './{{camelCase name}}Actions'
+import { useActions } from '../../../hooks/useActions'
+import {{name}}FieldGroup from './{{name}}FieldGroup'
+
+const {{name}}Form = () => {
+  const handleSubmit = useActions(upsert{{name}})
+  return (
+    <Container>
+      <CssBaseline />
+      <SimpleForm onSubmit={handleSubmit} validate={ {{camelCase name}}Validate}>
+        <{{name}}FieldGroup />
+        <Button type='submit' variant='contained' color='inherit'>
+          Submit
+        </Button>
+      </SimpleForm>
+    </Container>
+  )
+}
+
+export default memo({{name}}Form)
