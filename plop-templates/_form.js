@@ -19,10 +19,11 @@ module.exports = {
   ],
   actions: (prompts) => {
     const { fields } = prompts
-    const data = fields
+    const field = fields
       .replace(/ /g, '')
       .split(',')
       .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
+    const data = { field }
 
     const actions = [
       {
