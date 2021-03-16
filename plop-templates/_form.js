@@ -10,15 +10,20 @@ module.exports = {
       type: 'input',
       name: 'path',
       message: 'path to place form?'
+    },
+    {
+      type: 'input',
+      name: 'fields',
+      message: 'form fields?'
     }
   ],
   actions: (prompts) => {
-    const data = {
-      field: [
-        { id: 'firstName' },
-        { id: 'lastName' }
-      ]
-    }
+    const { fields } = prompts
+    const data = fields
+      .replace(/ /g, '')
+      .split(',')
+      .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
+
     const actions = [
       {
         type: 'addMany',

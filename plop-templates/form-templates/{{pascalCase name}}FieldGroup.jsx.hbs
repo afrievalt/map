@@ -2,12 +2,14 @@ import { Button, Container, CssBaseline } from '@material-ui/core'
 import React, {memo} from 'react'
 import InputField from '../../../form/Input.field'
 
-const {{name}}Form = () => {
+const {{pascalCase name}}Form = () => {
   return (
     <>
-      <InputField fieldId='email' label='E-mail Address' />
+      {{#each field}}
+        <InputField fieldId='{{id}}' label='{{titleCase id}}' />
+      {{/each}}
     </>
   )
 }
 
-export default memo({{name}}Form)
+export default memo({{pascalCase name}}Form)
