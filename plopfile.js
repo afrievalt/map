@@ -8,7 +8,7 @@ const _list = require('./plop-templates/_list')
 
 module.exports = function (plop) {
   // controller generator
-plop.setGenerator('form', _form)
+  plop.setGenerator('form', _form)
   plop.setGenerator('screen', _screen)
   plop.setGenerator('page', _page)
   plop.setGenerator('plop', _plop)

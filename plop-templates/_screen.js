@@ -1,3 +1,5 @@
+const plopHistory = require('./plopHistory')
+
 module.exports = {
   description: 'create a screen',
   prompts: [
@@ -8,6 +10,12 @@ module.exports = {
     }
   ],
   actions: data => {
+    const newHistory = {
+      ...data,
+      destination: 'src/pages//{{camelCase name}}',
+      type: 'screen'
+    }
+    plopHistory.push(newHistory)
     const actions = [
       {
         type: 'addMany',
@@ -46,7 +54,14 @@ module.exports = {
         pattern: "HOME: 'Home',",
         templateFile: 'plop-templates/screen-templates/_fragments/Title.jsx.hbs'
 
+      },
+      {
+        type: 'add',
+        force: true,
+        path: 'plop-templates/plopHistory.js',
+        template: `module.exports = ${JSON.stringify(plopHistory)}`
       }
+
     ]
     return actions
   }
