@@ -25,6 +25,12 @@ module.exports = {
     }
   ],
   actions: prompts => {
+    const { fields } = prompts
+    const field = fields
+      .replace(/ /g, '')
+      .split(',')
+      .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
+    const data = { field }
     const newHistory = {
       ...prompts,
       destination
@@ -36,7 +42,8 @@ module.exports = {
         type: 'addMany',
         destination: '{{path}}/table',
         base: 'plop-templates/table-templates/',
-        templateFiles: 'plop-templates/table-templates/*.hbs'
+        templateFiles: 'plop-templates/table-templates/*.hbs',
+        data
       },
       {
         type: 'modify',

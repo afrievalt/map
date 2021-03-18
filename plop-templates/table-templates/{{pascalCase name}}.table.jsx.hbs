@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 const columns = [
       {{#each field}}
-        { field: {{id}}}, headerName: {{titleCase id}}, width: 150 }, 
+        { field: '{{id}}', headerName: '{{titleCase id}}', width: 150 }, 
         
       {{/each}}
 
