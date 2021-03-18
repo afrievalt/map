@@ -1,3 +1,8 @@
+const plopHistory = require('./plopHistory')
+
+const [last] = plopHistory || []
+const { destination } = last || {}
+
 module.exports = {
   description: 'create a form',
   prompts: [
@@ -9,6 +14,7 @@ module.exports = {
     {
       type: 'input',
       name: 'path',
+      default: destination,
       message: 'path to place form?'
     },
     {
@@ -24,6 +30,12 @@ module.exports = {
       .split(',')
       .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
     const data = { field }
+    const newHistory = {
+      ...prompts,
+      destination: 'src/pages/{{camelCase name}}',
+      type: 'screen'
+    }
+    plopHistory.push(newHistory)
 
     const actions = [
       {
@@ -32,6 +44,12 @@ module.exports = {
         base: 'plop-templates/form-templates/',
         templateFiles: 'plop-templates/form-templates/*.hbs',
         data
+      },
+      {
+        type: 'add',
+        force: true,
+        path: 'plop-templates/plopHistory.js',
+        template: `module.exports = ${JSON.stringify(plopHistory)}`
       }
     ]
     return actions

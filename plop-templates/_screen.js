@@ -12,10 +12,10 @@ module.exports = {
   actions: data => {
     const newHistory = {
       ...data,
-      destination: 'src/pages//{{camelCase name}}',
+      destination: 'src/pages/{{camelCase name}}',
       type: 'screen'
     }
-    plopHistory.push(newHistory)
+    plopHistory.unshift(newHistory) // add to start
     const actions = [
       {
         type: 'addMany',
