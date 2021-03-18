@@ -1,0 +1,28 @@
+import React, {memo} from 'react'
+import { Container } from '@material-ui/core'
+import { DataGrid } from '@material-ui/data-grid'
+import { select{{ pascalCase name }}TableData } from './{{camelCase name}}Table.selectors.js'
+import { useSelector } from 'react-redux'
+
+const columns = [
+      {{#each field}}
+        { field: {{id}}}, headerName: {{titleCase id}}, width: 150 }, 
+        
+      {{/each}}
+
+ // { field: 'firstName', headerName: 'First Name', width: 150 },
+  
+]
+
+const {{pascalCase name}}Table = () => {
+  const {{camelCase name}}TableData = useSelector(select{{pascalCase name}}TableData)
+  return (
+    <Container>
+          <Container style={ { height: 600, width: '100%' } }>
+            <DataGrid rows={ {{camelCase name}}TableData} columns={columns} />
+          </Container>
+    </Container>
+  )
+}
+
+export default memo({{pascalCase name}}Table)

@@ -1,16 +1,15 @@
 const plopHistory = require('./plopHistory')
-
 const [last] = plopHistory || []
 const { destination, name, fields } = last || {}
 
 module.exports = {
-  description: 'create a form',
+  description: 'create a table',
   prompts: [
     {
       type: 'input',
       name: 'name',
       default: name,
-      message: 'form name?'
+      message: 'table name?'
     },
     {
       type: 'input',
@@ -25,27 +24,26 @@ module.exports = {
       message: 'form fields?'
     }
   ],
-  actions: (prompts) => {
-    const { fields } = prompts
-    const field = fields
-      .replace(/ /g, '')
-      .split(',')
-      .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
-    const data = { field }
+  actions: prompts => {
     const newHistory = {
       ...prompts,
-      destination: 'src/pages/{{camelCase name}}',
-      type: 'screen'
+      destination
     }
     plopHistory.push(newHistory)
 
     const actions = [
       {
         type: 'addMany',
-        destination: '{{path}}/form',
-        base: 'plop-templates/form-templates/',
-        templateFiles: 'plop-templates/form-templates/*.hbs',
-        data
+        destination: '{{path}}/table',
+        base: 'plop-templates/table-templates/',
+        templateFiles: 'plop-templates/table-templates/*.hbs'
+      },
+      {
+        type: 'modify',
+        path: 'src/routes/FirebaseListener.jsx',
+        pattern: 'useFirebaseConnect([',
+        templateFile: 'plop-templates/page-templates/_fragments/grid/FirebaseListener.jsx.hbs'
+
       },
       {
         type: 'add',
