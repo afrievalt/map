@@ -4,7 +4,7 @@ export const upsert{{pascalCase name}} = (payload, form) => (dispatch, getState,
     .ref('{{camelCase name}}')
     .push()
   newRef.set(payload)
-    .then(() => dispatch({ type: 'HOME' }))
+    .then(() => dispatch({ type: '{{constantCase name}}' }))
     .then(form.restart)
     .catch(function (error) {
       const errorMessage = error.message

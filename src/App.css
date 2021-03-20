@@ -53,7 +53,7 @@ body {
 }
 .header, .footer{
   height: 50px;
-  background: #666;
+  background: #20639B;
   color: #fff;
 }
 .content {
@@ -65,6 +65,7 @@ body {
 .columns{
   display: flex;
   flex:1;
+  
  
 }
 .main{
@@ -75,7 +76,8 @@ body {
 }
 .sidebar-first{
   width: 20%;
-  background: #ccc;
+  background-color: #173F5F;
+  color: white;
   order: 1;
 }
 
@@ -94,3 +96,6 @@ header.header {
   letter-spacing: 0.0075em;
 }
 
+.MuiListItemIcon-root {
+  color: #F6D55C !important;
+}
