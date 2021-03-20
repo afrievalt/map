@@ -1,24 +1,26 @@
 import { useSelector } from 'react-redux'
-import { makeArray } from '../utility/convert'
+import { memo } from 'react'
 import PropTypes from 'prop-types'
+import { makeArray } from '../utility/convert'
 
 const propTypes = {
-  fieldId: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  variant: PropTypes.string
+  type: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  variant: PropTypes.bool
 }
+
 const Route = ({ type, children, exact = false }) => {
   const locationType = useSelector(state => state.location.type)
   const hasPath = !!~makeArray(type)
     .findIndex(
-      o => exact ? o === locationType : o.startsWith(locationType)
+      o => exact ? o === locationType : locationType.startsWith(o)
     )
   return hasPath ? children : null
 }
 
 Route.propTypes = propTypes
 
-export default Route
+export default memo(Route)
 // <Route type='FOO'>
 //  <Foo/>
 // </Route>
