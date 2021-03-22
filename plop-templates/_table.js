@@ -35,7 +35,7 @@ module.exports = {
       ...prompts,
       destination
     }
-    plopHistory.push(newHistory)
+    plopHistory.unshift(newHistory)
 
     const actions = [
       {
