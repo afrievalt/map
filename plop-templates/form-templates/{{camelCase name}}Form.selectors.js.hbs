@@ -1,0 +1,22 @@
+import { createSelector } from '@reduxjs/toolkit'
+
+const EMPTY = []
+const EMPTY_OBJECT = {}
+const selectFirebase = state => state.firebase || EMPTY_OBJECT
+const selectLocation = state => state.location || EMPTY_OBJECT
+const selectLocationPayload = createSelector(selectLocation, l => l.payload || EMPTY)
+
+const selectData = createSelector(selectFirebase, f => f.data || EMPTY)
+const select{{ pascalCase name }}Lookup = createSelector(selectData, s => s.{{ camelCase name }} || EMPTY)
+export const select{{ pascalCase name }}ById = createSelector(
+  select{{ pascalCase name }}Lookup,
+  selectLocationPayload,
+  ({{ camelCase name }}Lookup, locationPayload) => {
+    const { {{ camelCase name }}Id = EMPTY_OBJECT } = locationPayload || EMPTY_OBJECT
+    const {{ camelCase name }} = {{ camelCase name }}Lookup[{{ camelCase name }}Id]
+    return {
+      ...{{ camelCase name }},
+      id: {{ camelCase name }}Id
+    }
+  }
+)

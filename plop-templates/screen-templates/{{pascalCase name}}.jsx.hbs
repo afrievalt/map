@@ -4,7 +4,15 @@ import React, {memo} from 'react'
 const {{pascalCase name}} = () => {
   return (
     <Container>
-      todo: add stuff here !!!
+      <Route type='EMPLOYEE' exact>
+        todo: add stuff here !!!
+      </Route>
+      <Route type='EMPLOYEE_EDIT'>
+        <EmployeeEditForm />
+      </Route>
+      <Route type='EMPLOYEE_ADD'>
+        <EmployeeForm />
+      </Route>
     </Container>
   )
 }

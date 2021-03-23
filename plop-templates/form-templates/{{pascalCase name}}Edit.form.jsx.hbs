@@ -1,0 +1,32 @@
+import { Button, Container, CssBaseline } from '@material-ui/core'
+import React, { memo } from 'react'
+import SimpleForm from '../../../form/SimpleForm'
+import {{ camelCase name }}Validate from './{{ camelCase name }}Validate'
+import { useActions } from '../../../hooks/useActions'
+import {{ pascalCase name }}FieldGroup from './{{ pascalCase name }}FieldGroup'
+
+import { update{{ pascalCase name }} } from './{{ camelCase name }}Actions'
+import { useSelector } from 'react-redux'
+import { select{{ pascalCase name }}ById } from './{{ camelCase name }}Form.selectors'
+
+const {{ pascalCase name }}EditForm = () => {
+  const handleSubmit = useActions(update{{ pascalCase name }})
+  const defaultValues = useSelector(select{{ pascalCase name }}ById)
+  return (
+    <Container>
+      <CssBaseline />
+      <SimpleForm
+        onSubmit={handleSubmit}
+        validate={ {{ camelCase name }}Validate}
+        initialValues={defaultValues}
+      >
+        <{{ pascalCase name }}FieldGroup />
+        <Button type='submit' variant='contained' color='inherit'>
+          Update
+        </Button>
+      </SimpleForm>
+    </Container>
+  )
+}
+
+export default memo({{ pascalCase name }}EditForm)

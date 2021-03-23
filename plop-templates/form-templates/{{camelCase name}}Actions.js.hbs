@@ -1,10 +1,25 @@
-export const upsert{{pascalCase name}} = (payload, form) => (dispatch, getState, getFirebase) => {
+export const add{{pascalCase name}} = (payload, form) => (dispatch, getState, getFirebase) => {
   const newRef = getFirebase()
     .database()
     .ref('{{camelCase name}}')
     .push()
   newRef.set(payload)
     .then(() => dispatch({ type: '{{constantCase name}}' }))
+    .then(form.restart)
+    .catch(function (error) {
+      const errorMessage = error.message
+      window.alert(errorMessage)
+      console.log(error)
+    })
+}
+
+export const update{{ pascalCase name }} = (payload, form) => (dispatch, getState, getFirebase) => {
+  const { {{ camelCase name }}Id } = payload || {}
+  getFirebase()
+    .database()
+    .ref(`{{ camelCase name }}/${ {{ camelCase name }}Id}`)
+    .set(payload)
+    .then(() => dispatch({ type: '{{ constantCase name }}' }))
     .then(form.restart)
     .catch(function (error) {
       const errorMessage = error.message
