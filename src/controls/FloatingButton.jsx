@@ -6,13 +6,21 @@ import Link from './Link'
 
 const propTypes = {
   routeKey: PropTypes.string.isRequired,
-  routeParameters: PropTypes.object
+  routeParameters: PropTypes.object,
+  bottom: PropTypes.string,
+  right: PropTypes.string
 }
 
-const FloatingButton = ({ routeKey, routeParameters }) => {
+const FloatingButton = ({
+  routeKey,
+  routeParameters,
+  bottom = '30px',
+  right = '30px'
+}) => {
+  const style = { bottom, right, position: 'absolute' }
   return (
     <Link routeKey={routeKey} {...routeParameters}>
-      <Fab>
+      <Fab style={style}>
         <AddIcon />
       </Fab>
     </Link>

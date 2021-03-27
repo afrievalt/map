@@ -1,12 +1,15 @@
 import React, { memo } from 'react'
-import { Container } from '@material-ui/core'
 import Route from '../../controls/Route'
+import FloatingButton from '../../controls/FloatingButton'
+import { Screen } from '../../controls/StyledMui'
+
 
 const {{pascalCase name}} = () => {
   return (
-    <Container>
+    <Screen>
       <Route type='{{constantCase name}}' exact>
         todo: stuff here !!!
+        <FloatingButton routeKey='{{constantCase name}}_ADD' />
       </Route>
       <Route type='{{constantCase name}}_EDIT'>
         todo: edit stuff here !!!
@@ -14,7 +17,7 @@ const {{pascalCase name}} = () => {
       <Route type='{{constantCase name}}_ADD'>
         todo: add stuff here !!!
       </Route>
-    </Container>
+    </Screen>
   )
 }
 
