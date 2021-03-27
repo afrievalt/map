@@ -1,17 +1,18 @@
+import React, { memo } from 'react'
 import { Container } from '@material-ui/core'
-import React, {memo} from 'react'
+import Route from '../../controls/Route'
 
 const {{pascalCase name}} = () => {
   return (
     <Container>
-      <Route type='EMPLOYEE' exact>
+      <Route type='{{constantCase name}}' exact>
+        todo: stuff here !!!
+      </Route>
+      <Route type='{{constantCase name}}_EDIT'>
+        todo: edit stuff here !!!
+      </Route>
+      <Route type='{{constantCase name}}_ADD'>
         todo: add stuff here !!!
-      </Route>
-      <Route type='EMPLOYEE_EDIT'>
-        <EmployeeEditForm />
-      </Route>
-      <Route type='EMPLOYEE_ADD'>
-        <EmployeeForm />
       </Route>
     </Container>
   )
