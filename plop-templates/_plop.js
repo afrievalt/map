@@ -31,7 +31,7 @@ module.exports = {
           },
           {
             type: 'add',
-            path: 'plop-templates/{{name}}.{{extension}}.hbs',
+            path: 'plop-templates/{{name}}.js.hbs',
             template: '// todo, copy the plop template you wish to create and replace w/ templates'
           }
         ]
