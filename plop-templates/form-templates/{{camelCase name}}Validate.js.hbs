@@ -1,10 +1,13 @@
 import {
-  getFuncValidateFields
-  // isEmailInvalid, isRequired
+  getFuncValidateFields,
+  isRequired,
+  getIsTooLong,
 } from '../../../form/validationHelpers'
 
 const {{camelCase name}}Validate = getFuncValidateFields.x({
-  
+  {{#each field}}
+    {{id}}: [isRequired, getIsTooLong(100)],
+  {{/each}}
 })
 
 export default {{camelCase name}}Validate

@@ -14,8 +14,8 @@ const propTypes = {
 const FloatingButton = ({
   routeKey,
   routeParameters,
-  bottom = '30px',
-  right = '30px'
+  bottom = '60px',
+  right = '75px'
 }) => {
   const style = { bottom, right, position: 'absolute' }
   return (
