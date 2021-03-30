@@ -2,16 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Divider from '@material-ui/core/Divider'
 import List from '@material-ui/core/List'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import useStyles from '../controls/TwoColumnLayout/useStyles'
-import SettingsIcon from '@material-ui/icons/Settings'
-import HomeIcon from '@material-ui/icons/Home'
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
 import ListItemLink from '../controls/ListItemLink'
-import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck'
-import EventAvailableIcon from '@material-ui/icons/EventAvailable'
-import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd'
+import Icon from '../controls/Icon'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+
 function LeftDrawer (props) {
   const classes = useStyles()
   return (
@@ -20,39 +16,39 @@ function LeftDrawer (props) {
       <Divider />
       <List>
         <ListItemLink routeKey='HOME'>
-          <ListItemIcon><HomeIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='Home' /></ListItemIcon>
           <ListItemText primary='Home' />
         </ListItemLink>
         <ListItemLink routeKey='SIGNIN'>
-          <ListItemIcon><SettingsIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
           <ListItemText primary='Account' />
         </ListItemLink>
         <ListItemLink routeKey='CONTACT_ADD'>
-          <ListItemIcon><SettingsIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
           <ListItemText primary='Add Contact' />
         </ListItemLink>
         <ListItemLink routeKey='CONTACT'>
-          <ListItemIcon><SettingsIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
           <ListItemText primary='Contacts' />
         </ListItemLink>
         <ListItemLink routeKey='COMPANY_ADD'>
-          <ListItemIcon><AddCircleOutlineIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='AddCircleOutline' /></ListItemIcon>
           <ListItemText primary='Company' />
         </ListItemLink>
         <ListItemLink routeKey='COMPANY'>
-          <ListItemIcon><SettingsIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
           <ListItemText primary='Company' />
         </ListItemLink>
         <ListItemLink routeKey='TASK_ADD'>
-          <ListItemIcon><PlaylistAddIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='PlaylistAdd' /></ListItemIcon>
           <ListItemText primary='Add Task' />
         </ListItemLink>
         <ListItemLink routeKey='TASK'>
-          <ListItemIcon><PlaylistAddCheckIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='PlaylistAddCheck' /></ListItemIcon>
           <ListItemText primary='Tasks' />
         </ListItemLink>
         <ListItemLink routeKey='PLAN'>
-          <ListItemIcon><EventAvailableIcon /></ListItemIcon>
+          <ListItemIcon><Icon iconName='EventAvailable' /></ListItemIcon>
           <ListItemText primary='Task Planning' />
         </ListItemLink>
       </List>

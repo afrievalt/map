@@ -7,6 +7,13 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'screen name?'
+    },
+    {
+      type: 'list',
+      name: 'icon',
+      message: 'Menu icon?',
+      default: 'Settings',
+      choices: ['AccessTime', 'AddCircleOutline', 'EventAvailable', 'Home', 'People', 'Person', 'PlaylistAddCheck', 'Settings']
     }
   ],
   actions: data => {
