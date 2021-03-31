@@ -10,10 +10,18 @@ const {{pascalCase name}}Form = () => {
           <InputField fieldId='{{id}}' label='{{titleCase id}}' />
         {{/if}}
         {{#if number}}
-          <InputField  type='number' fieldId='{{id}}' label='{{titleCase id}}' />
+          <InputField fieldId='{{id}}' label='{{titleCase id}}' />
         {{/if}}
         {{#if select}}
-          <InputField  type='number' fieldId='{{id}}' label='{{titleCase id}}' />
+          <SelectField fieldId='{{id}}' label='{{titleCase id}}'>
+            <SelectField.Options data={['One', 'Two', 'Three']} />
+          </SelectField>
+        {{/if}}
+        {{#if bool}}
+          <CheckboxField fieldId='{{id}}' label='{{titleCase id}}' />
+        {{/if}}
+        {{#if date}}
+          <DatePickerField fieldId='{{id}}' label='{{titleCase id}}' />
         {{/if}}
       {{/each}}
     </>

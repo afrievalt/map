@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import CheckboxGroupField from '../../../form/CheckboxGroupField'
 import InputField from '../../../form/Input.field'
 import Options from '../../../form/Options'
-import SelectField from '../../../form/SelectField'
+import SelectField from '../../../form/Select.field'
 import { selectCompanyOptionsData } from './contactForm.selectors'
 
 const ContactForm = () => {

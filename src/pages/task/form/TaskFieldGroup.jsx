@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import SelectField from '../../../form/SelectField'
+import SelectField from '../../../form/Select.field'
 import InputField from '../../../form/Input.field'
 import Options from '../../../form/Options'
 import DatePickerField from '../../../form/DatePicker.field'
