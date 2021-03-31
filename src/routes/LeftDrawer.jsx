@@ -8,7 +8,7 @@ import ListItemLink from '../controls/ListItemLink'
 import Icon from '../controls/Icon'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 
-function LeftDrawer (props) {
+function LeftDrawer () {
   const classes = useStyles()
   return (
     <div>
@@ -58,12 +58,5 @@ function LeftDrawer (props) {
   )
 }
 
-LeftDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func
-}
 
 export default LeftDrawer

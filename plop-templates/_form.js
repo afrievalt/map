@@ -27,17 +27,30 @@ module.exports = {
   ],
   actions: (prompts) => {
     const { fields } = prompts
+    // todo: move
+    const transformToIdType = raw => {
+      const [id, type = 'string'] = raw.split(':')
+      return { id, type, [type]: true }
+    }
     const field = fields
       .replace(/ /g, '')
       .split(',')
-      .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
-    const data = { field }
+      .map(transformToIdType) // 'firstName, lastName' => { id: 'firstName', type: 'string' },{ id: 'lastName', type: 'string' }
+    const fieldLookup = {
+      select: 'Select',
+      date: 'DatePicker',
+      bool: 'Checkbox'
+    }
+    const reduceUniqueFields = (acc, cur) => acc.add(fieldLookup[cur.type] || 'Input')
+    const uniqueFields = [...field.reduce(reduceUniqueFields, new Set())]
+    console.log('_form.js:39 field: ', uniqueFields)
+    const data = { field, uniqueFields }
     const newHistory = {
       ...prompts,
       destination: 'src/pages/{{camelCase name}}',
       type: 'screen'
     }
-    plopHistory.push(newHistory)
+    plopHistory.unshift(newHistory)
 
     const actions = [
       {

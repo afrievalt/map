@@ -1,12 +1,20 @@
-import { Button, Container, CssBaseline } from '@material-ui/core'
 import React, {memo} from 'react'
-import InputField from '../../../form/Input.field'
-
+{{#each uniqueFields}}
+import {{.}}Field from '../../../form/{{.}}.field'
+{{/each}}
 const {{pascalCase name}}Form = () => {
   return (
     <>
       {{#each field}}
-        <InputField fieldId='{{id}}' label='{{titleCase id}}' />
+        {{#if string}}
+          <InputField fieldId='{{id}}' label='{{titleCase id}}' />
+        {{/if}}
+        {{#if number}}
+          <InputField  type='number' fieldId='{{id}}' label='{{titleCase id}}' />
+        {{/if}}
+        {{#if select}}
+          <InputField  type='number' fieldId='{{id}}' label='{{titleCase id}}' />
+        {{/if}}
       {{/each}}
     </>
   )
