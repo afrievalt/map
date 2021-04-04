@@ -1,41 +1,63 @@
+const plopHistory = require('./plopHistory')
+const [last] = plopHistory || []
+const { destination, name, fields } = last || {}
+
 module.exports = {
-  description: 'create a list page',
+  description: 'create a drag and drop list',
   prompts: [
     {
       type: 'input',
       name: 'name',
-      message: 'List name?'
+      default: name,
+      message: 'list name?'
+    },
+    {
+      type: 'input',
+      name: 'path',
+      default: destination,
+      message: 'path to place list?'
+    },
+    {
+      type: 'input',
+      default: fields,
+      name: 'fields',
+      message: 'list fields?'
     }
   ],
-  actions: data => {
+  actions: prompts => {
+    const { fields } = prompts
+    const field = fields
+      .replace(/ /g, '')
+      .split(',')
+      .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
+    const data = { field }
+    const newHistory = {
+      ...prompts,
+      destination
+    }
+    plopHistory.unshift(newHistory)
+
     const actions = [
       {
         type: 'addMany',
-        destination: 'src/pages/{{name}}/{{name}}List',
-        base: 'plop-templates/page-templates/list-templates',
-        templateFiles: 'plop-templates/page-templates/list-templates/*.hbs'
-      },
-      {
-        // Action type 'append' injects a template into an existing file
-        type: 'append',
-        path: 'src/store/routePaths.js',
-        // Pattern tells plop where in the file to inject the template
-        pattern: "HOME: '/',",
-        template: "{{constantCase name}}_LIST: '/{{lowerCase name}}/list',"
+        destination: '{{path}}/list',
+        base: 'plop-templates/list-templates/',
+        templateFiles: 'plop-templates/list-templates/*.hbs',
+        data
       },
       {
         type: 'modify',
-        path: 'src/App.js',
-        // Pattern tells plop where in the file to inject the template
-        pattern: '</AppProvider>',
-        templateFile: 'plop-templates/_page-modify-App.js.hbs'
+        path: 'src/routes/FirebaseListener.jsx',
+        pattern: 'useFirebaseConnect([',
+        // todo: move location
+        templateFile: 'plop-templates/page-templates/_fragments/grid/FirebaseListener.jsx.hbs'
+
       },
       {
-        type: 'append',
-        path: 'src/App.js',
-        // Pattern tells plop where in the file to inject the template
-        pattern: "import Route from './controls/Route'",
-        template: "import {{name}}List from './pages/{{name}}/{{name}}List'"
+        type: 'add',
+        force: true,
+        path: 'plop-templates/plopHistory.js',
+        template: `module.exports = ${JSON.stringify(plopHistory)}`
       }
     ]
     return actions

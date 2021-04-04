@@ -15,13 +15,13 @@ module.exports = {
       type: 'input',
       name: 'path',
       default: destination,
-      message: 'path to place form?'
+      message: 'path to place table?'
     },
     {
       type: 'input',
       default: fields,
       name: 'fields',
-      message: 'form fields?'
+      message: 'table fields?'
     }
   ],
   actions: prompts => {

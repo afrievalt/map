@@ -1,0 +1,29 @@
+import React, {memo} from 'react'
+import { Container } from '@material-ui/core'
+import { DataGrid } from '@material-ui/data-grid'
+import { select{{ pascalCase name }}ListData } from './{{camelCase name}}List.selectors.js'
+import { useSelector, useDispatch } from 'react-redux'
+
+const columns = [
+      {{#each field}}
+        { field: '{{id}}', headerName: '{{titleCase id}}', width: 150 }, 
+      {{/each}}
+]
+
+const {{pascalCase name}}List = () => {
+  const {{camelCase name}}ListData = useSelector(select{{pascalCase name}}ListData)
+  const dispatch = useDispatch()
+  const handleRowClick = ({ row }) => {
+    const {{camelCase name}}Id = row?.id
+    dispatch({type: '{{constantCase name}}_EDIT', payload: { {{camelCase name}}Id }})
+  }
+  return (
+    <Container>
+          <Container style={ { height: 600, width: '100%' } }>
+            <DataGrid rows={ {{camelCase name}}ListData} columns={columns} onRowClick={handleRowClick}/>
+          </Container>
+    </Container>
+  )
+}
+
+export default memo({{pascalCase name}}List)
