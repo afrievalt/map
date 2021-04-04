@@ -41,11 +41,9 @@ export const signInAccount = (payload) => (dispatch, getState, getFirebase) => {
 }
 
 export const signOut = () => (dispatch, getState, getFirebase) => {
-  console.log('auth.duck.js:46 : in here'  );
   getFirebase()
     .auth()
     .signOut()
-    .then((x) => console.log('signout: ', x))
     .then(() => dispatch({ type: 'HOME' }))
     .catch(function (error) {
       // Handle Errors here.

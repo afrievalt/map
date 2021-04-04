@@ -1,13 +1,9 @@
 import React, { memo } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
-import { useActions } from '../hooks/useActions'
-import { dragEnd } from '../pages/task/scheduleTaskList/taskActions'
 
-const DragDropContextProvider = ({ children }) => {
-  const handleDragEnd = useActions(dragEnd)
-
+const DragDropContextProvider = ({ children, onDragEnd }) => {
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
+    <DragDropContext onDragEnd={onDragEnd}>
       {children}
     </DragDropContext>
   )

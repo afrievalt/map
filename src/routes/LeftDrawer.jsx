@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Divider from '@material-ui/core/Divider'
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -21,35 +20,7 @@ function LeftDrawer () {
         </ListItemLink>
         <ListItemLink routeKey='SIGNIN'>
           <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
-          <ListItemText primary='Account' />
-        </ListItemLink>
-        <ListItemLink routeKey='CONTACT_ADD'>
-          <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
-          <ListItemText primary='Add Contact' />
-        </ListItemLink>
-        <ListItemLink routeKey='CONTACT'>
-          <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
-          <ListItemText primary='Contacts' />
-        </ListItemLink>
-        <ListItemLink routeKey='COMPANY_ADD'>
-          <ListItemIcon><Icon iconName='AddCircleOutline' /></ListItemIcon>
-          <ListItemText primary='Company' />
-        </ListItemLink>
-        <ListItemLink routeKey='COMPANY'>
-          <ListItemIcon><Icon iconName='Settings' /></ListItemIcon>
-          <ListItemText primary='Company' />
-        </ListItemLink>
-        <ListItemLink routeKey='TASK_ADD'>
-          <ListItemIcon><Icon iconName='PlaylistAdd' /></ListItemIcon>
-          <ListItemText primary='Add Task' />
-        </ListItemLink>
-        <ListItemLink routeKey='TASK'>
-          <ListItemIcon><Icon iconName='PlaylistAddCheck' /></ListItemIcon>
-          <ListItemText primary='Tasks' />
-        </ListItemLink>
-        <ListItemLink routeKey='PLAN'>
-          <ListItemIcon><Icon iconName='EventAvailable' /></ListItemIcon>
-          <ListItemText primary='Task Planning' />
+          <ListItemText primary='Sign in' />
         </ListItemLink>
       </List>
       <Divider />
@@ -57,6 +28,5 @@ function LeftDrawer () {
     </div>
   )
 }
-
 
 export default LeftDrawer
