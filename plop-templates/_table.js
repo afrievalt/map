@@ -26,10 +26,14 @@ module.exports = {
   ],
   actions: prompts => {
     const { fields } = prompts
+    const transformToIdType = raw => {
+      const [id, type = 'string'] = raw.split(':')
+      return { id, type, [type]: true }
+    }
     const field = fields
       .replace(/ /g, '')
       .split(',')
-      .map(id => ({ id })) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
+      .map(transformToIdType) // 'firstName, lastName' => { id: 'firstName' },{ id: 'lastName' }
     const data = { field }
     const newHistory = {
       ...prompts,
