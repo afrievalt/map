@@ -99,3 +99,6 @@ header.header {
 .MuiListItemIcon-root {
   color: #F6D55C !important;
 }
+map-container {
+  height: 400px;
+}
