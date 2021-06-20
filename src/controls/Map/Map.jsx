@@ -1,44 +1,43 @@
+import React, { useRef, useEffect, useState } from 'react'
 import mapboxgl from '!mapbox-gl' // eslint-disable-line import/no-webpack-loader-syntax
-import { useEffect, useRef, useState } from 'react'
-import { mapboxglAccessToken } from '../../secretes'
-import useEffectOnce from '../../hooks/useEffectOnce'
-// normally we would not put this here
-mapboxgl.accessToken = mapboxglAccessToken
 
-const Map = () => {
-  const mapRef = useRef(null)
-  const [lng, setLng] = useState(-70.9)
-  const [lat, setLat] = useState(42.35)
-  const [zoom, setZoom] = useState(9)
-  useEffectOnce(() => {
-    mapRef.current = new mapboxgl.Map({
-      container: mapRef.current,
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWZyaWV2YWx0IiwiYSI6ImNrcHlmZG1ubDBkMTEydnBjbzhqcXB5Zm4ifQ.HPb-xVgehU4bkBPTuy2o7A'
+const temp = [
+  -122.076575, 37.415328
+]
+
+export default function App () {
+  const mapContainer = useRef(null)
+  const map = useRef(null)
+  // const [lng, setLng] = useState(-70.9)
+  // const [lat, setLat] = useState(42.35)
+  // const [zoom, setZoom] = useState(9)
+
+  useEffect(() => {
+    if (map.current) return // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [lng, lat],
-      zoom: zoom
+      center: temp,
+      zoom: 9
     })
   })
 
   useEffect(() => {
-    if (mapRef.current) { // wait for map to initialize
-      console.log(mapRef.current)
-      mapRef.current.on('move', () => {
-        const { lng, lat } = mapRef.current.getCenter() || {}
-        setLng(lng.toFixed(4))
-        setLat(lat.toFixed(4))
-        setZoom(mapRef.current.getZoom().toFixed(2))
-        // todo: debounce
-      })
-    }
-    //return () => { mapRef.current = null } // todo: figure out how to clean up (off?)
+    if (!map.current && !mapContainer.current) return // wait for map to initialize
+    const marker1 = new mapboxgl.Marker()
+      .setLngLat(temp)
+      .addTo(map.current)
+    // map.current.on('move', () => {
+    //   setLng(map.current.getCenter().lng.toFixed(4))
+    //   setLat(map.current.getCenter().lat.toFixed(4))
+    //   setZoom(map.current.getZoom().toFixed(2))
+    // })
   })
 
   return (
     <div>
-      {JSON.stringify({ lng, lat })}
-      <div ref={mapRef} className='map-container' />
+      <div ref={mapContainer} id='foo' className='map-container' />
     </div>
   )
 }
-
-export default Map
