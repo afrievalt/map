@@ -5,17 +5,9 @@ import Route from '../controls/Route'
 import Home from '../pages/Home'
 
 const MainContent = ({ type, children }) => (
-  <>
-    <Route type='HOME'>
-      <Home />
-    </Route>
-    <Route type='SIGNUP'>
-      <SignUpForm />
-    </Route>
-    <Route type='SIGNIN'>
-      <SignInForm />
-    </Route>
-  </>
+
+  <Home />
+
 )
 
 export default React.memo(MainContent)

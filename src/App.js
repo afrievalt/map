@@ -1,26 +1,12 @@
 import './App.css'
 import React from 'react'
-
-import FirebaseListener from './routes/FirebaseListener'
-
 import AppProvider from './AppProvider'
-// import TwoColumnLayout from './controls/TwoColumnLayout'
-import LeftDrawer from './routes/LeftDrawer'
-import MainContent from './routes/MainContent'
-import Title from './routes/Title'
-import ThreeColumnLayout from './controls/ThreeColumnLayout/ThreeColumnLayout'
-import RightColumn from './routes/RightColumn'
+import Home from './pages/Home'
 
 function App () {
   return (
     <AppProvider>
-      <FirebaseListener />
-      <ThreeColumnLayout>
-        <Title />
-        <LeftDrawer />
-        <MainContent />
-        <RightColumn />
-      </ThreeColumnLayout>
+      <Home />
     </AppProvider>
 
   )

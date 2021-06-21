@@ -12,6 +12,7 @@ const Home = () => {
     dispatch(fetchChargeLocations())
   }, [])
   const mapLocations = useSelector(selectChargeLocationsForMap)
+  console.log({ mapLocations })
   return (
     <Container>
       <ContentArea />

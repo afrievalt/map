@@ -9,6 +9,7 @@ const temp = [
 export default function Map ({ children }) {
   const mapContainer = useRef(null)
   const map = useRef(null)
+  const layers = useRef([])
   // const [lng, setLng] = useState(-70.9)
   // const [lat, setLat] = useState(42.35)
   // const [zoom, setZoom] = useState(9)
@@ -25,14 +26,20 @@ export default function Map ({ children }) {
 
   useEffect(() => {
     if (!map.current && !mapContainer.current) return // wait for map to initialize
+    console.log('in use effect', Children.toArray(children).length)
+    layers.current.forEach(l => l.remove())
+    layers.current = []
     Children.toArray(children)
       .filter(c => c?.type?.name === 'Marker')
       .forEach((marker) => {
         const { coordinates } = marker.props || {}
-        console.log({ coordinates })
-        coordinates && new mapboxgl.Marker()
+        if (!coordinates) {
+          return
+        }
+        layers.current.push(new mapboxgl.Marker()
           .setLngLat(coordinates)
           .addTo(map.current)
+        )
       })
     // new mapboxgl.Marker()
     //   .setLngLat(temp)

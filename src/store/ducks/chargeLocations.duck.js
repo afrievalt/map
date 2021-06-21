@@ -37,7 +37,7 @@ const chargeLocations = createSlice({
 const { fetchChargeLocationsRequest } = chargeLocations.actions
 export const { fetchChargeLocationsSuccess, fetchChargeLocationsFailure } = chargeLocations.actions
 
-const url = 'https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=10&compact=true&verbose=false&key=c37feaa6-2d65-4697-bfbe-bbf4fa858c31'
+const url = 'https://api.openchargemap.io/v3/poi/?output=json&compact=true&cammelCase=true&countrycode=US&maxresults=10&compact=true&verbose=false&key=c37feaa6-2d65-4697-bfbe-bbf4fa858c31'
 export const fetchChargeLocations = (payload) => (dispatch) => {
   dispatch(fetchChargeLocationsRequest(payload))
   return axios.get(url)
