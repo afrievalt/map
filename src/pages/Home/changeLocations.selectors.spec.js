@@ -29,7 +29,7 @@ describe('selectUniqueChargeLocations - ', () => {
   it('when 2 unique ids - two  ', () => {
     // arrange
     const location = rawState.chargeLocations.foundChargeLocations[0]
-    const otherLocation = { ...location, ID: 'other id' }
+    const otherLocation = { ...location, id: 'other id' }
     const state = {
       chargeLocations: {
         ...chargeLocations,
@@ -52,6 +52,6 @@ describe('selectChargeLocationsForMap - ', () => {
     // act
     const result = selectChargeLocationsForMap(rawState)
     // assert
-    expect(result[0]).toEqual({ coordinates: [-122.076575, 37.415328], id: 175784 })
+    expect(result[0]).toEqual({ coordinates: [-83.76679587242995, 32.882231435930905], id: 175911 })
   })
 })

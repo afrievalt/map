@@ -20,7 +20,7 @@ export default function Map ({ children }) {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: temp,
-      zoom: 9
+      zoom: 5
     })
   })
 
@@ -41,10 +41,7 @@ export default function Map ({ children }) {
           .addTo(map.current)
         )
       })
-    // new mapboxgl.Marker()
-    //   .setLngLat(temp)
-    //   .addTo(map.current)
-    // // map.current.on('move', () => {
+    // map.current.on('move', () => {
     //   setLng(map.current.getCenter().lng.toFixed(4))
     //   setLat(map.current.getCenter().lat.toFixed(4))
     //   setZoom(map.current.getZoom().toFixed(2))

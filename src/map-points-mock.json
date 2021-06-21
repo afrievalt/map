@@ -1,490 +1,1263 @@
 [
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-06-14T15:36:00Z",
-    "ID": 175784,
-    "UUID": "C2F0323D-DF88-4ED9-BE25-32E758879C65",
-    "DataProviderID": 1,
-    "OperatorID": 1,
-    "UsageTypeID": 6,
-    "AddressInfo": {
-      "ID": 176143,
-      "Title": "DARCARS Lanham Kia",
-      "AddressLine1": "9020 Lanham Severn Road",
-      "Town": "Lanham",
-      "StateOrProvince": "Maryland",
-      "Postcode": " 20706",
-      "CountryID": 2,
-      "Latitude": 37.415328,
-      "Longitude": -122.076575,
-      "ContactTelephone1": "(301) 459-1100",
-      "RelatedURL": "https://www.darcarslanhamkia.com/",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
+    "operatorInfo": {
+      "websiteURL": "http://www.chargepoint.net/",
+      "phonePrimaryContact": "1-888-758-4389",
+      "isPrivateIndividual": false,
+      "contactEmail": "support@coulombtech.com",
+      "faultReportEmail": "support@coulombtech.com",
+      "id": 5,
+      "title": "ChargePoint (Coulomb Technologies)"
+    },
+    "usageType": {
+      "isPayAtLocation": false,
+      "isMembershipRequired": true,
+      "isAccessKeyRequired": true,
+      "id": 4,
+      "title": "Public - Membership Required"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 75,
+      "title": "Partly Operational (Mixed)"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-18T19:42:00Z",
+    "id": 175911,
+    "uuid": "86E3E651-E946-4B0A-94F9-2DCA29270090",
+    "dataProviderID": 1,
+    "operatorID": 5,
+    "usageTypeID": 4,
+    "usageCost": "$0.25/minute (DC); $1/hour (AC)",
+    "addressInfo": {
+      "id": 176270,
+      "title": "Georgia Power Macon - Zebulon Road",
+      "addressLine1": "6225 Zebulon Road",
+      "town": "Macon",
+      "stateOrProvince": "GA",
+      "postcode": "31210",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
+      },
+      "latitude": 32.882231435930905,
+      "longitude": -83.76679587242995,
+      "accessComments": "In shopping center behind Applebee's, Fazoli's, and Freddy's; although the address is on Zebulon Road, access is via Peake Road from I-475.",
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272988,
-        "ConnectionTypeID": 1,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "CurrentTypeID": 10,
-        "Quantity": 2
+        "id": 273189,
+        "connectionTypeID": 32,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration EE",
+          "isDiscontinued": false,
+          "isObsolete": false,
+          "id": 32,
+          "title": "CCS (Type 1)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 3,
+        "level": {
+          "comments": "40KW and Higher",
+          "isFastChargeCapable": true,
+          "id": 3,
+          "title": "Level 3:  High (Over 40kW)"
+        },
+        "powerKW": 62.5,
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 2
+      },
+      {
+        "id": 273190,
+        "connectionTypeID": 2,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration AA",
+          "id": 2,
+          "title": "CHAdeMO"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 3,
+        "level": {
+          "comments": "40KW and Higher",
+          "isFastChargeCapable": true,
+          "id": 3,
+          "title": "Level 3:  High (Over 40kW)"
+        },
+        "powerKW": 62.5,
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 2
+      },
+      {
+        "id": 273191,
+        "connectionTypeID": 1,
+        "connectionType": {
+          "formalName": "SAE J1772-2009",
+          "id": 1,
+          "title": "Type 1 (J1772)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 2,
+        "level": {
+          "comments": "Over 2 kW, usually non-domestic socket type",
+          "isFastChargeCapable": false,
+          "id": 2,
+          "title": "Level 2 : Medium (Over 2kW)"
+        },
+        "voltage": 208,
+        "powerKW": 7.0,
+        "currentTypeID": 20,
+        "currentType": {
+          "description": "Alternating Current - Three Phase",
+          "id": 20,
+          "title": "AC (Three-Phase)"
+        },
+        "quantity": 2,
+        "comments": "J1772 may be out of service; no longer appears on ChargePoint's map"
       }
     ],
-    "NumberOfPoints": 2,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-14T18:25:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-06-14T15:36:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 4,
+    "statusTypeID": 75,
+    "dateLastStatusUpdate": "2021-06-21T03:23:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-18T19:42:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-06-14T15:36:00Z",
-    "ID": 175784,
-    "UUID": "C2F0323D-DF88-4ED9-BE25-32E758879C65",
-    "DataProviderID": 1,
-    "OperatorID": 1,
-    "UsageTypeID": 6,
-    "AddressInfo": {
-      "ID": 176143,
-      "Title": "DARCARS Lanham Kia",
-      "AddressLine1": "9020 Lanham Severn Road",
-      "Town": "Lanham",
-      "StateOrProvince": "Maryland",
-      "Postcode": " 20706",
-      "CountryID": 2,
-      "Latitude": 37.415328,
-      "Longitude": -122.076575,
-      "ContactTelephone1": "(301) 459-1100",
-      "RelatedURL": "https://www.darcarslanhamkia.com/",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
+    "operatorInfo": {
+      "websiteURL": "http://www.chargepoint.net/",
+      "phonePrimaryContact": "1-888-758-4389",
+      "isPrivateIndividual": false,
+      "contactEmail": "support@coulombtech.com",
+      "faultReportEmail": "support@coulombtech.com",
+      "id": 5,
+      "title": "ChargePoint (Coulomb Technologies)"
+    },
+    "usageType": {
+      "isPayAtLocation": false,
+      "isMembershipRequired": true,
+      "isAccessKeyRequired": true,
+      "id": 4,
+      "title": "Public - Membership Required"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 75,
+      "title": "Partly Operational (Mixed)"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-18T19:42:00Z",
+    "id": 175911,
+    "uuid": "86E3E651-E946-4B0A-94F9-2DCA29270090",
+    "dataProviderID": 1,
+    "operatorID": 5,
+    "usageTypeID": 4,
+    "usageCost": "$0.25/minute (DC); $1/hour (AC)",
+    "addressInfo": {
+      "id": 176270,
+      "title": "Georgia Power Macon - Zebulon Road",
+      "addressLine1": "6225 Zebulon Road",
+      "town": "Macon",
+      "stateOrProvince": "GA",
+      "postcode": "31210",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
+      },
+      "latitude": 32.882231435930905,
+      "longitude": -83.76679587242995,
+      "accessComments": "In shopping center behind Applebee's, Fazoli's, and Freddy's; although the address is on Zebulon Road, access is via Peake Road from I-475.",
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272988,
-        "ConnectionTypeID": 1,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "CurrentTypeID": 10,
-        "Quantity": 2
+        "id": 273189,
+        "connectionTypeID": 32,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration EE",
+          "isDiscontinued": false,
+          "isObsolete": false,
+          "id": 32,
+          "title": "CCS (Type 1)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 3,
+        "level": {
+          "comments": "40KW and Higher",
+          "isFastChargeCapable": true,
+          "id": 3,
+          "title": "Level 3:  High (Over 40kW)"
+        },
+        "powerKW": 62.5,
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 2
+      },
+      {
+        "id": 273190,
+        "connectionTypeID": 2,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration AA",
+          "id": 2,
+          "title": "CHAdeMO"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 3,
+        "level": {
+          "comments": "40KW and Higher",
+          "isFastChargeCapable": true,
+          "id": 3,
+          "title": "Level 3:  High (Over 40kW)"
+        },
+        "powerKW": 62.5,
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 2
+      },
+      {
+        "id": 273191,
+        "connectionTypeID": 1,
+        "connectionType": {
+          "formalName": "SAE J1772-2009",
+          "id": 1,
+          "title": "Type 1 (J1772)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 2,
+        "level": {
+          "comments": "Over 2 kW, usually non-domestic socket type",
+          "isFastChargeCapable": false,
+          "id": 2,
+          "title": "Level 2 : Medium (Over 2kW)"
+        },
+        "voltage": 208,
+        "powerKW": 7.0,
+        "currentTypeID": 20,
+        "currentType": {
+          "description": "Alternating Current - Three Phase",
+          "id": 20,
+          "title": "AC (Three-Phase)"
+        },
+        "quantity": 2,
+        "comments": "J1772 may be out of service; no longer appears on ChargePoint's map"
       }
     ],
-    "NumberOfPoints": 2,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-14T18:25:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-06-14T15:36:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 4,
+    "statusTypeID": 75,
+    "dateLastStatusUpdate": "2021-06-21T03:23:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-18T19:42:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-06-03T15:35:00Z",
-    "ID": 175649,
-    "UUID": "2ABE9BB2-221C-4A2A-9C7A-730EBEF26284",
-    "DataProviderID": 1,
-    "OperatorID": 1,
-    "UsageTypeID": 1,
-    "AddressInfo": {
-      "ID": 176008,
-      "Title": " Trails Travel Center DCFC ",
-      "AddressLine1": "795–821 Happy Trails Ln",
-      "Town": "Albert Lea",
-      "StateOrProvince": "Minnesota",
-      "Postcode": "56007",
-      "CountryID": 2,
-      "Latitude": 43.65727193544157,
-      "Longitude": -93.31863291605862,
-      "AccessComments": "At the northwest edge of the parking lot, just beyond the Tesla Superchargers",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
-      {
-        "ID": 272720,
-        "ConnectionTypeID": 32,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 150.0,
-        "Quantity": 1
+    "operatorInfo": {
+      "websiteURL": "https://eneldrive.enelx.com/",
+      "isPrivateIndividual": false,
+      "isRestrictedEdit": false,
+      "id": 80,
+      "title": "Enel X"
+    },
+    "usageType": {
+      "isPayAtLocation": true,
+      "isMembershipRequired": false,
+      "isAccessKeyRequired": false,
+      "id": 5,
+      "title": "Public - Pay At Location"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-18T14:42:00Z",
+    "id": 175903,
+    "uuid": "7C9BB865-2698-428B-9631-0245595D01F8",
+    "dataProviderID": 1,
+    "operatorID": 80,
+    "usageTypeID": 5,
+    "usageCost": "$1 Per session $0.5 Per hour $0.08 Per kWh",
+    "addressInfo": {
+      "id": 176262,
+      "title": "Harrison REMC",
+      "addressLine1": "1165 Old Forest Rd ",
+      "town": "Corydon",
+      "stateOrProvince": "Indiana",
+      "postcode": "47112",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
       },
+      "latitude": 38.21834894788404,
+      "longitude": -86.14947738780415,
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272721,
-        "ConnectionTypeID": 2,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 50.0,
-        "Quantity": 1
-      },
-      {
-        "ID": 272722,
-        "ConnectionTypeID": 1,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 11.5,
-        "Quantity": 2
+        "id": 273181,
+        "connectionTypeID": 11,
+        "connectionType": {
+          "isDiscontinued": false,
+          "isObsolete": false,
+          "id": 11,
+          "title": "NEMA 14-50"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 2,
+        "level": {
+          "comments": "Over 2 kW, usually non-domestic socket type",
+          "isFastChargeCapable": false,
+          "id": 2,
+          "title": "Level 2 : Medium (Over 2kW)"
+        },
+        "amps": 40,
+        "powerKW": 9.6,
+        "quantity": 2
       }
     ],
-    "NumberOfPoints": 1,
-    "GeneralComments": "Station provided by ZEF Energy",
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-03T20:51:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-06-03T15:35:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 2,
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-21T03:25:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-18T14:42:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-06-02T04:33:00Z",
-    "ID": 175621,
-    "UUID": "136D7BB6-4EDC-42E3-963A-6F37D9609DA1",
-    "DataProviderID": 1,
-    "OperatorID": 1,
-    "UsageTypeID": 5,
-    "AddressInfo": {
-      "ID": 175980,
-      "Title": "Whitewater Travel Plaza",
-      "AddressLine1": "2850 Whitewater Ave, ",
-      "Town": "St. Charles",
-      "StateOrProvince": "Winona County, MN",
-      "Postcode": "55972",
-      "CountryID": 2,
-      "Latitude": 43.94861418848777,
-      "Longitude": -92.06541288317487,
-      "AccessComments": "Swipe credit card to start the session, then to stop the session swipe the card again - VERY IMPORTANT! You will not be able to press stop without swiping the card again.",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
-      {
-        "ID": 272670,
-        "ConnectionTypeID": 32,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 50.0,
-        "Quantity": 1
+    "operatorInfo": {
+      "websiteURL": "https://eneldrive.enelx.com/",
+      "isPrivateIndividual": false,
+      "isRestrictedEdit": false,
+      "id": 80,
+      "title": "Enel X"
+    },
+    "usageType": {
+      "isPayAtLocation": true,
+      "isMembershipRequired": false,
+      "isAccessKeyRequired": false,
+      "id": 5,
+      "title": "Public - Pay At Location"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-18T14:42:00Z",
+    "id": 175903,
+    "uuid": "7C9BB865-2698-428B-9631-0245595D01F8",
+    "dataProviderID": 1,
+    "operatorID": 80,
+    "usageTypeID": 5,
+    "usageCost": "$1 Per session $0.5 Per hour $0.08 Per kWh",
+    "addressInfo": {
+      "id": 176262,
+      "title": "Harrison REMC",
+      "addressLine1": "1165 Old Forest Rd ",
+      "town": "Corydon",
+      "stateOrProvince": "Indiana",
+      "postcode": "47112",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
       },
+      "latitude": 38.21834894788404,
+      "longitude": -86.14947738780415,
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272671,
-        "ConnectionTypeID": 2,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 50.0,
-        "Quantity": 1
-      },
-      {
-        "ID": 272672,
-        "ConnectionTypeID": 1,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 11.5,
-        "Quantity": 1
+        "id": 273181,
+        "connectionTypeID": 11,
+        "connectionType": {
+          "isDiscontinued": false,
+          "isObsolete": false,
+          "id": 11,
+          "title": "NEMA 14-50"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 2,
+        "level": {
+          "comments": "Over 2 kW, usually non-domestic socket type",
+          "isFastChargeCapable": false,
+          "id": 2,
+          "title": "Level 2 : Medium (Over 2kW)"
+        },
+        "amps": 40,
+        "powerKW": 9.6,
+        "quantity": 2
       }
     ],
-    "NumberOfPoints": 1,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-02T07:40:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-06-02T04:33:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 2,
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-21T03:25:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-18T14:42:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-06-02T04:33:00Z",
-    "ID": 175621,
-    "UUID": "136D7BB6-4EDC-42E3-963A-6F37D9609DA1",
-    "DataProviderID": 1,
-    "OperatorID": 1,
-    "UsageTypeID": 5,
-    "AddressInfo": {
-      "ID": 175980,
-      "Title": "Whitewater Travel Plaza",
-      "AddressLine1": "2850 Whitewater Ave, ",
-      "Town": "St. Charles",
-      "StateOrProvince": "Winona County, MN",
-      "Postcode": "55972",
-      "CountryID": 2,
-      "Latitude": 43.94861418848777,
-      "Longitude": -92.06541288317487,
-      "AccessComments": "Swipe credit card to start the session, then to stop the session swipe the card again - VERY IMPORTANT! You will not be able to press stop without swiping the card again.",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
-      {
-        "ID": 272670,
-        "ConnectionTypeID": 32,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 50.0,
-        "Quantity": 1
+    "operatorInfo": {
+      "id": 1,
+      "title": "(Unknown Operator)"
+    },
+    "usageType": {
+      "id": 1,
+      "title": "Public"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-18T13:19:00Z",
+    "id": 175900,
+    "uuid": "1C6AE0E6-8D96-4251-9B83-645419931DC9",
+    "dataProviderID": 1,
+    "operatorID": 1,
+    "usageTypeID": 1,
+    "usageCost": "Free",
+    "addressInfo": {
+      "id": 176259,
+      "title": "Ever’man",
+      "addressLine1": "315 W Garden St",
+      "town": "Pensacola",
+      "stateOrProvince": "FL",
+      "postcode": "32505",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
       },
+      "latitude": 30.411994968885182,
+      "longitude": -87.22069482151534,
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272671,
-        "ConnectionTypeID": 2,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 50.0,
-        "Quantity": 1
-      },
-      {
-        "ID": 272672,
-        "ConnectionTypeID": 1,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 11.5,
-        "Quantity": 1
+        "id": 273174,
+        "connectionTypeID": 1,
+        "connectionType": {
+          "formalName": "SAE J1772-2009",
+          "id": 1,
+          "title": "Type 1 (J1772)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "currentTypeID": 20,
+        "currentType": {
+          "description": "Alternating Current - Three Phase",
+          "id": 20,
+          "title": "AC (Three-Phase)"
+        },
+        "quantity": 2
       }
     ],
-    "NumberOfPoints": 1,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-02T07:40:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-06-02T04:33:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 2,
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-21T03:26:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-18T13:19:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-06-02T04:33:00Z",
-    "ID": 175621,
-    "UUID": "136D7BB6-4EDC-42E3-963A-6F37D9609DA1",
-    "DataProviderID": 1,
-    "OperatorID": 1,
-    "UsageTypeID": 5,
-    "AddressInfo": {
-      "ID": 175980,
-      "Title": "Whitewater Travel Plaza",
-      "AddressLine1": "2850 Whitewater Ave, ",
-      "Town": "St. Charles",
-      "StateOrProvince": "Winona County, MN",
-      "Postcode": "55972",
-      "CountryID": 2,
-      "Latitude": 43.94909309687222,
-      "Longitude": -92.06571329058067,
-      "AccessComments": "Swipe credit card to start the session, then to stop the session swipe the card again - VERY IMPORTANT! You will not be able to press stop without swiping the card again.",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
-      {
-        "ID": 272670,
-        "ConnectionTypeID": 32,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 50.0,
-        "Quantity": 1
+    "operatorInfo": {
+      "id": 1,
+      "title": "(Unknown Operator)"
+    },
+    "usageType": {
+      "id": 1,
+      "title": "Public"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-18T13:19:00Z",
+    "id": 175900,
+    "uuid": "1C6AE0E6-8D96-4251-9B83-645419931DC9",
+    "dataProviderID": 1,
+    "operatorID": 1,
+    "usageTypeID": 1,
+    "usageCost": "Free",
+    "addressInfo": {
+      "id": 176259,
+      "title": "Ever’man",
+      "addressLine1": "315 W Garden St",
+      "town": "Pensacola",
+      "stateOrProvince": "FL",
+      "postcode": "32505",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
       },
+      "latitude": 30.411994968885182,
+      "longitude": -87.22069482151534,
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272671,
-        "ConnectionTypeID": 2,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 50.0,
-        "Quantity": 1
-      },
-      {
-        "ID": 272672,
-        "ConnectionTypeID": 1,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "PowerKW": 11.5,
-        "Quantity": 1
+        "id": 273174,
+        "connectionTypeID": 1,
+        "connectionType": {
+          "formalName": "SAE J1772-2009",
+          "id": 1,
+          "title": "Type 1 (J1772)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "currentTypeID": 20,
+        "currentType": {
+          "description": "Alternating Current - Three Phase",
+          "id": 20,
+          "title": "AC (Three-Phase)"
+        },
+        "quantity": 2
       }
     ],
-    "NumberOfPoints": 1,
-    "GeneralComments": "Station provided by ZEF Energy",
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-03T20:53:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-06-02T04:33:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 2,
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-21T03:26:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-18T13:19:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-05-31T18:19:00Z",
-    "ID": 175611,
-    "UUID": "0E00E95D-591A-415A-ABF0-D049C1E8E8C5",
-    "DataProviderID": 1,
-    "OperatorID": 5,
-    "UsageTypeID": 1,
-    "UsageCost": "$0.25/kWh + $0.20/min",
-    "AddressInfo": {
-      "ID": 175970,
-      "Title": "Estes Park Visitor Center",
-      "AddressLine1": "500 Big Thompson Avenue",
-      "Town": "Estes Park",
-      "StateOrProvince": "CO",
-      "Postcode": "80517",
-      "CountryID": 2,
-      "Latitude": 40.37911303048162,
-      "Longitude": -105.51361733924648,
-      "AccessComments": "In the Estes Park Visitors Center Parking Lot",
-      "RelatedURL": "https://estespark.colorado.gov/electricvehicles",
-      "DistanceUnit": 0
-    },
-    "Connections": [
-      {
-        "ID": 272655,
-        "ConnectionTypeID": 32,
-        "StatusTypeID": 50,
-        "LevelID": 3,
-        "PowerKW": 125.0,
-        "CurrentTypeID": 30,
-        "Quantity": 4
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
       },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
+    },
+    "operatorInfo": {
+      "id": 1,
+      "title": "(Unknown Operator)"
+    },
+    "usageType": {
+      "isPayAtLocation": false,
+      "isMembershipRequired": false,
+      "isAccessKeyRequired": false,
+      "id": 6,
+      "title": "Private - For Staff, Visitors or Customers"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-16T20:34:00Z",
+    "id": 175866,
+    "uuid": "CA847085-A5EB-4F2F-863D-DB918F01AB8B",
+    "dataProviderID": 1,
+    "operatorID": 1,
+    "usageTypeID": 6,
+    "usageCost": "Free",
+    "addressInfo": {
+      "id": 176225,
+      "title": "Sonic Drive-In",
+      "addressLine1": "407 Military Highway South",
+      "town": "Hamilton",
+      "stateOrProvince": "Alabama",
+      "postcode": "35570",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
+      },
+      "latitude": 34.1379917,
+      "longitude": -87.9891452,
+      "contactTelephone1": "+1 (205) 952-9727",
+      "accessComments": "One Clipper Creek charging connector at stall #16.",
+      "relatedURL": "https://locations.sonicdrivein.com/al/hamilton/407-military-street-south.html",
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272656,
-        "ConnectionTypeID": 2,
-        "StatusTypeID": 50,
-        "LevelID": 3,
-        "PowerKW": 50.0,
-        "CurrentTypeID": 30,
-        "Quantity": 4
+        "id": 273104,
+        "connectionTypeID": 1,
+        "connectionType": {
+          "formalName": "SAE J1772-2009",
+          "id": 1,
+          "title": "Type 1 (J1772)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 2,
+        "level": {
+          "comments": "Over 2 kW, usually non-domestic socket type",
+          "isFastChargeCapable": false,
+          "id": 2,
+          "title": "Level 2 : Medium (Over 2kW)"
+        },
+        "amps": 40,
+        "voltage": 240,
+        "powerKW": 9.6,
+        "currentTypeID": 10,
+        "currentType": {
+          "description": "Alternating Current - Single Phase",
+          "id": 10,
+          "title": "AC (Single-Phase)"
+        },
+        "quantity": 1
       }
     ],
-    "NumberOfPoints": 4,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-01T18:16:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-05-31T18:19:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 1,
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-19T20:38:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-16T20:34:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-05-31T18:19:00Z",
-    "ID": 175611,
-    "UUID": "0E00E95D-591A-415A-ABF0-D049C1E8E8C5",
-    "DataProviderID": 1,
-    "OperatorID": 5,
-    "UsageTypeID": 1,
-    "UsageCost": "$0.25/kWh + $0.20/min",
-    "AddressInfo": {
-      "ID": 175970,
-      "Title": "Estes Park Visitor Center",
-      "AddressLine1": "500 Big Thompson Avenue",
-      "Town": "Estes Park",
-      "StateOrProvince": "CO",
-      "Postcode": "80517",
-      "CountryID": 2,
-      "Latitude": 40.37911303048162,
-      "Longitude": -105.51361733924648,
-      "AccessComments": "In the Estes Park Visitors Center Parking Lot",
-      "RelatedURL": "https://estespark.colorado.gov/electricvehicles",
-      "DistanceUnit": 0
-    },
-    "Connections": [
-      {
-        "ID": 272655,
-        "ConnectionTypeID": 32,
-        "StatusTypeID": 50,
-        "LevelID": 3,
-        "PowerKW": 125.0,
-        "CurrentTypeID": 30,
-        "Quantity": 4
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
       },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
+    },
+    "operatorInfo": {
+      "id": 1,
+      "title": "(Unknown Operator)"
+    },
+    "usageType": {
+      "isPayAtLocation": false,
+      "isMembershipRequired": false,
+      "isAccessKeyRequired": false,
+      "id": 6,
+      "title": "Private - For Staff, Visitors or Customers"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-16T20:31:00Z",
+    "id": 175865,
+    "uuid": "5DFB14DC-30D2-421F-8C83-FC77F01C04C0",
+    "dataProviderID": 1,
+    "operatorID": 1,
+    "usageTypeID": 6,
+    "usageCost": "Free",
+    "addressInfo": {
+      "id": 176224,
+      "title": "Sonic Drive-In",
+      "addressLine1": "407 Military Highway South",
+      "town": "Hamilton",
+      "stateOrProvince": "Alabama",
+      "postcode": "35570",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
+      },
+      "latitude": 34.1379917,
+      "longitude": -87.9891452,
+      "contactTelephone1": "+1 (205) 952-9727",
+      "accessComments": "One Clipper Creek charging connector at stall #16.",
+      "relatedURL": "https://locations.sonicdrivein.com/al/hamilton/407-military-street-south.html",
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272656,
-        "ConnectionTypeID": 2,
-        "StatusTypeID": 50,
-        "LevelID": 3,
-        "PowerKW": 50.0,
-        "CurrentTypeID": 30,
-        "Quantity": 4
+        "id": 273103,
+        "connectionTypeID": 1,
+        "connectionType": {
+          "formalName": "SAE J1772-2009",
+          "id": 1,
+          "title": "Type 1 (J1772)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 2,
+        "level": {
+          "comments": "Over 2 kW, usually non-domestic socket type",
+          "isFastChargeCapable": false,
+          "id": 2,
+          "title": "Level 2 : Medium (Over 2kW)"
+        },
+        "amps": 40,
+        "voltage": 240,
+        "powerKW": 9.6,
+        "currentTypeID": 10,
+        "currentType": {
+          "description": "Alternating Current - Single Phase",
+          "id": 10,
+          "title": "AC (Single-Phase)"
+        },
+        "quantity": 1
       }
     ],
-    "NumberOfPoints": 4,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-01T18:16:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-05-31T18:19:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 1,
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-19T20:38:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-16T20:31:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-05-31T18:19:00Z",
-    "ID": 175611,
-    "UUID": "0E00E95D-591A-415A-ABF0-D049C1E8E8C5",
-    "DataProviderID": 1,
-    "OperatorID": 5,
-    "UsageTypeID": 1,
-    "UsageCost": "$0.25/kWh + $0.20/min",
-    "AddressInfo": {
-      "ID": 175970,
-      "Title": "Estes Park Visitor Center",
-      "AddressLine1": "500 Big Thompson Avenue",
-      "Town": "Estes Park",
-      "StateOrProvince": "CO",
-      "Postcode": "80517",
-      "CountryID": 2,
-      "Latitude": 40.37911303048162,
-      "Longitude": -105.51361733924648,
-      "AccessComments": "In the Estes Park Visitors Center Parking Lot",
-      "RelatedURL": "https://estespark.colorado.gov/electricvehicles",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
+    "operatorInfo": {
+      "websiteURL": "https://www.electrifyamerica.com/",
+      "isPrivateIndividual": false,
+      "isRestrictedEdit": false,
+      "id": 3318,
+      "title": "Electrify America"
+    },
+    "usageType": {
+      "isPayAtLocation": false,
+      "isMembershipRequired": true,
+      "isAccessKeyRequired": true,
+      "id": 4,
+      "title": "Public - Membership Required"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-15T18:07:00Z",
+    "id": 175808,
+    "uuid": "D827A35D-A61C-46AA-AD4F-A445498370B9",
+    "dataProviderID": 1,
+    "operatorID": 3318,
+    "usageTypeID": 4,
+    "usageCost": "$0.46/kWh with Free Pass, $0.31/kWh with Pass+",
+    "addressInfo": {
+      "id": 176167,
+      "title": "Foods Co",
+      "addressLine1": "2443-H Dela Rosa SR St.",
+      "town": "Soledad",
+      "stateOrProvince": "CA",
+      "postcode": "93960",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
+      },
+      "latitude": 36.41509670245367,
+      "longitude": -121.32004119517262,
+      "contactTelephone1": "(833) 632-2778",
+      "relatedURL": "https://www.electrifyamerica.com",
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272655,
-        "ConnectionTypeID": 32,
-        "StatusTypeID": 50,
-        "LevelID": 3,
-        "PowerKW": 125.0,
-        "CurrentTypeID": 30,
-        "Quantity": 4
+        "id": 273021,
+        "connectionTypeID": 32,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration EE",
+          "isDiscontinued": false,
+          "isObsolete": false,
+          "id": 32,
+          "title": "CCS (Type 1)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 4
       },
       {
-        "ID": 272656,
-        "ConnectionTypeID": 2,
-        "StatusTypeID": 50,
-        "LevelID": 3,
-        "PowerKW": 50.0,
-        "CurrentTypeID": 30,
-        "Quantity": 4
+        "id": 273022,
+        "connectionTypeID": 2,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration AA",
+          "id": 2,
+          "title": "CHAdeMO"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 3,
+        "level": {
+          "comments": "40KW and Higher",
+          "isFastChargeCapable": true,
+          "id": 3,
+          "title": "Level 3:  High (Over 40kW)"
+        },
+        "powerKW": 50.0,
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 1
       }
     ],
-    "NumberOfPoints": 4,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-01T18:16:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-05-31T18:19:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 4,
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-18T18:08:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-15T18:07:00Z",
+    "submissionStatusTypeID": 200
   },
   {
-    "IsRecentlyVerified": true,
-    "DateLastVerified": "2021-05-31T00:18:00Z",
-    "ID": 175602,
-    "UUID": "61C368C3-C765-4A09-B77A-85EA25BFFB30",
-    "DataProviderID": 1,
-    "OperatorID": 1,
-    "UsageTypeID": 4,
-    "AddressInfo": {
-      "ID": 175961,
-      "Title": "Small Towne RV Park",
-      "AddressLine1": "803 s Towne Ave",
-      "Town": "Terry",
-      "StateOrProvince": "MT",
-      "Postcode": "59349",
-      "CountryID": 2,
-      "Latitude": 46.786369,
-      "Longitude": -105.310038,
-      "ContactTelephone1": "4066354501",
-      "RelatedURL": "https://www.smalltownerv.com",
-      "DistanceUnit": 0
+    "dataProvider": {
+      "websiteURL": "http://openchargemap.org",
+      "dataProviderStatusType": {
+        "isProviderEnabled": true,
+        "id": 1,
+        "title": "Manual Data Entry"
+      },
+      "isRestrictedEdit": false,
+      "isOpenDataLicensed": true,
+      "isApprovedImport": true,
+      "license": "Licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "id": 1,
+      "title": "Open Charge Map Contributors"
     },
-    "Connections": [
+    "operatorInfo": {
+      "websiteURL": "http://www.chargepoint.net/",
+      "phonePrimaryContact": "1-888-758-4389",
+      "isPrivateIndividual": false,
+      "contactEmail": "support@coulombtech.com",
+      "faultReportEmail": "support@coulombtech.com",
+      "id": 5,
+      "title": "ChargePoint (Coulomb Technologies)"
+    },
+    "usageType": {
+      "isPayAtLocation": false,
+      "isMembershipRequired": true,
+      "isAccessKeyRequired": true,
+      "id": 4,
+      "title": "Public - Membership Required"
+    },
+    "statusType": {
+      "isOperational": true,
+      "isUserSelectable": true,
+      "id": 50,
+      "title": "Operational"
+    },
+    "submissionStatus": {
+      "isLive": true,
+      "id": 200,
+      "title": "Submission Published"
+    },
+    "isRecentlyVerified": true,
+    "dateLastVerified": "2021-06-15T17:38:00Z",
+    "id": 175807,
+    "uuid": "207ED04C-C37B-4DB8-AE97-84CE7320F41B",
+    "dataProviderID": 1,
+    "operatorID": 5,
+    "usageTypeID": 4,
+    "usageCost": "12AM-4PM: $0.36/kWh, 4PM-9PM: $0.46/kWh, 9PM-12AM: $0.36/kWh. Parking: $0.05/min",
+    "addressInfo": {
+      "id": 176166,
+      "title": "King City Shopping Center",
+      "addressLine1": "510 Canal St. ",
+      "town": "King City",
+      "stateOrProvince": "CA",
+      "postcode": "93930",
+      "countryID": 2,
+      "country": {
+        "isoCode": "US",
+        "continentCode": "NA",
+        "id": 2,
+        "title": "United States"
+      },
+      "latitude": 36.20527412909516,
+      "longitude": -121.13292542542996,
+      "relatedURL": "https://www.chargepoint.com",
+      "distanceUnit": 0
+    },
+    "connections": [
       {
-        "ID": 272639,
-        "ConnectionTypeID": 11,
-        "StatusTypeID": 50,
-        "LevelID": 2,
-        "Amps": 50,
-        "Voltage": 240,
-        "PowerKW": 12.0,
-        "Quantity": 1,
-        "Comments": "$10 to charge"
+        "id": 273018,
+        "connectionTypeID": 32,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration EE",
+          "isDiscontinued": false,
+          "isObsolete": false,
+          "id": 32,
+          "title": "CCS (Type 1)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 3,
+        "level": {
+          "comments": "40KW and Higher",
+          "isFastChargeCapable": true,
+          "id": 3,
+          "title": "Level 3:  High (Over 40kW)"
+        },
+        "powerKW": 62.5,
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 3
+      },
+      {
+        "id": 273019,
+        "connectionTypeID": 2,
+        "connectionType": {
+          "formalName": "IEC 62196-3 Configuration AA",
+          "id": 2,
+          "title": "CHAdeMO"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 3,
+        "level": {
+          "comments": "40KW and Higher",
+          "isFastChargeCapable": true,
+          "id": 3,
+          "title": "Level 3:  High (Over 40kW)"
+        },
+        "powerKW": 62.5,
+        "currentTypeID": 30,
+        "currentType": {
+          "description": "Direct Current",
+          "id": 30,
+          "title": "DC"
+        },
+        "quantity": 3
+      },
+      {
+        "id": 273020,
+        "connectionTypeID": 1,
+        "connectionType": {
+          "formalName": "SAE J1772-2009",
+          "id": 1,
+          "title": "Type 1 (J1772)"
+        },
+        "statusTypeID": 50,
+        "statusType": {
+          "isOperational": true,
+          "isUserSelectable": true,
+          "id": 50,
+          "title": "Operational"
+        },
+        "levelID": 2,
+        "level": {
+          "comments": "Over 2 kW, usually non-domestic socket type",
+          "isFastChargeCapable": false,
+          "id": 2,
+          "title": "Level 2 : Medium (Over 2kW)"
+        },
+        "powerKW": 6.6,
+        "currentTypeID": 10,
+        "currentType": {
+          "description": "Alternating Current - Single Phase",
+          "id": 10,
+          "title": "AC (Single-Phase)"
+        },
+        "quantity": 1
       }
     ],
-    "NumberOfPoints": 1,
-    "StatusTypeID": 50,
-    "DateLastStatusUpdate": "2021-06-01T18:18:00Z",
-    "DataQualityLevel": 1,
-    "DateCreated": "2021-05-31T00:18:00Z",
-    "SubmissionStatusTypeID": 200
+    "numberOfPoints": 4,
+    "generalComments": "(866) 480-2936",
+    "statusTypeID": 50,
+    "dateLastStatusUpdate": "2021-06-18T17:53:00Z",
+    "dataQualityLevel": 1,
+    "dateCreated": "2021-06-15T17:38:00Z",
+    "submissionStatusTypeID": 200
   }
 ]

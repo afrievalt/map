@@ -5,17 +5,18 @@ import ListItemText from '@material-ui/core/ListItemText'
 import { useSelector } from 'react-redux'
 import ListItemLink from '../../../controls/ListItemLink'
 import { selectChargeLocationsForContentArea } from './contentArea.selectors'
-import { Typography } from '@material-ui/core'
 import styled from 'styled-components'
-
+import Box from '../../../controls/LayoutAtoms/Box'
 const BlockSpan = styled.span`
   display: block;
 `
-
+const Container = styled(Box)`
+  min-width: 20%;
+`
 function LeftDrawer () {
   const locations = useSelector(selectChargeLocationsForContentArea)
   return (
-    <div>
+    <Container>
       <Divider />
       <List>
         {
@@ -36,7 +37,7 @@ function LeftDrawer () {
       </List>
       <Divider />
 
-    </div>
+    </Container>
   )
 }
 

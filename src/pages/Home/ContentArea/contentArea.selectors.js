@@ -1,22 +1,26 @@
 import { createSelector } from 'reselect'
-import { selectUniqueChargeLocations } from '../chargeLocations.selectors'
+import { selectRouteLocation, selectUniqueChargeLocations } from '../chargeLocations.selectors'
 
 const EMPTY = {}
 
-export const selectChargeLocationsForContentArea = createSelector(selectUniqueChargeLocations, locations => {
-  return locations.map(location => {
-    const { AddressInfo, ID, Connections } = location || EMPTY
-    const { Title, Town, AddressLine1, AccessComments } = AddressInfo || EMPTY
-    const details = [
-      AddressLine1,
-      AccessComments,
-      `Connections: ${Connections.length}`
-    ].filter(l => l)
-    return {
-      id: ID,
-      title: Title,
-      subTitle: Town,
-      details
-    }
+export const selectChargeLocationsForContentArea = createSelector(
+  selectUniqueChargeLocations,
+  selectRouteLocation,
+  (locations, routeLocation) => {
+    console.log(routeLocation)
+    return locations.map(location => {
+      const { addressInfo, id, connections } = location || EMPTY
+      const { title, town, addressLine1, accessComments } = addressInfo || EMPTY
+      const details = [
+        addressLine1,
+        town,
+        accessComments,
+      `Connections: ${connections.length}`
+      ].filter(l => l)
+      return {
+        id,
+        title,
+        details
+      }
+    })
   })
-})

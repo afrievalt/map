@@ -17,10 +17,15 @@ describe('selectChargeLocationsForContentArea - ', () => {
     console.log(result[0])
     // assert
     expect(result[0]).toEqual({
-      id: 175784,
-      title: 'DARCARS Lanham Kia',
-      subTitle: 'Lanham',
-      details: ['9020 Lanham Severn Road', 'Connections: 1']
+      id: 175911,
+      title: 'Georgia Power Macon - Zebulon Road',
+      details: [
+        '6225 Zebulon Road',
+        'Macon',
+        "In shopping center behind Applebee's, Fazoli's, and Freddy's; although " +
+          'the address is on Zebulon Road, access is via Peake Road from I-475.',
+        'Connections: 3'
+      ]
     })
   })
 })

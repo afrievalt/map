@@ -8,9 +8,9 @@ export const selectUniqueChargeLocations = createSelector(selectChargeLocations,
   locations => {
     const allIds = []
     return locations.filter(l => {
-      const { ID } = l
-      if (!allIds.includes(ID)) {
-        allIds.push(ID)
+      const { id } = l
+      if (!allIds.includes(id)) {
+        allIds.push(id)
         return true
       }
       return false
@@ -27,12 +27,12 @@ export const selectChargeLocationsForMap = createSelector(
     console.log({ id })
     return locations
       .map(location => {
-        const { AddressInfo, ID } = location || EMPTY
-        const { Latitude, Longitude } = AddressInfo || EMPTY
-        const coordinates = [Longitude, Latitude]
+        const { addressInfo, id } = location || EMPTY
+        const { latitude, longitude } = addressInfo || EMPTY
+        const coordinates = [longitude, latitude]
         return {
           coordinates,
-          id: ID
+          id
         }
       })
       .filter(location => !id || id === location.id)
