@@ -5,7 +5,7 @@ import Map from '../../controls/Map/Map'
 import Marker from '../../controls/Map/Marker'
 import { fetchChargeLocations } from '../../store/ducks/chargeLocations.duck'
 import { selectChargeLocationsForMap } from './chargeLocations.selectors'
-
+import ContentArea from './ContentArea/ContentArea'
 const Home = () => {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -14,6 +14,7 @@ const Home = () => {
   const mapLocations = useSelector(selectChargeLocationsForMap)
   return (
     <Container>
+      <ContentArea />
       <h1>Home</h1>
       <Map>
         {

@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { Children, useRef, useEffect, useState } from 'react'
 import mapboxgl from '!mapbox-gl' // eslint-disable-line import/no-webpack-loader-syntax
-import { Children } from 'react'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWZyaWV2YWx0IiwiYSI6ImNrcHlmZG1ubDBkMTEydnBjbzhqcXB5Zm4ifQ.HPb-xVgehU4bkBPTuy2o7A'
 const temp = [

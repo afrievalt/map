@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 
 const EMPTY = {}
-const selectChargeLocations = state => state.chargeLocations.foundChargeLocations
+export const selectChargeLocations = state => state.chargeLocations.foundChargeLocations
 
 export const selectChargeLocationsForMap = createSelector(selectChargeLocations, locations => {
   return locations.map(location => {

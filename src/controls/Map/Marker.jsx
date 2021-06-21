@@ -7,6 +7,6 @@ const propTypes = {
 const Marker = () => {
   return null
 }
-Marker.propTypes = propTypes;
+Marker.propTypes = propTypes
 
 export default Marker
