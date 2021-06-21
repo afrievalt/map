@@ -4,8 +4,21 @@ const EMPTY = {}
 export const selectChargeLocations = state => state.chargeLocations.foundChargeLocations
 export const selectRouteLocation = state => state.location
 
+export const selectUniqueChargeLocations = createSelector(selectChargeLocations,
+  locations => {
+    const allIds = []
+    return locations.filter(l => {
+      const { ID } = l
+      if (!allIds.includes(ID)) {
+        allIds.push(ID)
+        return true
+      }
+      return false
+    })
+  }
+)
 export const selectChargeLocationsForMap = createSelector(
-  selectChargeLocations,
+  selectUniqueChargeLocations,
   selectRouteLocation,
 
   (locations, routeLocation) => {
@@ -14,12 +27,12 @@ export const selectChargeLocationsForMap = createSelector(
     console.log({ id })
     return locations
       .map(location => {
-        const { AddressInfo, UUID } = location || EMPTY
+        const { AddressInfo, ID } = location || EMPTY
         const { Latitude, Longitude } = AddressInfo || EMPTY
         const coordinates = [Longitude, Latitude]
         return {
           coordinates,
-          id: UUID
+          id: ID
         }
       })
       .filter(location => !id || id === location.id)

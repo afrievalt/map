@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-
 export const initialState = {
   foundChargeLocations: [],
   loading: false,

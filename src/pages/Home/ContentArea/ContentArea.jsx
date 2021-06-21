@@ -5,6 +5,13 @@ import ListItemText from '@material-ui/core/ListItemText'
 import { useSelector } from 'react-redux'
 import ListItemLink from '../../../controls/ListItemLink'
 import { selectChargeLocationsForContentArea } from './contentArea.selectors'
+import { Typography } from '@material-ui/core'
+import styled from 'styled-components'
+
+const BlockSpan = styled.span`
+  display: block;
+`
+
 function LeftDrawer () {
   const locations = useSelector(selectChargeLocationsForContentArea)
   return (
@@ -18,7 +25,11 @@ function LeftDrawer () {
               routeParameters={{ id: l.id }}
               key={l.id}
             >
-              <ListItemText primary={l.title} />
+              <ListItemText
+                primary={l.title}
+                secondary={l.details.map(d => <BlockSpan key={d}>{d}</BlockSpan>)}
+              />
+
             </ListItemLink>
           ))
         }

@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect'
-import { selectChargeLocations } from '../chargeLocations.selectors'
+import { selectUniqueChargeLocations } from '../chargeLocations.selectors'
 
 const EMPTY = {}
 
-export const selectChargeLocationsForContentArea = createSelector(selectChargeLocations, locations => {
+export const selectChargeLocationsForContentArea = createSelector(selectUniqueChargeLocations, locations => {
   return locations.map(location => {
     const { AddressInfo, ID, Connections } = location || EMPTY
     const { Title, Town, AddressLine1, AccessComments } = AddressInfo || EMPTY
