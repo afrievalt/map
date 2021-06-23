@@ -1,22 +1,19 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Map from '../../controls/Map/Map'
 import Marker from '../../controls/Map/Marker'
-import { fetchChargeLocations } from '../../store/ducks/chargeLocations.duck'
 import { selectChargeLocationsForMap } from './chargeLocations.selectors'
 import ContentArea from './ContentArea/ContentArea'
 import Stack from '../../controls/LayoutAtoms/Stack'
+import FetchChargingLocations from './FetchChargingLocations'
 const Home = () => {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchChargeLocations())
-  }, [])
   const mapLocations = useSelector(selectChargeLocationsForMap)
   console.log({ mapLocations })
   return (
     <Stack>
       <ContentArea />
       <Map>
+        <FetchChargingLocations />
         {
           mapLocations.map(l =>
             <Marker coordinates={l.coordinates} key={l.id} />

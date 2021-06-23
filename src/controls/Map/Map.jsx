@@ -1,6 +1,8 @@
-import React, { Children, useRef, useEffect, useState } from 'react'
+import React, { Children, useRef, useEffect, useState, createContext } from 'react'
 import mapboxgl from '!mapbox-gl' // eslint-disable-line import/no-webpack-loader-syntax
+import useDebounce from '../../hooks/useDebounce'
 
+export const MapContext = createContext()
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWZyaWV2YWx0IiwiYSI6ImNrcHlmZG1ubDBkMTEydnBjbzhqcXB5Zm4ifQ.HPb-xVgehU4bkBPTuy2o7A'
 const temp = [
   -122.076575, 37.415328
@@ -10,9 +12,10 @@ export default function Map ({ children }) {
   const mapContainer = useRef(null)
   const map = useRef(null)
   const layers = useRef([])
-  // const [lng, setLng] = useState(-70.9)
-  // const [lat, setLat] = useState(42.35)
-  // const [zoom, setZoom] = useState(9)
+  const [lng, setLng] = useState(-70.9)
+  const [lat, setLat] = useState(42.35)
+  const [zoom, setZoom] = useState(9)
+  const search = useDebounce({ lng, lat, zoom }, 500)
 
   useEffect(() => {
     if (map.current) return // initialize map only once
@@ -41,16 +44,28 @@ export default function Map ({ children }) {
           .addTo(map.current)
         )
       })
-    // map.current.on('move', () => {
-    //   setLng(map.current.getCenter().lng.toFixed(4))
-    //   setLat(map.current.getCenter().lat.toFixed(4))
-    //   setZoom(map.current.getZoom().toFixed(2))
-    // })
+    map.current.on('move', () => {
+      setLng(map.current.getCenter().lng.toFixed(4))
+      setLat(map.current.getCenter().lat.toFixed(4))
+      setZoom(map.current.getZoom().toFixed(2))
+    })
   }, [children])
-
+  useEffect(() => {
+    console.log({ search })
+  }, [search.lat, search.lng, search.zoom])
+  const context = {
+    mapContainer,
+    map: map.current,
+    lat,
+    lng,
+    zoom
+  }
   return (
-    <div>
-      <div ref={mapContainer} id='foo' className='map-container' />
-    </div>
+    <MapContext.Provider value={context}>
+      <div>
+        {children}
+        <div ref={mapContainer} id='foo' className='map-container' />
+      </div>
+    </MapContext.Provider>
   )
 }
