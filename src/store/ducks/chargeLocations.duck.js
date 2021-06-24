@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { openChangeMapKey } from '../../secretes'
 
 export const initialState = {
   foundChargeLocations: [],
@@ -36,9 +37,9 @@ const chargeLocations = createSlice({
 const { fetchChargeLocationsRequest } = chargeLocations.actions
 export const { fetchChargeLocationsSuccess, fetchChargeLocationsFailure } = chargeLocations.actions
 
-const baseUrl = 'https://api.openchargemap.io/v3/poi/?output=json&camelCase=true&compact=true&cammelCase=true&countrycode=US&maxresults=10&compact=true&verbose=false&key=c37feaa6-2d65-4697-bfbe-bbf4fa858c31'
+const baseUrl = 'https://api.openchargemap.io/v3/poi/?output=json&camelCase=true&compact=true&cammelCase=true&countrycode=US&maxresults=10&compact=true&verbose=false'
 export const fetchChargeLocations = (search) => (dispatch) => {
-  const url = `${baseUrl}&latitude=${search.lat}&longitude=${search.lng}&distance=50`
+  const url = `${baseUrl}&latitude=${search.lat}&longitude=${search.lng}&distance=50&key=${openChangeMapKey}`
   console.log('inFetch', { search })
   dispatch(fetchChargeLocationsRequest())
   return axios.get(url)
