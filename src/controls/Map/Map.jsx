@@ -4,11 +4,16 @@ import { mapboxglAccessToken } from '../../secretes'
 export const MapContext = createContext()
 mapboxgl.accessToken = mapboxglAccessToken
 
+const MILWAUKEE = {
+  lat: 43.0292238997657,
+  lng: -87.9368712076874
+}
+
 export default function Map ({ children }) {
   const mapContainer = useRef(null)
   const map = useRef(null)
-  const [lng, setLng] = useState(-70.9)
-  const [lat, setLat] = useState(42.35)
+  const [lng, setLng] = useState(MILWAUKEE.lng)
+  const [lat, setLat] = useState(MILWAUKEE.lat)
   const [zoom, setZoom] = useState(9)
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { size, colors } from './theme'
-const gray = colors.grays[600]
+const gray = colors.grays[100]
 
 const Box = styled.div(
   ({ padding = 2, background = gray, border = 0 }) =>

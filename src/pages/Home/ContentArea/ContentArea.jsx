@@ -1,23 +1,22 @@
 import React from 'react'
-import Divider from '@material-ui/core/Divider'
+import { useSelector } from 'react-redux'
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
-import { useSelector } from 'react-redux'
 import ListItemLink from '../../../controls/ListItemLink'
-import { selectChargeLocationsForContentArea } from './contentArea.selectors'
 import styled from 'styled-components'
 import Box from '../../../controls/LayoutAtoms/Box'
+import { selectChargeLocationsForContentArea } from './contentArea.selectors'
+
 const BlockSpan = styled.span`
   display: block;
 `
 const Container = styled(Box)`
-  min-width: 20%;
+  width: 20vw;
 `
 function LeftDrawer () {
   const locations = useSelector(selectChargeLocationsForContentArea)
   return (
     <Container>
-      <Divider />
       <List>
         {
           locations.map(l => (
@@ -35,8 +34,6 @@ function LeftDrawer () {
           ))
         }
       </List>
-      <Divider />
-
     </Container>
   )
 }

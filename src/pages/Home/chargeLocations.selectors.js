@@ -35,5 +35,5 @@ export const selectChargeLocationsForMap = createSelector(
           id
         }
       })
-      .filter(location => !id || id === location.id)
+      .filter(location => !id || +id === +location.id)
   })

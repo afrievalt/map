@@ -1,1 +1,0 @@
-module.exports = [{"name":"locations","path":"src\\pages\\Home","fields":"Title, Town, StateOrProvince"},{"name":"employee"}]
