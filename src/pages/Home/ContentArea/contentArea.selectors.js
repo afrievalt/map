@@ -7,16 +7,22 @@ export const selectChargeLocationsForContentArea = createSelector(
   selectUniqueChargeLocations,
   selectRouteLocation,
   (locations, routeLocation) => {
-    console.log(routeLocation)
+    const { payload } = routeLocation
+
     return locations.map(location => {
       const { addressInfo, id, connections } = location || EMPTY
-      const { title, town, addressLine1, accessComments } = addressInfo || EMPTY
-      const details = [
-        addressLine1,
-        town,
-        accessComments,
-      `Connections: ${connections.length}`
-      ].filter(l => l)
+      const { title, town, addressLine1, accessComments, stateOrProvince, postcode, usageCost } = addressInfo || EMPTY
+      const isFullDetails = id === +payload?.id
+      const addressLine2 = `${town}, ${stateOrProvince} ${postcode}`
+      const details = isFullDetails
+        ? [
+            addressLine1,
+            addressLine2,
+            accessComments,
+            usageCost,
+            `Connections: ${connections.length}`
+          ].filter(l => l)
+        : [addressLine2]
       return {
         id,
         title,
