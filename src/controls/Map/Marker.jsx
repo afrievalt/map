@@ -9,12 +9,12 @@ const propTypes = {
 
 const Marker = ({ coordinates }) => {
   const { map } = useContext(MapContext)
-  const marker = useRef(new mapboxgl.Marker())
   useEffect(() => {
-    map && marker.current.setLngLat(coordinates)
+    const marker = new mapboxgl.Marker()
+    map && marker.setLngLat(coordinates)
       .addTo(map)
     return () => {
-      marker.current.remove()
+      marker.remove()
     }
   }, [map])
   return null

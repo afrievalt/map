@@ -1,8 +1,6 @@
 const routePaths = {
   HOME: '/',
-  STATION: '/station/:id',
-  SIGNUP: '/admin/signup',
-  SIGNIN: '/admin/signin'
+  STATION: '/station/:id'
 }
 
 export default routePaths

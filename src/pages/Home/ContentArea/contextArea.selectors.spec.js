@@ -41,7 +41,7 @@ describe('selectChargeLocationsForContentArea - ', () => {
     }
     // act
     const result = selectChargeLocationsForContentArea(state)
-    
+
     // assert
     expect(result[0]).toEqual({
       id: 175911,
