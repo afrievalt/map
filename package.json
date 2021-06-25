@@ -54,21 +54,5 @@
       "jest": true
     }
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "plop": "^2.7.4",
-    "react-test-renderer": "^17.0.1",
-    "standard": "^16.0.3"
-  }
+  "browserslist": [">0.3%", "not ie 11", "not dead", "not op_mini all"]
 }

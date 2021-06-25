@@ -22,7 +22,7 @@ export const selectChargeLocationsForContentArea = createSelector(
             usageCost,
             `Connections: ${connections.length}`
           ].filter(l => l)
-        : [addressLine2]
+        : [addressLine1]
       return {
         id,
         title,

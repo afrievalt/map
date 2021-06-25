@@ -32,7 +32,6 @@ export default function Map ({ children }) {
   })
 
   const context = {
-    mapContainer,
     map: map.current,
     lat,
     lng,
@@ -41,8 +40,8 @@ export default function Map ({ children }) {
   return (
     <MapContext.Provider value={context}>
       <div>
-        {children}
         <div ref={mapContainer} className='map-container' />
+        {children}
       </div>
     </MapContext.Provider>
   )

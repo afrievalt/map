@@ -46,7 +46,7 @@ describe('selectChargeLocationsForContentArea - ', () => {
     expect(result[0]).toEqual({
       id: 175911,
       title: 'Georgia Power Macon - Zebulon Road',
-      details: ['Macon, GA 31210']
+      details: ['6225 Zebulon Road']
     })
   })
 })

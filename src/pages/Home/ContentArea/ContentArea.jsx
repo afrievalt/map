@@ -13,7 +13,7 @@ const BlockSpan = styled.span`
 const Container = styled(Box)`
   width: 20vw;
 `
-function LeftDrawer () {
+function ContentArea () {
   const locations = useSelector(selectChargeLocationsForContentArea)
   return (
     <Container>
@@ -38,4 +38,4 @@ function LeftDrawer () {
   )
 }
 
-export default LeftDrawer
+export default ContentArea

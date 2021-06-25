@@ -4,19 +4,20 @@ import { useDispatch } from 'react-redux'
 import { MapContext } from '../../controls/Map/Map'
 import { useContext, useEffect } from 'react'
 
-export default function Map ({ children }) {
+function FetchChargingLocations () {
   const dispatch = useDispatch()
   const context = useContext(MapContext)
+  const search = useDebounce(context, 500)
   const {
     lat,
     lng,
     zoom
-  } = context
-  const search = useDebounce({ lng, lat, zoom }, 500)
-
+  } = search
   useEffect(() => {
-    dispatch(fetchChargeLocations(search))
-  }, [search.lat, search.lng, search.zoom])
+    dispatch(fetchChargeLocations({ lng, lat, zoom }))
+  }, [lng, lat, zoom, dispatch])
 
-  return null
+  return null // no rendering
 }
+
+export default FetchChargingLocations

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect } from 'react'
 import mapboxgl from 'mapbox-gl'
 import PropTypes from 'prop-types'
 import { MapContext } from './Map'
@@ -16,7 +16,7 @@ const Marker = ({ coordinates }) => {
     return () => {
       marker.remove()
     }
-  }, [map])
+  }, [map, coordinates])
   return null
 }
 Marker.propTypes = propTypes

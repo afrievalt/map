@@ -6,7 +6,8 @@ import { selectChargeLocationsForMap } from './chargeLocations.selectors'
 import ContentArea from './ContentArea/ContentArea'
 import Stack from '../../controls/LayoutAtoms/Stack'
 import FetchChargingLocations from './FetchChargingLocations'
-const Home = () => {
+
+function Home () {
   const mapLocations = useSelector(selectChargeLocationsForMap)
   console.log({ mapLocations })
   return (
@@ -20,7 +21,6 @@ const Home = () => {
           )
         }
       </Map>
-
     </Stack>
   )
 }
