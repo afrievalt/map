@@ -4,6 +4,8 @@ import { mapboxglAccessToken } from '../../secretes'
 import useEffectOnce from '../../hooks/useEffectOnce'
 export const MapContext = createContext()
 mapboxgl.accessToken = mapboxglAccessToken
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const MILWAUKEE = {
   lat: 43.0292238997657,
