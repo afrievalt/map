@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,KACE,QACF,CAEA,eACE,YAAa,CACb,UACF","file":"main.60c0a8ca.chunk.css","sourcesContent":["body {\r\n  margin: 0;\r\n} \r\n\r\n.map-container {\r\n  height: 100vh;\r\n  width: 79vw;\r\n}\r\n"]}
