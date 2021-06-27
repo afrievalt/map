@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { openChangeMapKey } from '../../secretes'
+import { openChangeMapKey } from '../../.secretes'
 
 export const initialState = {
   foundChargeLocations: [],

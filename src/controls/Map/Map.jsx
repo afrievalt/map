@@ -1,6 +1,6 @@
 import React, { useRef, useState, createContext } from 'react'
 import mapboxgl from 'mapbox-gl'
-import { mapboxglAccessToken } from '../../secretes'
+import { mapboxglAccessToken } from '../../.secretes'
 import useEffectOnce from '../../hooks/useEffectOnce'
 export const MapContext = createContext()
 mapboxgl.accessToken = mapboxglAccessToken
