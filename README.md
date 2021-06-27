@@ -3,4 +3,4 @@ npm i\
 npm run dev
 
 # Deployed
-[Map](https://afrievalt.github.io/)
+[Map](https://afrievalt.github.io/map)
